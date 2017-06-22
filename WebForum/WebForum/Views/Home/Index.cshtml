@@ -6,16 +6,47 @@
     <title>Pocetna</title>
     <link rel="stylesheet" href="../../Content/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="../../Content/css/app.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 </head>
 <body>
-    <h1>CEO APP</h1>
-    <div ng-view></div>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default" ng-controller="NavController">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#!/pocetna">Web Forum</a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="checkActive('/pocetna')"><a href="#!/pocetna">Podforumi</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
+                        <li ng-class="checkActive('/register')"><a href="#!/register">Register</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div ng-view></div>
+    </div>
+    
+    <script src="../../Scripts/js/jquery-1.10.2.min.js"></script>
+    <script src="../../Scripts/js/bootstrap.min.js"></script>
     <script src="../../Scripts/js/angular.min.js"></script>
     <script src="../../Scripts/js/angular-route.min.js"></script>
     <script src="../../SPA/app.js"></script>
     <script src="../../SPA/controllers/HomeController.js"></script>
     <script src="../../SPA/controllers/LoginController.js"></script>
+    <script src="../../SPA/controllers/NavController.js"></script>
 </body>
 
 </html>

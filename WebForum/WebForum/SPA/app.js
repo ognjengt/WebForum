@@ -4,15 +4,26 @@ webForum.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/',
 	{
 	    controller: 'HomeController',
-	    templateUrl: 'SPA/partials/home.html'
-	}).when('/home',
+	    templateUrl: 'SPA/partials/pocetna.html',
+	    activeTab: 'pocetna'
+
+	}).when('/pocetna',
 	{
 	    controller: 'HomeController',
-	    templateUrl: 'SPA/partials/home.html'
+	    templateUrl: 'SPA/partials/pocetna.html',
+        activeTab: 'pocetna'
+
 	}).when('/login',
     {
         controller: 'LoginController',
-        templateUrl: 'SPA/partials/login.html'
+        templateUrl: 'SPA/partials/login.html',
+        activeTab: 'login'
+
+    }).when('/register',
+    {
+        controller: 'LoginController',
+        templateUrl: 'SPA/partials/register.html',
+        activeTab: 'register'
     })
 
 });

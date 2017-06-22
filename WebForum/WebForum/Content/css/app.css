@@ -1,3 +1,29 @@
+.loginWindow {
+  width: 200px;
+  height: 200px;
+  background: #000; }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.01em; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.navbar, .navbar-default {
+  background: #F7F7F7 !important;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  border-bottom: 2px solid #eaeaea; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background: none !important;
+  color: #0060FF !important; }
+
+.active {
+  border-bottom: 2px solid #0060FF !important;
+  background: transparent !important;
+  color: #0060FF !important; }
 
 /*# sourceMappingURL=app.css.map */
