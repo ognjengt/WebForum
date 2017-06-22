@@ -150,7 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="SPA\Controllers\" />
     <Folder Include="SPA\services\" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +234,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="SPA\app.js" />
+    <Content Include="SPA\controllers\HomeController.js" />
+    <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\home.html" />
     <Content Include="Web.config" />
