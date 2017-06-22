@@ -148,9 +148,7 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SPA\services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -184,14 +182,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DbOperater.cs" />
+    <Compile Include="Helpers\RequestClasses.cs" />
     <Compile Include="Models\Komentar.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Podforum.cs" />
+    <Compile Include="Models\Poruka.cs" />
     <Compile Include="Models\Tema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -234,10 +236,11 @@
     <Content Include="SPA\app.js" />
     <Content Include="SPA\controllers\HomeController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
-    <Content Include="SPA\controllers\NavController.js" />
+    <Content Include="SPA\controllers\MainController.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\pocetna.html" />
     <Content Include="SPA\partials\register.html" />
+    <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

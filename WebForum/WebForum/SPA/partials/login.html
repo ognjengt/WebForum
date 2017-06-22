@@ -1,15 +1,18 @@
+<div class="porukaORegistraciji">
+    <h4 class="success">{{uspesnoRegistrovan}}</h4>
+</div>
 <div class="loginWindow">
   <div class="header">
     <h2>Login</h2>
   </div>
   <div class="body">
       <div class="form-group">
-        <input type="text" class="form-control" id="username" placeholder="Username">
+        <input type="text" class="form-control" id="username" ng-model="korisnik.username" placeholder="Username">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="pwd" placeholder="Password">
+        <input type="password" class="form-control" id="pwd" ng-model="korisnik.password" placeholder="Password">
       </div>
       <br>
-      <button type="submit" class="btn button-success">Login</button>
+      <button type="submit" class="btn button-success" ng-click="Login(korisnik)">Login</button>
   </div>
 </div>

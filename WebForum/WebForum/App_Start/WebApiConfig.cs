@@ -14,6 +14,14 @@ namespace WebForum
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            config.Routes.MapHttpRoute("ActionApi",
+              "api/{controller}/{action}",
+              null,
+              new { action = @"[a-zA-Z]+" });
+
+            config.Routes.MapHttpRoute("WithActionApi",
+              "api/{controller}/{id}/{action}");
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

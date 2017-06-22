@@ -4,27 +4,27 @@
   </div>
   <div class="body">
       <div class="form-group">
-        <input type="text" class="form-control" id="username" placeholder="Username">
+        <input type="text" class="form-control" id="username" ng-model="korisnik.username" placeholder="Username">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="ime" placeholder="Ime">
+        <input type="text" class="form-control" id="ime" ng-model="korisnik.ime" placeholder="Ime">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="prezime" placeholder="Prezime">
+        <input type="text" class="form-control" id="prezime" ng-model="korisnik.prezime" placeholder="Prezime">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="kontaktTelefon" placeholder="Kontakt telefon">
+        <input type="text" class="form-control" id="kontaktTelefon" ng-model="korisnik.kontaktTelefon" placeholder="Kontakt telefon">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="Email">
+        <input type="email" class="form-control" id="email" ng-model="korisnik.email" placeholder="Email">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="pwd" placeholder="Password">
+        <input type="password" class="form-control" id="pwd" ng-model="korisnik.pwd" placeholder="Password">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="pwd2" placeholder="Potvrdi password">
+        <input type="password" class="form-control" id="pwd2" ng-model="korisnik.pwd2" placeholder="Potvrdi password">
       </div>
       <br>
-      <button type="submit" class="btn button-success">Registracija</button>
+      <button type="submit" class="btn button-success" ng-click="RegistrujKorisnika(korisnik)">Registracija</button>
   </div>
 </div>
