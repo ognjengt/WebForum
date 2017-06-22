@@ -1,0 +1,16 @@
+.button-success{
+  background: linear-gradient(180deg, #0080FF, #0060FF) !important;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
+  color: #fff;
+  width: 100%;
+  transition: 0.2s ease;
+  height: 50px;
+}
+.button-success:hover{
+  opacity: 0.85;
+  color: #fff;
+}
+.btn:active, .btn:focus, .btn:active, .btn:focus {
+  color: #fff !important; 
+  }

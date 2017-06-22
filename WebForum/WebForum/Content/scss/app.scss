@@ -1,13 +1,15 @@
 @import "variables.scss";
 @import "partials/loginregister.scss";
+@import "components/buttons.scss";
 
 *{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 1.01em;
 }
 body{
   padding: 0;
   margin: 0;
+  background: url("../img/bg.png");
 }
 .navbar, .navbar-default {
   background: $navbarColor !important;
@@ -19,10 +21,20 @@ body{
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
   background: none !important;
-  color: $activeLink !important;
+  color: $blue !important;
+}
+.navbar-default .navbar-brand {
+  color: $blue;
 }
 .active{
-  border-bottom: 2px solid $activeLink !important;
+  border-bottom: 2px solid $blue !important;
   background: transparent !important;
-  color: $activeLink !important;
+  color: $blue !important;
+}
+input{
+  height: 50px !important;
+  box-shadow: none !important;
+}
+input:focus{
+  border: 2px solid $blue !important;
 }
