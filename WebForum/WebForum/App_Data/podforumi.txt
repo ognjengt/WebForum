@@ -1,0 +1,3 @@
+﻿Sport;opis sporta;ikonica sporta;pravila pravila pravila;moderator1
+Knjizevnost;opis knjizevnosti;ikonica nauke;pravila pravila knjizevnost;moderator2
+Nauka;opis nauke;ikonica nauke;pravila pravila nauka;moderator3

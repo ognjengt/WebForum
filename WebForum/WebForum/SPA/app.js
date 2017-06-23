@@ -7,8 +7,8 @@ webForum.config(function ($routeProvider, $locationProvider) {
 
 	}).when('/podforumi',
 	{
-	    controller: 'HomeController',
-	    templateUrl: 'SPA/partials/pocetna.html',
+	    controller: 'PodforumiController',
+	    templateUrl: 'SPA/partials/podforumi/podforumi.html',
         activeTab: 'podforumi'
 
 	}).when('/login',

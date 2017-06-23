@@ -1,5 +1,7 @@
 ﻿webForum.controller('LoginController', function ($scope, AccountFactory, $window, $rootScope) {
 
+    $scope.korisnik = {};
+
     if ($rootScope.ulogovan == true) {
         $window.location.href = "#!/pocetna";
     }
@@ -26,7 +28,6 @@
                 }
             })
         }
-        
     };
 
     $scope.Login = function (korisnik) {

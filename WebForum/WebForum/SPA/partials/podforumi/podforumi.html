@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="podforumi-header">
+    <h1>Spisak svih podforuma</h1>
+    <h4>Lorem ipsum is simply dummy text</h4>
+  </div>
+</div>
+<div class="podforumi-wrapper">
+  <div class="container-fluid">
+  <div class="col-md-12">
+
+    <div class="wrapper" ng-repeat="pf in podforumi">
+      <a href="/podforumi/{{pf.Naziv}}">
+      <div class="col-md-3">
+        <div class="podforum">
+          <div class="slika"></div>
+          <div class="telo">
+            {{pf.Naziv}}
+            <p class="opis">{{pf.Opis}}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+
+
+  </div>
+</div>
+</div>

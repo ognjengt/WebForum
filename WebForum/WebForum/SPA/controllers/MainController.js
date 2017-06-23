@@ -1,5 +1,7 @@
 ﻿webForum.controller('MainController', function ($scope, $location, $rootScope) {
  
+    // Kontroler koji je zaduzen za Index.cshtml, svaki put kada se bilo koja stranica ucita, proverava se cookie
+
     if (document.cookie !== "") {
         console.log(document.cookie);
         var cookieInfo = document.cookie.substring(9, document.cookie.length);
