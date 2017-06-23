@@ -2,6 +2,7 @@
 @import "partials/loginregister.scss";
 @import "components/buttons.scss";
 @import "partials/podforumi.scss";
+@import "modals/addNewPodforum.scss";
 
 *{
   font-family: 'Montserrat', sans-serif !important;
@@ -37,6 +38,10 @@ input{
   height: 50px !important;
   box-shadow: none !important;
 }
-input:focus{
+textarea{
+  height: 100px !important;
+  box-shadow: none !important;
+}
+input:focus,textarea:focus{
   border: 2px solid $blue !important;
 }

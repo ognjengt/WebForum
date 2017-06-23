@@ -1,10 +1,17 @@
+.holder{
+  position: relative;
+}
 .podforumi-header{
   width: 100%;
   text-align: center;
-  // background: $blue;
-  // color: #fff;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
+  position: relative;
+  
+  .add-podforum-btn{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-weight: 500;
+  }
 }
 .podforumi-wrapper{
   margin-top: 50px;
@@ -58,7 +65,7 @@
 }
 
 .podforum:hover{
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 // Pregled jednog podforuma
@@ -96,3 +103,4 @@
     }
   }
 }
+

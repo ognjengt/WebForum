@@ -1,7 +1,11 @@
 <div class="container-fluid">
   <div class="podforumi-header">
+    <div class="add-podforum-btn">
+      <button class="btn button-success" ng-show="korisnik.uloga == 'Administrator'" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible"><i class="ion ion-plus-round"></i> Novi podforum</button>
+    </div>
+
     <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span></h1>
-    <h4>Pregledaj spisak postojecih podforuma</h4>
+    <h4>Pregledaj spisak postojećih podforuma</h4>
   </div>
 </div>
 <div class="podforumi-wrapper">
@@ -30,4 +34,44 @@
 
   </div>
 </div>
+</div>
+<div id="addNewPodforumModal" ng-show="dodavanjePopupVisible">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+            <div class="header">
+                Dodaj novi podforum
+            </div>
+            <div class="popup-body">
+              <div class="form-group">
+                  <input type="text" class="form-control" id="projectTitleInput" placeholder="Naziv podforuma">
+              </div>
+
+              <div class="form-group">
+                  <textarea type="text" class="form-control" placeholder="Opis"></textarea>
+              </div>
+
+              <div class="form-group">
+                  <input type="file" class="form-control" placeholder="Slika">
+              </div>
+
+              <div class="form-group">
+                  <textarea type="text" class="form-control" placeholder="Spisak pravila"></textarea>
+              </div>
+
+
+              <div class="button-holder">
+                <div class="col-md-4">
+                  <button type="submit" class="btn button-green" ng-click="addProject()">Dodaj</button>
+                  </div>
+                  
+
+                <div class="col-md-4">
+                  <button type="button" class="btn button-cancel" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible">Zatvori</button>
+                </div>
+              
+              </div>
+              
+            </div>
+        </div>
+  </div>
 </div>
