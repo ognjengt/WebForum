@@ -204,6 +204,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\app.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\img\bg.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -236,11 +237,13 @@
     <Content Include="Scripts\js\jquery-1.10.2.min.js" />
     <Content Include="Scripts\js\modernizr-2.6.2.js" />
     <Content Include="SPA\app.js" />
+    <Content Include="SPA\controllers\PodforumController.js" />
     <Content Include="SPA\controllers\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\controllers\MainController.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
+    <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />

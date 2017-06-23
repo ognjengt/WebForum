@@ -1,7 +1,10 @@
 .podforumi-header{
   width: 100%;
   text-align: center;
-
+  // background: $blue;
+  // color: #fff;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
 }
 .podforumi-wrapper{
   margin-top: 50px;
@@ -19,22 +22,73 @@
   transition: 0.2s ease;
   overflow: hidden;
 
-  .slika{
+  .heder{
     width: 100%;
     height: 100px;
     border-radius: 4px 4px 0 0;
     background: $blue;
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+
   }
   .telo{
-    padding: 30px;
 
-    .opis{
+    .levo{
+      float:left;
+      width:30%;
+
+      img{
+        width: 100%;
+        height: 100px;
+      }
+    }
+    .desno{
       color: #999999;
-      font-size: 0.8em;
+      font-size: 0.9em;
+      float:left;
+      width: 70%;
+      padding: 10px;
     }
   }
 }
 
 .podforum:hover{
   transform: scale(1.05);
+}
+
+// Pregled jednog podforuma
+
+.podforum-header{
+  width: 100%;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  height: 250px;
+  overflow: hidden;
+
+  .abs{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 250px;
+    padding-top: 60px;
+  }
+
+  .podforum-bg{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+      height: 200%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
 }

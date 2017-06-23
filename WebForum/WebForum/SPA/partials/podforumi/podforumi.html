@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="podforumi-header">
-    <h1>Spisak svih podforuma</h1>
-    <h4>Lorem ipsum is simply dummy text</h4>
+    <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span></h1>
+    <h4>Pregledaj spisak postojecih podforuma</h4>
   </div>
 </div>
 <div class="podforumi-wrapper">
@@ -9,13 +9,18 @@
   <div class="col-md-12">
 
     <div class="wrapper" ng-repeat="pf in podforumi">
-      <a href="/podforumi/{{pf.Naziv}}">
+      <a href="#!/podforumi/{{pf.Naziv}}">
       <div class="col-md-3">
         <div class="podforum">
-          <div class="slika"></div>
+          <div class="heder">
+            <!--<img src="Content/img/podforumi/{{pf.Naziv}}.jpg" alt="">-->
+            <h3>{{pf.Naziv}}</h3>
+          </div>
           <div class="telo">
-            {{pf.Naziv}}
-            <p class="opis">{{pf.Opis}}</p>
+            <div class="levo">
+              <img src="Content/img/podforumi/{{pf.Naziv}}.jpg" alt="">
+            </div>
+            <div class="desno"><p>{{pf.Opis}}</p></div>
           </div>
         </div>
       </div>

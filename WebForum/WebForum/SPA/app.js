@@ -22,6 +22,12 @@ webForum.config(function ($routeProvider, $locationProvider) {
         controller: 'LoginController',
         templateUrl: 'SPA/partials/register.html',
         activeTab: 'register'
+
+    }).when('/podforumi/:naziv', 
+    {
+        controller: 'PodforumController',
+        templateUrl: 'SPA/partials/podforumi/pregledPodforuma.html',
+        activetab: 'nijedan'
     })
 
 });
