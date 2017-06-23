@@ -183,13 +183,13 @@
   top: 10%;
   transform: translateX(-50%);
   background: #fff;
-  border-radius: 3px; }
+  border-radius: 4px; }
   #addNewPodforumModal .addNew-wrapper .header {
     width: 100%;
     height: 50px;
     padding-top: 15px;
     background: #0060FF;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
     text-align: center;
     color: #DCD7EC; }
   #addNewPodforumModal .addNew-wrapper .popup-body {
@@ -198,7 +198,7 @@
     height: 100%;
     padding: 20px;
     color: #3380ff;
-    border-radius: 0px 0px 3px 3px; }
+    border-radius: 0px 0px 4px 4px; }
     #addNewPodforumModal .addNew-wrapper .popup-body .col-md-4 {
       padding: 0;
       margin-right: 20px; }

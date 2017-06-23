@@ -28,6 +28,7 @@
         document.cookie = 'korisnik=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         sessionStorage.clear();
         $rootScope.ulogovan = false;
+        $rootScope.korisnik = {};
         document.location.href = "#!/login";
     }
 
