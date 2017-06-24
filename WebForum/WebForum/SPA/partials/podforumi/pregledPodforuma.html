@@ -19,33 +19,37 @@
           <input class="form-control" placeholder="Pretrazi teme...">
         </div>
       </div>
-      <div class="teme"> 
+      <div class="teme" ng-show="temePodforuma"> 
 
-      <div class="tema-repeat"><!--ovde ng repeat-->
+      <div class="tema-repeat" ng-repeat="tema in temePodforuma">
         <a href="">
         <div class="col-md-12">
           <div class="tema">
             <div class="glasovi">
               <div class="up">
                 <i class="ion ion-thumbsup"></i>
-                <span class="thumbsnum">500</span>
+                <span class="thumbsnum">{{tema.PozitivniGlasovi}}</span>
               </div>
               <div class="down">
                 <i class="ion ion-thumbsdown"></i>
-                <span class="thumbsnum">15</span>
+                <span class="thumbsnum">{{tema.NegativniGlasovi}}</span>
               </div>
             </div>
-            <h4>Naslov</h4>
-            <p>Tip: [Tip]</p>
-            <p>Datum kreiranja</p>
-            <p>Autor</p>
-            <p>broj komentara</p>
+            <h4>{{tema.Naslov}}</h4>
+            <p>Tip: [{{tema.Tip}}]</p>
+            <p>{{tema.DatumKreiranja}}</p>
+            <p>Autor: {{tema.Autor}}</p>
+            <p>Broj Komentara: {{tema.Komentari.length}}</p>
           </div>
         </div>
       </a>
       </div>
       
 
+    </div>
+
+    <div class="nemaTema" ng-show="temePodforuma.length == 0"><h2>Trenutno ne postoji ni jedna tema za ovaj podforum.</h2>
+    <h3>Promenite to tako što će te dodati novu temu.</h3>
     </div>
   </div>
 

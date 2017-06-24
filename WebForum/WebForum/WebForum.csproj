@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PodforumiController.cs" />
+    <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,6 +202,7 @@
   <ItemGroup>
     <Content Include="App_Data\korisnici.txt" />
     <Content Include="App_Data\podforumi.txt" />
+    <Content Include="App_Data\teme.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\app.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -241,6 +243,7 @@
     <Content Include="SPA\controllers\podforumi\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\controllers\MainController.js" />
+    <Content Include="SPA\controllers\teme\TemeController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
@@ -248,6 +251,7 @@
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
+    <Content Include="SPA\services\TemeFactory.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

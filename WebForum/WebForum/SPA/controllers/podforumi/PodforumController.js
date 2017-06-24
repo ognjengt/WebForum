@@ -1,4 +1,4 @@
-﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, $routeParams) {
+﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, $routeParams) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
@@ -18,6 +18,13 @@
             $scope.podforum.Opis = $scope.podforum.Opis.replace(new RegExp('{novired}', 'g'), '\n');
             $scope.podforum.SpisakPravila = $scope.podforum.SpisakPravila.replace(new RegExp('{novired}', 'g'), '\n');
 
+            TemeFactory.getTemeZaPodforum($scope.nazivPodforuma).then(function (response) {
+                $scope.temePodforuma = response.data;
+                $scope.temePodforuma.forEach(function (tema) {
+                    tema.DatumKreiranja = new Date(tema.DatumKreiranja).toLocaleDateString();
+                })
+                console.log(response.data);
+            });
         });
     }
 

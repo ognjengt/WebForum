@@ -20,6 +20,10 @@ namespace WebForum.Controllers
     {
         DbOperater dbOperater = new DbOperater();
 
+        /// <summary>
+        /// Vraca sve postojece podforume
+        /// </summary>
+        /// <returns></returns>
         [ActionName("GetAll")]
         public List<Podforum> GetAll()
         {
@@ -49,6 +53,11 @@ namespace WebForum.Controllers
             return listaSvihPodforuma;
         }
 
+        /// <summary>
+        /// Vraca forum koji ima naziv koji je prosledjen
+        /// </summary>
+        /// <param name="naziv"></param>
+        /// <returns></returns>
         [ActionName("GetPodforumByNaziv")]
         public Podforum GetPodforumByNaziv(string naziv)
         {
@@ -78,6 +87,11 @@ namespace WebForum.Controllers
             return null;
         }
 
+        /// <summary>
+        /// Dodaje podforum sa prosledjenim parametrima u podforumi.txt
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName("DodajPodforum")]
         public Podforum DodajPodforum([FromBody]Podforum p)
@@ -105,6 +119,10 @@ namespace WebForum.Controllers
             return p;
         }
 
+        /// <summary>
+        /// Uploaduje sliku u /Content/img/podforumi, sa nazivom koji je izvucen iz headera, takodje se svi podaci potrebni izvlace iz headera
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [ActionName("UploadImage")]
         public HttpResponseMessage UploadImage()
