@@ -1,3 +1,6 @@
-﻿Sport;opis sporta;ikonica sporta;pravila pravila pravila;moderator1
-Knjizevnost;opis knjizevnosti;ikonica nauke;pravila pravila knjizevnost;moderator2
-Nauka;opis nauke;ikonica nauke;pravila pravila nauka;moderator3
+﻿Sport;opis sporta;Sport.jpg;pravila pravila pravila;moderator1
+Knjizevnost;opis knjizevnosti;Knjizevnost.jpg;pravila pravila knjizevnost;moderator2
+Nauka;opis nauke;Nauka.jpg;pravila pravila nauka;moderator3
+
+asd;asd;asd.jpg;asd;ognjen;ognjen
+gifina;asd;gifina.gif;asd;ognjen;ognjen

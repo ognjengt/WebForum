@@ -29,8 +29,12 @@ namespace WebForum.Controllers
 
             while ( (line = sr.ReadLine()) != null )
             {
-                string[] splitter = line.Split(';');
-                listaSvihPodforuma.Add(new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], new List<string>()));
+                if (line != "")
+                {
+                    string[] splitter = line.Split(';');
+                    listaSvihPodforuma.Add(new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], new List<string>()));
+                }
+                
             }
             sr.Close();
             dbOperater.Reader.Close();
@@ -95,21 +99,30 @@ namespace WebForum.Controllers
             {
                 Request.Content.ReadAsMultipartAsync<MultipartMemoryStreamProvider>(new MultipartMemoryStreamProvider()).ContinueWith((task) =>
                 {
-                    MultipartMemoryStreamProvider provider = task.Result;
-                    foreach (HttpContent content in provider.Contents)
+                    try
                     {
-                        Stream stream = content.ReadAsStreamAsync().Result;
-                        Image image = Image.FromStream(stream);
-                        var testName = content.Headers.ContentDisposition.Name;
-                        String filePath = HostingEnvironment.MapPath("~/Content/img/podforumi");
-                        string slika = Request.Headers.GetValues("slika").First();
-                        string[] spliter = slika.Split('.');
-                        string imeSlike = spliter[0];
-                        string ekstenzija = spliter[1];
-                        String fileName = slika + "."+ekstenzija;
-                        String fullPath = Path.Combine(filePath, fileName);
-                        image.Save(fullPath);
+                        MultipartMemoryStreamProvider provider = task.Result;
+                        foreach (HttpContent content in provider.Contents)
+                        {
+                            Stream stream = content.ReadAsStreamAsync().Result;
+                            Image image = Image.FromStream(stream);
+                            var testName = content.Headers.ContentDisposition.Name;
+                            String filePath = HostingEnvironment.MapPath("~/Content/img/podforumi");
+                            string slika = Request.Headers.GetValues("slika").First();
+                            string[] spliter = slika.Split('.');
+                            string imeSlike = spliter[0];
+                            string ekstenzija = spliter[1];
+                            String fileName = slika + "." + ekstenzija;
+                            String fullPath = Path.Combine(filePath, fileName);
+                            image.Save(fullPath);
+                        }
                     }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                    
                 });
                 return result;
             }
