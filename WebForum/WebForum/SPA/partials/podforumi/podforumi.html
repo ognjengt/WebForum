@@ -13,7 +13,7 @@
   <div class="container-fluid">
   <div class="col-md-12">
 
-    <div class="wrapper" ng-repeat="pf in podforumi">
+    <div class="wrapper" ng-repeat="pf in podforumi | orderBy:'-'">
       <a href="#!/podforumi/{{pf.Naziv}}">
       <div class="col-md-3">
         <div class="podforum">

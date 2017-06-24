@@ -13,16 +13,13 @@
     <div class="col-md-8">
       <div class="col-md-12">
         <div class="col-md-2">
-          <div class="btn button-success" ng-click="dodavanjeTemePopupVisible = !dodavanjeTemePopupVisible"><i class="ion ion-plus-round"></i>Nova tema</div>
-        </div>
-        <div class="form-group">
-          <input class="form-control" placeholder="Pretrazi teme...">
+          <div class="btn button-success" ng-show="ulogovan" ng-click="dodavanjeTemePopupVisible = !dodavanjeTemePopupVisible"><i class="ion ion-plus-round"></i>Nova tema</div>
         </div>
       </div>
       <div class="teme" ng-show="temePodforuma"> 
 
-      <div class="tema-repeat" ng-repeat="tema in temePodforuma">
-        <a href="">
+      <div class="tema-repeat" ng-repeat="tema in temePodforuma | orderBy:'-'">
+        <a href="#!/podforumi/{{podforum.Naziv}}/{{tema.Naslov}}">
         <div class="col-md-12">
           <div class="tema">
             <div class="glasovi">
@@ -37,7 +34,7 @@
             </div>
             <h4>{{tema.Naslov}}</h4>
             <p>Tip: [{{tema.Tip}}]</p>
-            <p>{{tema.DatumKreiranja}}</p>
+            <p>Datum kreiranja: {{tema.DatumKreiranja}}</p>
             <p>Autor: {{tema.Autor}}</p>
             <p>Broj Komentara: {{tema.Komentari.length}}</p>
           </div>
@@ -84,12 +81,12 @@
   <div class="overlay">
     <div class="addNew-wrapper">
             <div class="header">
-                Dodaj novi podforum
+                Dodaj novu temu
             </div>
             <div class="popup-body">
               <div class="form-group">
-                  <label>Naziv</label>
-                  <input type="text" class="form-control" ng-model="tema.naziv" placeholder="Naziv teme">
+                  <label>Naslov</label>
+                  <input type="text" class="form-control" ng-model="tema.naslov" placeholder="Naziv teme">
               </div>
 
               <div class="form-group">
@@ -98,6 +95,7 @@
               </div>
 
               <div class="form-group">
+                <label>Tip teme</label>
                   <select class="form-control" ng-model="tema.tip">
                     <option ng-selected value="Tekst">Tekst</option>
                     <option value="Slika">Slika</option>

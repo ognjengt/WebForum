@@ -1,10 +1,10 @@
 webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$rootScope) {
 
-    //$scope.dodavanjePopupVisible = false;
 
     function init() {
         $rootScope.uspesnoRegistrovan = "";
         $scope.dodavanjePopupVisible = false;
+        $scope.podforum = {};
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;
    
@@ -34,6 +34,20 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
 
     $scope.dodajPodforum = function (podforum) {
         //validacije
+        if (podforum.naziv == "" || podforum.naziv == null) {
+            alert('Popunite naziv podforuma');
+            return;
+        }
+        else if (podforum.opis == "" || podforum.opis == null) {
+            alert('Popunite opis podforuma');
+            return;
+        }
+        else if (podforum.spisakPravila == "" || podforum.spisakPravila == null) {
+            alert('Popunite spisak pravila podforuma');
+            return;
+        }
+
+        
         podforum.opis = podforum.opis.replace(/(\r\n|\n|\r)/gm, "{novired}");
         podforum.spisakPravila = podforum.spisakPravila.replace(/(\r\n|\n|\r)/gm, "{novired}");
 
@@ -70,13 +84,11 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
 
         PodforumiFactory.dodajPodforum(podforum).then(function (response) {
             init();
+            // podforum dodat, poziva se funkcija za dodavanje slike ukoliko je slika prikacena
             if (izmenjenNazivSlike != "") {
                 upload(izmenjenNazivSlike);
             }
-            
-        });
-
-        
+        }); 
     }
 
     function upload(nazivSlike) {
@@ -86,6 +98,7 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
         });
 
         PodforumiFactory.uploadImage(fd, nazivSlike).then(function (response) {
+            // upload slike gotov
             console.log(response.data);
         });
     }

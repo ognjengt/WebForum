@@ -36,10 +36,14 @@ namespace WebForum.Controllers
                     
                     if (splitter[0] == podforum)
                     {
-                        string[] commentSplitter = splitter[4].Split('|');
+                        string[] commentSplitter = splitter[8].Split('|');
                         foreach (string komentar in commentSplitter)
                         {
-                            listaKomentara.Add(komentar);
+                            if (komentar != "nePostoji")
+                            {
+                                listaKomentara.Add(komentar);
+                            }
+                            
                         }
 
                         listaTema.Add(new Tema(splitter[0], splitter[1], splitter[2], splitter[3],splitter[4],DateTime.Parse(splitter[5]), Int32.Parse(splitter[6]), Int32.Parse(splitter[7]),listaKomentara));
@@ -50,6 +54,44 @@ namespace WebForum.Controllers
             sr.Close();
             dbOperater.Reader.Close();
             return listaTema;
+        }
+
+        /// <summary>
+        /// Proverava da li tema sa prosledjenim naslovom i podforumom u koji pripada vec postoji
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ActionName("DodajTemu")]
+        public Tema DodajTemu(Tema t)
+        {
+            StreamReader sr = dbOperater.getReader("teme.txt");
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == t.PodforumKomePripada && splitter[1] == t.Naslov)
+                {
+                    sr.Close();
+                    dbOperater.Reader.Close();
+                    return null;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            StreamWriter sw = dbOperater.getWriter("teme.txt");
+
+            t.Komentari = new List<string>();
+            t.DatumKreiranja = DateTime.Now;
+            t.PozitivniGlasovi = 0;
+            t.NegativniGlasovi = 0;
+
+            sw.WriteLine(t.PodforumKomePripada + ";" + t.Naslov + ";" + t.Tip + ";" + t.Autor + ";" + t.Sadrzaj + ";" + t.DatumKreiranja.ToShortDateString() + ";" + t.PozitivniGlasovi.ToString() + ";" + t.NegativniGlasovi.ToString() + ";" + "nePostoje");
+
+            sw.WriteLine();
+            sw.Close();
+            dbOperater.Writer.Close();
+            return t;
         }
     }
 }

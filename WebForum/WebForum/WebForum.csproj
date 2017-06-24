@@ -243,12 +243,13 @@
     <Content Include="SPA\controllers\podforumi\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\controllers\MainController.js" />
-    <Content Include="SPA\controllers\teme\TemeController.js" />
+    <Content Include="SPA\controllers\teme\TemaController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
     <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
     <Content Include="SPA\partials\register.html" />
+    <Content Include="SPA\partials\teme\pregledTeme.html" />
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />

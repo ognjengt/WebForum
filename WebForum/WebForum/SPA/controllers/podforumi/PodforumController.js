@@ -4,6 +4,7 @@
 
     function init() {
         $scope.dodavanjeTemePopupVisible = false;
+        $scope.tema = {};
         PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
             $scope.podforum = response.data;
             if ($scope.podforum.Ikonica.includes('.jpg') || $scope.podforum.Ikonica.includes('.png')) {
@@ -29,5 +30,41 @@
     }
 
     init();
+
+    $scope.dodajTemu = function (tema) {
+        //validacije
+        if (tema.naslov == null || tema.naslov == "") {
+            alert('Popunite naslov teme');
+            return;
+        }
+        else if (tema.opis == null || tema.opis == "") {
+            alert('Popunite opis teme');
+            return;
+        }
+        else if (tema.tip == null || tema.tip == "") {
+            alert('Popunite tip teme');
+            return;
+        }
+        else if (tema.sadrzaj == null || tema.sadrzaj == "") {
+            alert('Popunite sadrzaj teme');
+            return;
+        }
+
+        tema.podforumKomePripada = $scope.podforum.Naziv;
+        tema.autor = sessionStorage.getItem("username");
+
+        if (tema.tip == 'Tekst') {
+            // dodaj tekstualnu temu
+            TemeFactory.dodajTemu(tema).then(function (response) {
+                console.log(response.data);
+            });
+        }
+        else if (tema.tip == 'Link') {
+            //dodaj temu sa linkom
+        }
+        else if (tema.tip == 'Slika') {
+            // dodaj temu sa slikom
+        }
+    }
 
 });

@@ -28,6 +28,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
+                        <li ng-class="checkActive('/pretraga')"><a href="#!/pretraga"><i class="ion ion-ios-search-strong"></i> Pretraga</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
@@ -53,7 +54,7 @@
     <script src="../../SPA/controllers/podforumi/PodforumController.js"></script>
     <script src="../../SPA/controllers/LoginController.js"></script>
     <script src="../../SPA/controllers/MainController.js"></script>
-    <script src="../../SPA/controllers/teme/TemeController.js"></script>
+    <script src="../../SPA/controllers/teme/TemaController.js"></script>
     <!--Factories-->
     <script src="../../SPA/services/AccountFactory.js"></script>
     <script src="../../SPA/services/PodforumiFactory.js"></script>

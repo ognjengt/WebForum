@@ -28,6 +28,13 @@ webForum.config(function ($routeProvider) {
         controller: 'PodforumController',
         templateUrl: 'SPA/partials/podforumi/pregledPodforuma.html',
         activetab: 'nijedan'
+
+    }).when('/podforumi/:naziv/:tema',
+    {
+        controller: 'TemaController',
+        templateUrl: 'SPA/partials/teme/pregledTeme.html',
+        activetab: 'nijedan'
+
     })
 
 });

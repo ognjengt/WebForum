@@ -33,7 +33,7 @@
     $scope.Login = function (korisnik) {
         AccountFactory.Login(korisnik).then(function (response) {
             if (response.data == null) {
-                alert("Korisnik ne postoji");
+                alert("Korisnik sa tim korisnickim imenom i sifrom ne postoji");
             }
             else {
                 document.cookie = "korisnik=" + JSON.stringify({ username: response.data.Username, uloga: response.data.Uloga, imePrezime: response.data.Ime+" "+response.data.Prezime }) + ";expires=Thu, 01 Jan 2019 00:00:01 GMT;";
