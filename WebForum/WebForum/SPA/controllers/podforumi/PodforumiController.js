@@ -28,10 +28,11 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
 
     $scope.dodajPodforum = function (podforum) {
 
+        // Zastita da samo administratori i moderatori mogu da dodaju nove podforume
         if (sessionStorage.getItem('uloga') == null) {
-            return false;
-            if (!sessionStorage.getItem('uloga').includes('Administrator')) {
-                return false;
+            return;
+            if (!sessionStorage.getItem('uloga').includes('Administrator') || !sessionStorage.getItem('uloga').includes('Moderator')) {
+                return;
             }
         }
 
@@ -58,6 +59,7 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
         podforum.moderator = sessionStorage.getItem("username");
 
         PodforumiFactory.dodajPodforum(podforum).then(function (response) {
+            init();
             if (izmenjenNazivSlike != "") {
                 upload(izmenjenNazivSlike);
             }
@@ -74,7 +76,7 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
         });
 
         PodforumiFactory.uploadImage(fd, nazivSlike).then(function (response) {
-            init();
+            console.log(response.data);
         });
     }
 

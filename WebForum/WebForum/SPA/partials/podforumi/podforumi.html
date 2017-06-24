@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="podforumi-header">
     <div class="add-podforum-btn">
-      <button class="btn button-success" ng-show="korisnik.uloga.includes('Administrator')" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible"><i class="ion ion-plus-round"></i> Novi podforum</button>
+      <button class="btn button-success" ng-show="korisnik.uloga.includes('Administrator') || korisnik.uloga.includes('Moderator')" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible"><i class="ion ion-plus-round"></i> Novi podforum</button>
     </div>
 
     <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span> <span ng-show="korisnik.uloga.includes('Administrator')">(Admin)</span></h1>
