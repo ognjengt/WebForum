@@ -1,3 +1,5 @@
-﻿Sport;opis sporta;Sport.jpg;pravila pravila pravila;moderator1
-Knjizevnost;opis knjizevnosti;Knjizevnost.jpg;pravila pravila knjizevnost;moderator2
-Nauka;opis nauke;Nauka.jpg;pravila pravila nauka;moderator3
+﻿Sport;opis sporta;Sport.jpg;pravila pravila pravila;moderator1;moderator1
+Knjizevnost;opis knjizevnosti;Knjizevnost.jpg;pravila pravila knjizevnost;moderator2;moderator2
+Nauka;opis nauke;Nauka.jpg;pravila pravila nauka;moderator3;moderator3|moderator4
+ajdebree;Ovde ide opis za ovaj ajd da vidimo da li radi;ajdebree.png;ajdee;ognjen;ognjen
+najnoviji;ajde bre;najnoviji.jpg;asdasd;ognjen;ognjen

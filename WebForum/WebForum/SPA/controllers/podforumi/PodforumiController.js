@@ -1,8 +1,9 @@
-webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
+webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$rootScope) {
 
     //$scope.dodavanjePopupVisible = false;
 
     function init() {
+        $rootScope.uspesnoRegistrovan = "";
         $scope.dodavanjePopupVisible = false;
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;

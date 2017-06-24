@@ -12,7 +12,7 @@
             } else {
                 $scope.podforum.Ikonica = "noimage.png";
             }
-
+            console.log(response.data);
             
         });
     }

@@ -6,7 +6,72 @@
       <p>Ovde getovati sa servera taj podforum sa tim nazivom i ovde staviti njegov opis</p>
     </div>
   </div>
-  
+</div>
+
+<div class="container-fluid">
+  <div class="content-wrapper">
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="col-md-2">
+          <div class="btn button-success"><i class="ion ion-plus-round"></i>Nova tema</div>
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="Pretrazi teme...">
+        </div>
+      </div>
+      <div class="teme"> 
+
+      <div class="tema-repeat"><!--ovde ng repeat-->
+        <a href="">
+        <div class="col-md-12">
+          <div class="tema">
+            <div class="glasovi">
+              <div class="up">
+                <i class="ion ion-thumbsup"></i>
+                <span class="thumbsnum">500</span>
+              </div>
+              <div class="down">
+                <i class="ion ion-thumbsdown"></i>
+                <span class="thumbsnum">15</span>
+              </div>
+            </div>
+            <h4>Naslov</h4>
+            <p>Datum kreiranja</p>
+            <p>Autor</p>
+            <p>broj komentara</p>
+          </div>
+        </div>
+      </a>
+      </div>
+      
+
+    </div>
+  </div>
+
+  <div class="strana">
+    <div class="col-md-4">
+      
+      <div class="box">
+        <div class="header">
+          <h4>Pravila</h4>
+        </div>
+        <div class="body">
+          <p>{{podforum.Opis}}</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="header">
+          <h4>Moderatori</h4>
+        </div>
+        <div class="body-moderatori">
+          <ul>
+            <a href="#" ng-repeat="mod in podforum.Moderatori"><li>{{mod}}</li></a> <!--ovde ng-repeat-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   
 </div>
 

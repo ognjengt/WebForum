@@ -31,8 +31,16 @@ namespace WebForum.Controllers
             {
                 if (line != "")
                 {
+                    
                     string[] splitter = line.Split(';');
-                    listaSvihPodforuma.Add(new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], new List<string>()));
+                    List<string> listaModeratora = new List<string>();
+
+                    string[] moderatorSplitter = splitter[5].Split('|');
+                    foreach (string moderator in moderatorSplitter)
+                    {
+                        listaModeratora.Add(moderator);
+                    }
+                    listaSvihPodforuma.Add(new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], listaModeratora));
                 }
                 
             }
@@ -54,7 +62,14 @@ namespace WebForum.Controllers
                 {
                     sr.Close();
                     dbOperater.Reader.Close();
-                    return new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], new List<string>());
+                    List<string> listaModeratora = new List<string>();
+
+                    string[] moderatorSplitter = splitter[5].Split('|');
+                    foreach (string moderator in moderatorSplitter)
+                    {
+                        listaModeratora.Add(moderator);
+                    }
+                    return new Podforum(splitter[0], splitter[1], splitter[2], splitter[3], splitter[4], listaModeratora);
                 }
             }
 

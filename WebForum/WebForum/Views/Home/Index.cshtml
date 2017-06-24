@@ -27,13 +27,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi">Podforumi</a></li>
+                        <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
                         <li ng-show="!ulogovan" ng-class="checkActive('/register')"><a href="#!/register">Registracija</a></li>
-                        <li ng-show="ulogovan" ng-class="checkActive('/profil')"><a href="#!/profil">{{korisnik.imePrezime}}</a></li>
-                        <li ng-show="ulogovan"><a href ng-click="Logout()">Logout</a></li>
+                        <li ng-show="ulogovan"><a ng-class="checkActive('/inbox')" href="#!/inbox"><i class="ion ion-email"></i> Inbox</a></li>
+                        <li ng-show="ulogovan" ng-class="checkActive('/profil')"><a href="#!/profil"><i class="ion ion-person"></i> {{korisnik.imePrezime}}</a></li>
+                        <li ng-show="ulogovan"><a href ng-click="Logout()"><i class="ion ion-log-out"></i> Logout</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
