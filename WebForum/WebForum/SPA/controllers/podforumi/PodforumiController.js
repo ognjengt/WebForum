@@ -1,8 +1,9 @@
 webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
 
-    $scope.dodavanjePopupVisible = false;
+    //$scope.dodavanjePopupVisible = false;
 
     function init() {
+        $scope.dodavanjePopupVisible = false;
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;
             $scope.podforumi.forEach(function (podforum) {
@@ -47,18 +48,17 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
             nazivSlike = filename;
         }
         // menjam naziv slike da se zove onako kako se zove podforum i pozivam factory
-        var izmenjenNazivSlike;
-        if (nazivSlike != null || nazivSlike != "") {
+        var izmenjenNazivSlike = "";
+        if (nazivSlike != "") {
             var spliter = nazivSlike.split('.');
             izmenjenNazivSlike = podforum.naziv + "." + spliter[1];
         }
-        else izmenjenNazivSlike = null;
 
         podforum.ikonica = izmenjenNazivSlike;
         podforum.moderator = sessionStorage.getItem("username");
 
         PodforumiFactory.dodajPodforum(podforum).then(function (response) {
-            if (izmenjenNazivSlike != null) {
+            if (izmenjenNazivSlike != "") {
                 upload(izmenjenNazivSlike);
             }
             
@@ -73,8 +73,8 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
             fd.append('file', file);
         });
 
-        PodforumiFactory.uploadImage(fd,nazivSlike).then(function (response) {
-            console.log(response.data);
+        PodforumiFactory.uploadImage(fd, nazivSlike).then(function (response) {
+            init();
         });
     }
 

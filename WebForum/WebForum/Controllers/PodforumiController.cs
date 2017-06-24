@@ -99,29 +99,22 @@ namespace WebForum.Controllers
             {
                 Request.Content.ReadAsMultipartAsync<MultipartMemoryStreamProvider>(new MultipartMemoryStreamProvider()).ContinueWith((task) =>
                 {
-                    try
+
+                    MultipartMemoryStreamProvider provider = task.Result;
+                    foreach (HttpContent content in provider.Contents)
                     {
-                        MultipartMemoryStreamProvider provider = task.Result;
-                        foreach (HttpContent content in provider.Contents)
-                        {
-                            Stream stream = content.ReadAsStreamAsync().Result;
-                            Image image = Image.FromStream(stream);
-                            var testName = content.Headers.ContentDisposition.Name;
-                            String filePath = HostingEnvironment.MapPath("~/Content/img/podforumi");
-                            string slika = Request.Headers.GetValues("slika").First();
-                            string[] spliter = slika.Split('.');
-                            string imeSlike = spliter[0];
-                            string ekstenzija = spliter[1];
-                            String fileName = slika + "." + ekstenzija;
-                            String fullPath = Path.Combine(filePath, fileName);
-                            image.Save(fullPath);
-                        }
+                        Stream stream = content.ReadAsStreamAsync().Result;
+                        Image image = Image.FromStream(stream);
+                        var testName = content.Headers.ContentDisposition.Name;
+                        String filePath = HostingEnvironment.MapPath("~/Content/img/podforumi");
+                        string slika = Request.Headers.GetValues("slika").First();
+                        string[] spliter = slika.Split('.');
+                        string imeSlike = spliter[0];
+                        string ekstenzija = spliter[1];
+                        String fileName = slika + "." + ekstenzija;
+                        String fullPath = Path.Combine(filePath, fileName);
+                        image.Save(fullPath);
                     }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                    
                 });
                 return result;
             }
