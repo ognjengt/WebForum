@@ -2,7 +2,7 @@
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
-    function init() {
+    function init() {   
         PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
             $scope.podforum = response.data;
             if ($scope.podforum.Ikonica.includes('.jpg') || $scope.podforum.Ikonica.includes('.png')) {
@@ -14,6 +14,9 @@
             }
             console.log(response.data);
             
+            $scope.podforum.Opis = $scope.podforum.Opis.replace(new RegExp('{novired}', 'g'), '\n');
+            $scope.podforum.SpisakPravila = $scope.podforum.SpisakPravila.replace(new RegExp('{novired}', 'g'), '\n');
+
         });
     }
 

@@ -7,7 +7,9 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
         $scope.dodavanjePopupVisible = false;
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;
+   
             $scope.podforumi.forEach(function (podforum) {
+                // dodeljivanje putanje za sliku
                 if (podforum.Ikonica.includes('.jpg') || podforum.Ikonica.includes('.png')) {
                     var spliter = podforum.Ikonica.split('.');
                     podforum.Ikonica = podforum.Ikonica + "." + spliter[1];
@@ -16,6 +18,9 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
                     podforum.Ikonica = "noimage.png";
                 }
                 
+                // parsiranje stringa za noveredove
+                podforum.Opis = podforum.Opis.replace(new RegExp('{novired}', 'g'), '\n');
+                podforum.SpisakPravila = podforum.SpisakPravila.replace(new RegExp('{novired}', 'g'), '\n');
             });
         });
     }
@@ -28,6 +33,10 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
     }
 
     $scope.dodajPodforum = function (podforum) {
+        //validacije
+        podforum.opis = podforum.opis.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        podforum.spisakPravila = podforum.spisakPravila.replace(/(\r\n|\n|\r)/gm, "{novired}");
+
 
         // Zastita da samo administratori i moderatori mogu da dodaju nove podforume
         if (sessionStorage.getItem('uloga') == null) {
