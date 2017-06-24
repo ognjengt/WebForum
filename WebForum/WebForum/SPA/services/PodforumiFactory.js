@@ -3,6 +3,7 @@
     var factory = {};
     
     factory.getAllPodforums = function () {
+
         return $http.get('/api/Podforumi/GetAll');
     }
 

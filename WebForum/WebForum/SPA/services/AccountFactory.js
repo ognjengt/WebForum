@@ -1,7 +1,7 @@
 ﻿webForum.factory('AccountFactory', function ($http) {
 
     var factory = {};
-    factory.RegistrujKorisnika = function(korisnik) {
+    factory.RegistrujKorisnika = function (korisnik) {
         return $http.post('/api/Account/Register', {
             Username: korisnik.username,
             Password: korisnik.pwd,

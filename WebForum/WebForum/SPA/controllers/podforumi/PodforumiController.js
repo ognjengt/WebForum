@@ -27,6 +27,13 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
 
     $scope.dodajPodforum = function (podforum) {
 
+        if (sessionStorage.getItem('uloga') == null) {
+            return false;
+            if (!sessionStorage.getItem('uloga').includes('Administrator')) {
+                return false;
+            }
+        }
+
         // na osnovu id-a sa stranice uzima naziv i ekstenziju slike
         var fullPath = document.getElementById('slikaPodforuma').value;
         var nazivSlike = "";

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
@@ -26,7 +27,6 @@ namespace WebForum.Controllers
 
             StreamReader sr = dbOperater.getReader("podforumi.txt");
             string line = "";
-
             while ( (line = sr.ReadLine()) != null )
             {
                 if (line != "")
