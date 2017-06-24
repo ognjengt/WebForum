@@ -1,11 +1,12 @@
 <div class="container-fluid">
   <div class="podforumi-header">
     <div class="add-podforum-btn">
-      <button class="btn button-success" ng-show="korisnik.uloga == 'Administrator'" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible"><i class="ion ion-plus-round"></i> Novi podforum</button>
+      <button class="btn button-success" ng-show="korisnik.uloga.includes('Administrator')" ng-click="dodavanjePopupVisible = !dodavanjePopupVisible"><i class="ion ion-plus-round"></i> Novi podforum</button>
     </div>
 
-    <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span></h1>
-    <h4>Pregledaj spisak postojećih podforuma</h4>
+    <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span> <span ng-show="korisnik.uloga.includes('Administrator')">(Admin)</span></h1>
+    <h4 ng-show="ulogovan">Pregledaj spisak postojećih podforuma</h4>
+    <h4 ng-show="!ulogovan">Ulogujte se da bi ste mogli da vršite više funkcija na forumu</h4>
   </div>
 </div>
 <div class="podforumi-wrapper">
@@ -43,25 +44,29 @@
             </div>
             <div class="popup-body">
               <div class="form-group">
-                  <input type="text" class="form-control" id="projectTitleInput" placeholder="Naziv podforuma">
+                  <label>Naziv</label>
+                  <input type="text" class="form-control" ng-model="podforum.naziv" placeholder="Naziv podforuma">
               </div>
 
               <div class="form-group">
-                  <textarea type="text" class="form-control" placeholder="Opis"></textarea>
+                  <label>Opis</label>
+                  <textarea type="text" class="form-control" ng-model="podforum.opis" placeholder="Opis"></textarea>
               </div>
 
               <div class="form-group">
-                  <input type="file" class="form-control" placeholder="Slika">
+                  <label>Slika</label>
+                  <input type="file" class="form-control" id="slikaPodforuma" file-input="files" placeholder="Slika">
               </div>
 
               <div class="form-group">
-                  <textarea type="text" class="form-control" placeholder="Spisak pravila"></textarea>
+                  <label>Spisak pravila</label>
+                  <textarea type="text" class="form-control" ng-model="podforum.spisakPravila" placeholder="Spisak pravila"></textarea>
               </div>
 
 
               <div class="button-holder">
                 <div class="col-md-4">
-                  <button type="submit" class="btn button-green" ng-click="addProject()">Dodaj</button>
+                  <button type="submit" class="btn button-green" ng-click="dodajPodforum(podforum)">Dodaj</button>
                   </div>
                   
 

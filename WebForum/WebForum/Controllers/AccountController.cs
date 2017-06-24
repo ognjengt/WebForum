@@ -24,13 +24,13 @@ namespace WebForum.Controllers
                 string[] splitter = line.Split(';');
                 if (splitter[0] == k.Username)
                 {
-                    dbOperater.Reader.Close();
                     sr.Close();
+                    dbOperater.Reader.Close();
                     return false;
                 }
             }
-            dbOperater.Reader.Close();
             sr.Close();
+            dbOperater.Reader.Close();
             StreamWriter sw = dbOperater.getWriter("korisnici.txt");
             Korisnik kor = new Korisnik(k.Username, k.Password, k.Ime, k.Prezime, "Korisnik", k.Telefon, k.Email, DateTime.Now, new List<string>(), new List<string>(), new List<string>());
             sw.WriteLine(kor.Username+";"+kor.Password+";"+kor.Ime+";"+kor.Prezime+";"+kor.Uloga+";"+kor.Email+";"+kor.Telefon+";"+kor.DatumRegistracije.ToShortDateString());

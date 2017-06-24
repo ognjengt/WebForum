@@ -175,7 +175,7 @@
   background: rgba(0, 0, 0, 0.7); }
 #addNewPodforumModal .addNew-wrapper {
   width: 800px;
-  min-height: 500px;
+  min-height: 600px;
   max-height: auto;
   position: absolute;
   left: 50%;

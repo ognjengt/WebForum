@@ -3,7 +3,7 @@
     $scope.korisnik = {};
 
     if ($rootScope.ulogovan == true) {
-        $window.location.href = "#!/pocetna";
+        $window.location.href = "#!/podforumi";
     }
 
     function init() {
@@ -46,7 +46,7 @@
                     uloga: sessionStorage.getItem("uloga"),
                     imePrezime: sessionStorage.getItem("imePrezime")
                 };
-                document.location.href = "#!/";
+                $window.location.href = "#!/";
             }
         });
     }
