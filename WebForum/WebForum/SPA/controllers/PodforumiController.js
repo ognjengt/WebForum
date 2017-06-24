@@ -6,12 +6,12 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;
             $scope.podforumi.forEach(function (podforum) {
-                if (podforum.Ikonica == null || podforum.Ikonica == "" || podforum.Ikonica.includes('.gif')) {
-                    podforum.Ikonica = "noimage.png";
-                }
-                else {
+                if (podforum.Ikonica.includes('.jpg') || podforum.Ikonica.includes('.png')) {
                     var spliter = podforum.Ikonica.split('.');
                     podforum.Ikonica = podforum.Ikonica + "." + spliter[1];
+                }
+                else {
+                    podforum.Ikonica = "noimage.png";
                 }
                 
             });
@@ -29,7 +29,7 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
 
         // na osnovu id-a sa stranice uzima naziv i ekstenziju slike
         var fullPath = document.getElementById('slikaPodforuma').value;
-        var nazivSlike;
+        var nazivSlike = "";
         if (fullPath) {
             var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
             var filename = fullPath.substring(startIndex);
@@ -41,14 +41,20 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
         }
         // menjam naziv slike da se zove onako kako se zove podforum i pozivam factory
         var izmenjenNazivSlike;
-        var spliter = nazivSlike.split('.');
-        izmenjenNazivSlike = podforum.naziv + "." + spliter[1];
+        if (nazivSlike != null || nazivSlike != "") {
+            var spliter = nazivSlike.split('.');
+            izmenjenNazivSlike = podforum.naziv + "." + spliter[1];
+        }
+        else izmenjenNazivSlike = null;
 
         podforum.ikonica = izmenjenNazivSlike;
         podforum.moderator = sessionStorage.getItem("username");
 
         PodforumiFactory.dodajPodforum(podforum).then(function (response) {
-            upload(izmenjenNazivSlike);
+            if (izmenjenNazivSlike != null) {
+                upload(izmenjenNazivSlike);
+            }
+            
         });
 
         

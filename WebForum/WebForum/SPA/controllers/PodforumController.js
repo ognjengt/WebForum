@@ -5,11 +5,12 @@
     function init() {
         PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
             $scope.podforum = response.data;
-            if ($scope.podforum.Ikonica == null || $scope.podforum.Ikonica == "" || $scope.podforum.Ikonica.includes('.gif')) {
-                $scope.podforum.Ikonica = "noimage.png";
-            } else {
+            if ($scope.podforum.Ikonica.includes('.jpg') || $scope.podforum.Ikonica.includes('.png')) {
                 var spliter = $scope.podforum.Ikonica.split('.');
                 $scope.podforum.Ikonica = $scope.podforum.Ikonica + "." + spliter[1];
+                
+            } else {
+                $scope.podforum.Ikonica = "noimage.png";
             }
 
             

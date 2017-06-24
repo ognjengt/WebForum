@@ -119,7 +119,6 @@ namespace WebForum.Controllers
                     }
                     catch (Exception)
                     {
-
                         throw;
                     }
                     

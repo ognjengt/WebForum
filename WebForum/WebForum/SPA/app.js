@@ -1,6 +1,6 @@
 var webForum = angular.module('webForum',['ngRoute']);
 
-webForum.config(function ($routeProvider, $locationProvider) {
+webForum.config(function ($routeProvider) {
     $routeProvider.when('/',
 	{
 	    redirectTo: '/podforumi'
