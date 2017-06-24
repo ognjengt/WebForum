@@ -125,7 +125,7 @@
       margin-top: 30px;
       border-radius: 4px;
       box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
-      padding: 20px 150px 20px 150px;
+      padding: 10px 150px 10px 150px;
       transition: 0.2s ease;
       color: #000;
       border: 1px solid #ccc;
@@ -134,11 +134,12 @@
       p{
         font-size: 0.8em;
         color: lighten($mainText,10);
+        margin: 3px;
       }
 
       .glasovi{
         position: absolute;
-        top: 10px;
+        top: 5px;
         left: 30px;
         height: 120px;
         width: 50px;

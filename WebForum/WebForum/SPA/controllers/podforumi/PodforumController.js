@@ -2,7 +2,8 @@
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
-    function init() {   
+    function init() {
+        $scope.dodavanjeTemePopupVisible = false;
         PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
             $scope.podforum = response.data;
             if ($scope.podforum.Ikonica.includes('.jpg') || $scope.podforum.Ikonica.includes('.png')) {
