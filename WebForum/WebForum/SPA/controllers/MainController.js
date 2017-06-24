@@ -3,12 +3,16 @@
     // Kontroler koji je zaduzen za Index.cshtml, svaki put kada se bilo koja stranica ucita, proverava se cookie
 
     if (document.cookie !== "") {
-        console.log(document.cookie);
+        //console.log(document.cookie);
         var cookieInfo = document.cookie.substring(9, document.cookie.length);
         var parsed = JSON.parse(cookieInfo);
         sessionStorage.setItem("username", parsed.username);
         sessionStorage.setItem("uloga", parsed.uloga);
         sessionStorage.setItem("imePrezime", parsed.imePrezime);
+        sessionStorage.setItem("praceniPodforumi", parsed.PraceniPodforumi);
+        sessionStorage.setItem("snimljeneTeme", parsed.SnimljeneTeme);
+        sessionStorage.setItem("snimljeniKomentari", parsed.SnimljeniKomentari);
+
         $rootScope.ulogovan = true;
         $rootScope.korisnik = {
             username: sessionStorage.getItem("username"),

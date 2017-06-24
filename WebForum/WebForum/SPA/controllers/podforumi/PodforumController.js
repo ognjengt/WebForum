@@ -53,18 +53,26 @@
         tema.podforumKomePripada = $scope.podforum.Naziv;
         tema.autor = sessionStorage.getItem("username");
 
-        if (tema.tip == 'Tekst') {
-            // dodaj tekstualnu temu
+        if (tema.tip == 'Tekst' || tema.tip == 'Link') {
+            // dodaj tekstualnu ili temu sa Linkom
             TemeFactory.dodajTemu(tema).then(function (response) {
                 console.log(response.data);
             });
         }
-        else if (tema.tip == 'Link') {
-            //dodaj temu sa linkom
-        }
         else if (tema.tip == 'Slika') {
             // dodaj temu sa slikom
         }
+    }
+
+    $scope.thumbDown = function (tema) {
+        //TODO
+        alert('Sprzi mu thumb down');
+    }
+
+    $scope.thumbUp = function (tema) {
+        // TODO
+        alert('Sprzi mu thumb up');
+        console.log(tema);
     }
 
 });

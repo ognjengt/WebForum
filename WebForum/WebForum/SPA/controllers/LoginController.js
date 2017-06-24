@@ -36,10 +36,22 @@
                 alert("Korisnik sa tim korisnickim imenom i sifrom ne postoji");
             }
             else {
-                document.cookie = "korisnik=" + JSON.stringify({ username: response.data.Username, uloga: response.data.Uloga, imePrezime: response.data.Ime+" "+response.data.Prezime }) + ";expires=Thu, 01 Jan 2019 00:00:01 GMT;";
+                console.log(response);
+                document.cookie = "korisnik=" + JSON.stringify({
+                    username: response.data.Username,
+                    uloga: response.data.Uloga,
+                    imePrezime: response.data.Ime + " " + response.data.Prezime,
+                    praceniPodforumi: response.data.PraceniPodforumi,
+                    snimljeneTeme: response.data.SnimljeneTeme,
+                    snimljeniKomentari: response.data.SnimljeniKomentari
+                }) + ";expires=Thu, 01 Jan 2019 00:00:01 GMT;";
                 sessionStorage.setItem("username", response.data.Username);
                 sessionStorage.setItem("uloga", response.data.Uloga);
                 sessionStorage.setItem("imePrezime", response.data.Ime + " " + response.data.Prezime);
+                sessionStorage.setItem("praceniPodforumi", response.data.PraceniPodforumi);
+                sessionStorage.setItem("snimljeneTeme", response.data.SnimljeneTeme);
+                sessionStorage.setItem("snimljeniKomentari", response.data.SnimljeniKomentari);
+
                 $rootScope.ulogovan = true;
                 $rootScope.korisnik = {
                     username: sessionStorage.getItem("username"),

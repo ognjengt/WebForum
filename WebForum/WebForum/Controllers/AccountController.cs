@@ -39,7 +39,7 @@ namespace WebForum.Controllers
             dbOperater.Reader.Close();
             StreamWriter sw = dbOperater.getWriter("korisnici.txt");
             Korisnik kor = new Korisnik(k.Username, k.Password, k.Ime, k.Prezime, "Korisnik", k.Telefon, k.Email, DateTime.Now, new List<string>(), new List<string>(), new List<string>());
-            sw.WriteLine(kor.Username+";"+kor.Password+";"+kor.Ime+";"+kor.Prezime+";"+kor.Uloga+";"+kor.Email+";"+kor.Telefon+";"+kor.DatumRegistracije.ToShortDateString());
+            sw.WriteLine(kor.Username+";"+kor.Password+";"+kor.Ime+";"+kor.Prezime+";"+kor.Uloga+";"+kor.Email+";"+kor.Telefon+";"+kor.DatumRegistracije.ToShortDateString()+";"+"nemaSnimljenihPodforuma"+";nemaSnimljenihTema"+";nemaSnimljenihKomentara");
             sw.Close();
             dbOperater.Writer.Close();
             
@@ -56,13 +56,44 @@ namespace WebForum.Controllers
         public Korisnik Login([FromBody]Korisnik k)
         {
             StreamReader sr = dbOperater.getReader("korisnici.txt");
+
+            List<string> listaSacuvanihPodforuma = new List<string>();
+            List<string> listaSacuvanihTema = new List<string>();
+            List<string> listaSacuvanihKomentara = new List<string>();
             string line = "";
             while ((line = sr.ReadLine()) != null)
             {
                 string[] splitter = line.Split(';');
                 if (splitter[0] == k.Username && splitter[1] == k.Password)
                 {
-                    Korisnik kor = new Korisnik(splitter[0],splitter[1],splitter[2],splitter[3],splitter[4],splitter[5],splitter[6],DateTime.Parse(splitter[7]),new List<string>(),new List<string>(),new List<string>());
+
+                    string[] podforumSplitter = splitter[8].Split('|');
+                    foreach (string podforum in podforumSplitter)
+                    {
+                        if (podforum != "nemaSnimljenihPodforuma")
+                        {
+                            listaSacuvanihPodforuma.Add(podforum);
+                        }
+                    }
+
+                    string[] temeSplitter = splitter[9].Split('|');
+                    foreach (string tema in temeSplitter)
+                    {
+                        if (tema != "nemaSnimljenihTema")
+                        {
+                            listaSacuvanihTema.Add(tema);
+                        }
+                    }
+
+                    string[] komentariSplitter = splitter[10].Split('|');
+                    foreach (string komentar in komentariSplitter)
+                    {
+                        if (komentar != "nemaSnimljenihKomentara")
+                        {
+                            listaSacuvanihKomentara.Add(komentar);
+                        }
+                    }
+                    Korisnik kor = new Korisnik(splitter[0],splitter[1],splitter[2],splitter[3],splitter[4],splitter[5],splitter[6],DateTime.Parse(splitter[7]),listaSacuvanihPodforuma,listaSacuvanihTema,listaSacuvanihKomentara);
                     kor.Password = null;
                     sr.Close();
                     dbOperater.Reader.Close();
