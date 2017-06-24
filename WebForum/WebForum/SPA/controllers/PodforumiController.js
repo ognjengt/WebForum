@@ -5,6 +5,16 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory) {
     function init() {
         PodforumiFactory.getAllPodforums().then(function (response) {
             $scope.podforumi = response.data;
+            $scope.podforumi.forEach(function (podforum) {
+                if (podforum.Ikonica == null || podforum.Ikonica == "" || podforum.Ikonica.includes('.gif')) {
+                    podforum.Ikonica = "noimage.png";
+                }
+                else {
+                    var spliter = podforum.Ikonica.split('.');
+                    podforum.Ikonica = podforum.Ikonica + "." + spliter[1];
+                }
+                
+            });
         });
     }
 
