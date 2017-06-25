@@ -16,9 +16,10 @@
 </div>
 
 <div class="container-fluid">
-  <div class="col-md-10">
+  <div class="col-md-10 odvojiOdDoleLevo">
     <h2>Komentari</h2>
     <div class="komentari">
+
     <div class="komentar-repeat">
       <div class="komentar">
         <div class="korisnik">
@@ -32,11 +33,39 @@
               <div class="thumbsnum">200</div>
             </div>
           </div>
-          <h5><b>korisnickoime</b> <span>datumKomentarisanja</span> <span>izmenjen da/ne</span></h5>
+          <h5><b>korisnickoime</b> <span>datumKomentarisanja</span> <span class="izmenjen">izmenjen da/ne</span></h5>
           <p>
             Tekst komentara
           </p>
         </div>
+      </div>
+      <div class="komentar">
+        <div class="korisnik">
+          <div class="glasovi">
+            <div class="up">
+              <i class="ion ion-thumbsup"></i>
+              <div class="thumbsnum">200</div>
+            </div>
+            <div class="down">
+              <i class="ion ion-thumbsdown"></i>
+              <div class="thumbsnum">200</div>
+            </div>
+          </div>
+          <h5><b>korisnickoime</b> <span>datumKomentarisanja</span> <span class="izmenjen">izmenjen da/ne</span></h5>
+          <p>
+            Tekst komentara
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ostaviKomentar"> 
+      <div class="form-group">
+          <label>Ostavi komentar:</label>
+          <textarea type="text" class="form-control" placeholder="Ostavi komentar na ovu temu..." ng-model="tekstKomentara"></textarea>
+      </div>
+      <div class="col-md-3">
+        <button class="btn button-success" ng-click="komentarisiTemu(tema.PodforumKomePripada,tema.Naslov)">Komentariši</button>
       </div>
     </div>
   </div>

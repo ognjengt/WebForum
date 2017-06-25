@@ -27,6 +27,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
+                        <li ng-class="checkActive('/podforumi')"><a href="#!/pocetna"><i class="ion ion-android-home"></i> Početna</a></li>
                         <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
                         <li ng-class="checkActive('/pretraga')"><a href="#!/pretraga"><i class="ion ion-ios-search-strong"></i> Pretraga</a></li>
                     </ul>
@@ -59,6 +60,7 @@
     <script src="../../SPA/services/AccountFactory.js"></script>
     <script src="../../SPA/services/PodforumiFactory.js"></script>
     <script src="../../SPA/services/TemeFactory.js"></script>
+    <script src="../../SPA/services/KomentariFactory.js"></script>
     <!--Directives-->
     <script src="../../SPA/directives/fileUploadDirective.js"></script>
 </body>

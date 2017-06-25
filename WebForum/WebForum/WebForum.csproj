@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\PodforumiController.cs" />
     <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\komentari.txt" />
     <Content Include="App_Data\korisnici.txt" />
     <Content Include="App_Data\podforumi.txt" />
     <Content Include="App_Data\teme.txt" />
@@ -251,6 +253,7 @@
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\partials\teme\pregledTeme.html" />
     <Content Include="SPA\services\AccountFactory.js" />
+    <Content Include="SPA\services\KomentariFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />
     <Content Include="Web.config" />

@@ -7,7 +7,6 @@ namespace WebForum.Models
 {
     public class Tema
     {
-        public string Id { get; set; }
         public string PodforumKomePripada { get; set; }
         public string Naslov { get; set; }
         public string Tip { get; set; }

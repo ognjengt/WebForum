@@ -17,6 +17,13 @@ namespace WebForum.Helpers
             return new StreamWriter(Writer);
         }
 
+        public StreamWriter getBulkWriter(string filename)
+        {
+            var dataFile = HttpContext.Current.Server.MapPath("~/App_Data/" + filename);
+            Writer = new FileStream(dataFile,FileMode.Create,FileAccess.Write);
+            return new StreamWriter(Writer);
+        }
+
         public StreamReader getReader(string filename)
         {
             var dataFile = HttpContext.Current.Server.MapPath("~/App_Data/"+filename);

@@ -1,11 +1,11 @@
-﻿Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;komentar1|komentar2|komentar3
-Sport;Ajmo bree zvezda;Tekst;ognjen;Zvezda dobila partiazan;6/22/2017;200;150;komentar1|komentar2|komentar3
+Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;komentar1|komentar2|komentar3
+Sport;Ajmo bree zvezda;Tekst;ognjen;Zvezda dobila partiazan;6/22/2017;200;150;komentar1|komentar2|komentar3|1d5f817d-8972-443d-a2dd-5d6eff47735c
 Nauka;Otkriven lek za sidu;Tekst;sofija;Lek za sidu je otkriven;6/22/2017;5000;2;komentar1|komentar2|komentar3
 Sport;Nova tema;Tekst;ognjen;Najnovija tema iz sporta batenga moj;6/24/2017 11:15:49 PM;0;0;nePostoje
 Nauka;Nova vest iz nauke;Tekst;ognjen;asdasdasd;6/24/2017 11:18:12 PM;0;0;nePostoje
 Knjizevnost;Pogledajte na ovom linku novu temu iz knjizevnosti;Link;ognjen;https://sr.wikipedia.org/wiki/%D0%9A%D1%9A%D0%B8%D0%B6%D0%B5%D0%B2%D0%BD%D0%BE%D1%81%D1%82;6/25/2017;0;0;nePostoje
 Sport;Nastup bittersweeta na ulicnim sviracima;Link;ognjen;https://www.youtube.com/watch?v=1sOytNdWMI4;6/25/2017;0;0;nePostoje
-Knjizevnost;Najnovija knjiga;Tekst;ognjen;Najnovija knjiga neka tamo se pojavila nekad;6/25/2017;0;0;nePostoje
-
-Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;0;nePostoje
+Knjizevnost;Najnovija knjiga;Tekst;ognjen;Najnovija knjiga neka tamo se pojavila nekad;6/25/2017;0;0;nePostoje|96b6fd9e-875c-4214-9c96-1ffd80822822
+Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;0;nePostoje|3272c3e4-0d37-4542-bd8a-84de8b5b1cb1
+Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;0;nePostoje
 

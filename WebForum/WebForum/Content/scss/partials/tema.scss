@@ -1,3 +1,7 @@
+.odvojiOdDoleLevo{
+  padding-bottom: 50px !important;
+  padding-left: 30px !important;
+}
 .tema-header{
   padding-top: 30px;
   margin: 0;
@@ -41,6 +45,7 @@
   }
 }
 
+
 .tema-sadrzaj{
   width: 100%;
   min-height: 100px;
@@ -56,7 +61,7 @@
 }
 
 .komentari{
-  padding-bottom:50px;
+  margin-bottom:50px;
   .komentar{
     width: 100%;
     min-height: 100px;
@@ -65,11 +70,16 @@
     box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     padding: 1px 5px 5px 10px;
+    margin-top: 30px;
     
 
     .korisnik{
       padding-left: 50px;
       position: relative;
+
+      .izmenjen{
+        color: $blue;
+      }
       p{
         padding-left: 10px;
         font-size: 0.9em;
@@ -119,4 +129,9 @@
       }
     
   }
+
+  .ostaviKomentar{
+    margin-top: 20px;
+  }
+
 }

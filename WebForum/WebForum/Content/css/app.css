@@ -303,6 +303,10 @@
       padding: 0;
       margin-right: 20px; }
 
+.odvojiOdDoleLevo {
+  padding-bottom: 50px !important;
+  padding-left: 30px !important; }
+
 .tema-header {
   padding-top: 30px;
   margin: 0;
@@ -349,7 +353,7 @@
     font-size: 1.1em; }
 
 .komentari {
-  padding-bottom: 50px; }
+  margin-bottom: 50px; }
   .komentari .komentar {
     width: 100%;
     min-height: 100px;
@@ -357,10 +361,13 @@
     background: #fff;
     box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
     border-radius: 4px;
-    padding: 1px 5px 5px 10px; }
+    padding: 1px 5px 5px 10px;
+    margin-top: 30px; }
     .komentari .komentar .korisnik {
       padding-left: 50px;
       position: relative; }
+      .komentari .komentar .korisnik .izmenjen {
+        color: #0060FF; }
       .komentari .komentar .korisnik p {
         padding-left: 10px;
         font-size: 0.9em; }
@@ -393,6 +400,8 @@
           font-size: 1.3em; }
         .komentari .komentar .glasovi .down i:hover {
           color: #e74c3c; }
+  .komentari .ostaviKomentar {
+    margin-top: 20px; }
 
 * {
   font-family: 'Montserrat', sans-serif !important;
