@@ -9,6 +9,10 @@
         TemeFactory.getTemaByNaziv($scope.nazivTeme, $scope.nazivPodforuma).then(function (response) {
             $scope.tema = response.data;
             $scope.tema.DatumKreiranja = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
+
+            KomentariFactory.getKomentariZaTemu($scope.nazivPodforuma, $scope.nazivTeme).then(function (response) {
+                console.log(response.data);
+            });
         });
     }
 

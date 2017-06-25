@@ -10,6 +10,10 @@
         })
     }
 
+    factory.getKomentariZaTemu = function (podforum, tema) {
+        return $http.get('/api/Komentari/GetKomentariZaTemu/?idTeme=' + podforum + '-' + tema);
+    }
+
     return factory;
 
 });

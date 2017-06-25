@@ -1,3 +1,1 @@
-﻿1d5f817d-8972-443d-a2dd-5d6eff47735c;Sport-Nba draft 2017;ognjen;6/25/2017;;0;0;False
-3272c3e4-0d37-4542-bd8a-84de8b5b1cb1;Knjizevnost-Najnovija knjiga;ognjen;6/25/2017;;0;0;False
-96b6fd9e-875c-4214-9c96-1ffd80822822;Knjizevnost-Najnovija knjiga;ognjen;6/25/2017;;0;0;False
+﻿9a1ce922-5cf3-41d1-a103-16c8ca51bf98;Sport-nova;ognjen;6/25/2017;nemaRoditelja;;0;0;False

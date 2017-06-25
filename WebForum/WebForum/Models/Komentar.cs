@@ -17,5 +17,19 @@ namespace WebForum.Models
         public int PozitivniGlasovi { get; set; }
         public int NegativniGlasovi { get; set; }
         public bool Izmenjen { get; set; }
+
+        public Komentar(string id, string temaKojojPripada, string autor, DateTime datum, string roditeljskiKomentar, List<string> podkomentari, string tekst, int pozitivni,int negativni, bool izmenjen)
+        {
+            this.Id = id;
+            this.TemaKojojPripada = temaKojojPripada;
+            this.Autor = autor;
+            this.DatumKomentara = datum;
+            this.RoditeljskiKomentar = roditeljskiKomentar;
+            this.Podkomentari = podkomentari;
+            this.Tekst = tekst;
+            this.PozitivniGlasovi = pozitivni;
+            this.NegativniGlasovi = negativni;
+            this.Izmenjen = izmenjen;
+        }
     }
 }

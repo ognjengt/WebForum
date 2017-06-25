@@ -14,6 +14,7 @@ namespace WebForum.Controllers
     {
         DbOperater dbOperater = new DbOperater();
 
+        [HttpPost]
         [ActionName("DodajKomentarNaTemu")]
         public Komentar DodajKomentarNaTemu([FromBody]Komentar k)
         {
@@ -64,11 +65,33 @@ namespace WebForum.Controllers
 
             // Upis u komentari.txt
             StreamWriter swKomentari = dbOperater.getWriter("komentari.txt");
-            swKomentari.WriteLine(k.Id + ";" + k.TemaKojojPripada + ";" + k.Autor + ";" + k.DatumKomentara.ToShortDateString() +";"+ k.Tekst + ";" + k.PozitivniGlasovi.ToString() +";"+ k.NegativniGlasovi.ToString() +";"+ k.Izmenjen.ToString());
+            swKomentari.WriteLine(k.Id + ";" + k.TemaKojojPripada + ";" + k.Autor + ";" + k.DatumKomentara.ToShortDateString() +";"+k.RoditeljskiKomentar+";"+ k.Tekst + ";" + k.PozitivniGlasovi.ToString() +";"+ k.NegativniGlasovi.ToString() +";"+ k.Izmenjen.ToString());
 
             swKomentari.Close();
             dbOperater.Writer.Close();
             return k;
+        }
+
+        [ActionName("GetKomentariZaTemu")]
+        public List<Komentar> GetKomentariZaTemu(string idTeme)
+        {
+            StreamReader sr = dbOperater.getReader("komentari.txt");
+            string line = "";
+
+            List<Komentar> listaKomentaraZaTemu = new List<Komentar>();
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[1] == idTeme)
+                {
+                    listaKomentaraZaTemu.Add(new Komentar(splitter[0],splitter[1],splitter[2],DateTime.Parse(splitter[3]),splitter[4],new List<string>(),splitter[5],Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),bool.Parse(splitter[8])));
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+            return listaKomentaraZaTemu;
         }
     }
 }
