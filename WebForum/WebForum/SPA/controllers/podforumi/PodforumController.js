@@ -52,7 +52,8 @@
         if (tema.tip == 'Tekst' || tema.tip == 'Link') {
             // dodaj tekstualnu ili temu sa Linkom
             TemeFactory.dodajTemu(tema).then(function (response) {
-                console.log(response.data);
+                $scope.dodavanjeTemePopupVisible = false;
+                init();
             });
         }
         else if (tema.tip == 'Slika') {

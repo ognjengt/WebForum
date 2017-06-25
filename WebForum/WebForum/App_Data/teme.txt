@@ -2,9 +2,10 @@
 Sport;Ajmo bree zvezda;Tekst;ognjen;Zvezda dobila partiazan;6/22/2017;200;150;komentar1|komentar2|komentar3
 Nauka;Otkriven lek za sidu;Tekst;sofija;Lek za sidu je otkriven;6/22/2017;5000;2;komentar1|komentar2|komentar3
 Sport;Nova tema;Tekst;ognjen;Najnovija tema iz sporta batenga moj;6/24/2017 11:15:49 PM;0;0;nePostoje
-
 Nauka;Nova vest iz nauke;Tekst;ognjen;asdasdasd;6/24/2017 11:18:12 PM;0;0;nePostoje
-
 Knjizevnost;Pogledajte na ovom linku novu temu iz knjizevnosti;Link;ognjen;https://sr.wikipedia.org/wiki/%D0%9A%D1%9A%D0%B8%D0%B6%D0%B5%D0%B2%D0%BD%D0%BE%D1%81%D1%82;6/25/2017;0;0;nePostoje
-
 Sport;Nastup bittersweeta na ulicnim sviracima;Link;ognjen;https://www.youtube.com/watch?v=1sOytNdWMI4;6/25/2017;0;0;nePostoje
+Knjizevnost;Najnovija knjiga;Tekst;ognjen;Najnovija knjiga neka tamo se pojavila nekad;6/25/2017;0;0;nePostoje
+
+Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;0;nePostoje
+
