@@ -37,10 +37,6 @@
             alert('Popunite naslov teme');
             return;
         }
-        else if (tema.opis == null || tema.opis == "") {
-            alert('Popunite opis teme');
-            return;
-        }
         else if (tema.tip == null || tema.tip == "") {
             alert('Popunite tip teme');
             return;

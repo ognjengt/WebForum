@@ -93,5 +93,37 @@ namespace WebForum.Controllers
             dbOperater.Writer.Close();
             return t;
         }
+
+        [ActionName("GetTemaByNaziv")]
+        public Tema GetTemaByNaziv(string podforum, string tema)
+        {
+            StreamReader sr = dbOperater.getReader("teme.txt");
+            string line = "";
+
+            List<string> listaKomentara = new List<string>();
+
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == podforum && splitter[1] == tema)
+                {
+                    string[] komentarSplitter = splitter[8].Split('|');
+                    foreach (string komentar in komentarSplitter)
+                    {
+                        if (komentar != "nePostoje")
+                        {
+                            listaKomentara.Add(komentar);
+                        }
+                    }
+                    sr.Close();
+                    dbOperater.Reader.Close();
+                    return new Tema(splitter[0],splitter[1],splitter[2],splitter[3],splitter[4],DateTime.Parse(splitter[5]),Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),listaKomentara);
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+            return null;
+        }
     }
 }

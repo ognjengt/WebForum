@@ -172,7 +172,8 @@
   .container-fluid .content-wrapper input.form-control {
     width: 500px; }
   .container-fluid .content-wrapper .teme {
-    padding-top: 50px; }
+    padding-top: 50px;
+    padding-bottom: 50px; }
     .container-fluid .content-wrapper .teme a {
       text-decoration: none !important; }
       .container-fluid .content-wrapper .teme a .tema {
@@ -248,12 +249,14 @@
         font-size: 1.02em; }
     .container-fluid .strana .box .body {
       padding: 30px;
-      overflow: hidden; }
+      overflow: hidden;
+      word-wrap: break-word; }
       .container-fluid .strana .box .body p {
         font-size: 0.92em; }
     .container-fluid .strana .box .body-moderatori {
       padding: 30px;
-      overflow: hidden; }
+      overflow: hidden;
+      word-wrap: break-word; }
       .container-fluid .strana .box .body-moderatori ul {
         padding: 0; }
         .container-fluid .strana .box .body-moderatori ul a {
@@ -310,11 +313,11 @@
   text-align: center; }
   .tema-header .btn {
     margin: 5px; }
-  .tema-header h1 {
+  .tema-header h2 {
     padding: 0;
     margin: 0;
     color: #000;
-    font-size: 3.2em;
+    font-size: 2em;
     font-weight: 500; }
   .tema-header h3 {
     color: #000;
@@ -340,51 +343,56 @@
   max-height: auto;
   background: #fff;
   box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
-  padding: 30px 100px 30px 100px; }
+  padding: 30px 100px 30px 100px;
+  word-wrap: break-word; }
+  .tema-sadrzaj a {
+    font-size: 1.1em; }
 
-.komentari .komentar {
-  width: 100%;
-  min-height: 100px;
-  max-height: auto;
-  background: #fff;
-  box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
-  padding: 1px 5px 5px 10px; }
-  .komentari .komentar .korisnik {
-    padding-left: 50px;
-    position: relative; }
-    .komentari .komentar .korisnik p {
-      padding-left: 10px;
-      font-size: 0.9em; }
-    .komentari .komentar .korisnik span {
-      margin-left: 20px;
-      font-weight: 300; }
-  .komentari .komentar .glasovi {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    height: 100px;
-    width: 30px; }
-    .komentari .komentar .glasovi i {
-      transition: 0.2s ease;
-      color: #606060;
-      cursor: pointer; }
-    .komentari .komentar .glasovi .thumbsnum {
-      font-size: 0.8em !important; }
-    .komentari .komentar .glasovi .up {
-      width: 50px;
-      padding: 0; }
-      .komentari .komentar .glasovi .up i {
-        font-size: 1.3em; }
-      .komentari .komentar .glasovi .up i:hover {
-        color: #61DC73; }
-    .komentari .komentar .glasovi .down {
-      width: 50px;
-      padding: 10px 0 0 0; }
-      .komentari .komentar .glasovi .down i {
-        font-size: 1.3em; }
-      .komentari .komentar .glasovi .down i:hover {
-        color: #e74c3c; }
+.komentari {
+  padding-bottom: 50px; }
+  .komentari .komentar {
+    width: 100%;
+    min-height: 100px;
+    max-height: auto;
+    background: #fff;
+    box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    padding: 1px 5px 5px 10px; }
+    .komentari .komentar .korisnik {
+      padding-left: 50px;
+      position: relative; }
+      .komentari .komentar .korisnik p {
+        padding-left: 10px;
+        font-size: 0.9em; }
+      .komentari .komentar .korisnik span {
+        margin-left: 20px;
+        font-weight: 300; }
+    .komentari .komentar .glasovi {
+      position: absolute;
+      top: 0;
+      left: 5px;
+      height: 100px;
+      width: 30px; }
+      .komentari .komentar .glasovi i {
+        transition: 0.2s ease;
+        color: #606060;
+        cursor: pointer; }
+      .komentari .komentar .glasovi .thumbsnum {
+        font-size: 0.8em !important; }
+      .komentari .komentar .glasovi .up {
+        width: 50px;
+        padding: 0; }
+        .komentari .komentar .glasovi .up i {
+          font-size: 1.3em; }
+        .komentari .komentar .glasovi .up i:hover {
+          color: #61DC73; }
+      .komentari .komentar .glasovi .down {
+        width: 50px;
+        padding: 10px 0 0 0; }
+        .komentari .komentar .glasovi .down i {
+          font-size: 1.3em; }
+        .komentari .komentar .glasovi .down i:hover {
+          color: #e74c3c; }
 
 * {
   font-family: 'Montserrat', sans-serif !important;
