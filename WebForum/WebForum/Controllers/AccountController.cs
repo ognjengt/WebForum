@@ -111,11 +111,11 @@ namespace WebForum.Controllers
                                         odgovorniModeratori.Add(moderator);
                                     }
                                     listaSacuvanihPodforuma.Add(new Podforum(podforumLineSplitter[0], podforumLineSplitter[1], podforumLineSplitter[2], podforumLineSplitter[3], podforumLineSplitter[4], odgovorniModeratori));
-                                    srPodforumi.Close();
-                                    dbOperaterPodforumi.Reader.Close();
                                     break;
                                 }
                             }
+                            srPodforumi.Close();
+                            dbOperaterPodforumi.Reader.Close();
                         }
                     }
                 }
@@ -156,11 +156,11 @@ namespace WebForum.Controllers
                                     // NOTE: kada dodajem temu u listu pracenih tema , stavim da nema ni jedan komentar, posto mi ne trebaju komentari kada budem ispisivao samo teme
                                     // kada se klikne na tu temu on ga vodi i sve fino
                                     listaSacuvanihTema.Add(new Tema(temaLineSplitter[0], temaLineSplitter[1], temaLineSplitter[2], temaLineSplitter[3], temaLineSplitter[4], DateTime.Parse(temaLineSplitter[5]), Int32.Parse(temaLineSplitter[6]), Int32.Parse(temaLineSplitter[7]), new List<string>()));
-                                    srTeme.Close();
-                                    dbOperaterTeme.Reader.Close();
                                     break; // tema nadjena pici sledeci foreach
-                                }
+                                } 
                             }
+                            srTeme.Close();
+                            dbOperaterTeme.Reader.Close();
                         }
                     }
                 }
@@ -198,11 +198,11 @@ namespace WebForum.Controllers
                                 {
                                     // NOTE: kada dodajem ovde komentar, necu dodavati njegove podkomentare, posto to nije bitno za tu stranicu, korisnik treba samo da ima uvid u jedan komentar
                                     listaSacuvanihKomentara.Add(new Komentar(komentarLineSplitter[0], komentarLineSplitter[1], komentarLineSplitter[2], DateTime.Parse(komentarLineSplitter[3]), komentarLineSplitter[4], new List<Komentar>(), komentarLineSplitter[5], Int32.Parse(komentarLineSplitter[6]), Int32.Parse(komentarLineSplitter[7]), bool.Parse(komentarLineSplitter[8])));
-                                    srKomentari.Close();
-                                    dbOperaterKomentari.Reader.Close();
                                     break;
                                 }
                             }
+                            srKomentari.Close();
+                            dbOperaterKomentari.Reader.Close();
                         }
                     }
                 }

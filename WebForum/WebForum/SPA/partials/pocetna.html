@@ -9,12 +9,15 @@
 <div class="container">
   <div class="col-md-12">
     <div class="praceneTeme">
-      <div class="teme-repeat" ng-repeat="tema in snimljeneTeme">
+      <div class="teme-repeat" ng-show="snimljeneTeme" ng-repeat="tema in snimljeneTeme">
         <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
         <div class="tema">
           {{tema.PodforumKomePripada}} - {{tema.Naslov}}
         </div>
         </a>
+      </div>
+      <div class="nemaTema" ng-show="snimljeneTeme.length == 0">
+        <h4>Trenutno nemate ni jednu snimljenu temu.</h4>
       </div>
     </div>
   </div>

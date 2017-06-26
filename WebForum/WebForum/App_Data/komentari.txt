@@ -8,3 +8,5 @@ deb24575-1202-4d2e-b609-02892801908c;Sport-Ajmo bree zvezda;ognjen;6/26/2017;nem
 ca0efb38-20ab-4bec-b952-5f052ec5acf3;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Jos jedan komentar;0;0;False
 4ba189aa-e446-48c2-9bbf-4559ab6d9430;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;najnoviji komentar;0;0;False
 fb750de3-923f-41c4-a8b1-185eb72584c8;Najnoviji podforum-novi redovi;obican;6/26/2017;nemaRoditelja;jedan;0;0;False
+e729cd8b-2f87-4893-b3a9-cffad43adef6;Najnoviji podforum-novi redovi;ognjen;6/26/2017;nemaRoditelja;Moze jos jedan;0;0;False
+26e26b68-d51a-42dd-9bb7-c689a1d28ff8;Najnoviji podforum-Slikovita;ognjen;6/26/2017;nemaRoditelja;Odlicna slika;0;0;False
