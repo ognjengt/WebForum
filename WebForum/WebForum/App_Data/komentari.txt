@@ -1,6 +1,5 @@
-﻿9a1ce922-5cf3-41d1-a103-16c8ca51bf98;Sport-nova;ognjen;6/25/2017;nemaRoditelja;Desi brate;0;0;False
-71b191da-d280-49f6-9667-ca5ce1accd13;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;Pozdrav svima;0;0;False
-629adf28-8df9-4030-aa3a-ac6e3af3cd50;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;Pozdrav bree;0;0;False
-12e57a61-713c-4357-8270-8c4755efae50;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Zdravo zdravo;0;0;False
-0a04ed8f-e6ef-4434-a9de-57d5ab5313b9;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;Da li se brise;0;0;False
-6d1b57e2-48a1-4989-bce5-9d31a50349d8;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;takoebre;0;0;False
+﻿399d933f-8ac7-41fb-92ad-a84ccd53ec3c;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;Desi bre najnobija temo;0;0;False
+93001a6d-d150-4061-9224-4f58d6867e53;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Pozdrav;0;0;False
+23b46ef0-4e72-4ce9-af18-13fd0a4f355e;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Jos jedan comm;0;0;False
+9bf6b9f1-01c8-450a-9723-f5eb2f3eaca7;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;pooooozz;0;0;False
+4c0af8ea-f4fc-4adc-b632-7253a7e1f60c;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Odlicna tema;0;0;False

@@ -39,7 +39,7 @@ namespace WebForum.Controllers
                         string[] commentSplitter = splitter[8].Split('|');
                         foreach (string komentar in commentSplitter)
                         {
-                            if (komentar != "nePostoji")
+                            if (komentar != "nePostoje")
                             {
                                 listaKomentara.Add(komentar);
                             }

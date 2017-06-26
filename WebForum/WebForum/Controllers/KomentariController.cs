@@ -50,8 +50,10 @@ namespace WebForum.Controllers
             k.Izmenjen = false;
             k.NegativniGlasovi = 0;
             k.PozitivniGlasovi = 0;
-            k.Podkomentari = new List<string>();
+            k.Podkomentari = new List<Komentar>();
             k.RoditeljskiKomentar = "nemaRoditelja";
+
+            // Prvo ako ova tema nema komentar tj ako joj je spliter listaSvihTema[indexZaIzmenu-1][8] == 'nePostoje', obrisi to nePostoje
 
             listaSvihTema[indexZaIzmenu-1] += "|" + k.Id;
 
@@ -85,7 +87,7 @@ namespace WebForum.Controllers
                 string[] splitter = line.Split(';');
                 if (splitter[1] == idTeme)
                 {
-                    listaKomentaraZaTemu.Add(new Komentar(splitter[0],splitter[1],splitter[2],DateTime.Parse(splitter[3]),splitter[4],new List<string>(),splitter[5],Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),bool.Parse(splitter[8])));
+                    listaKomentaraZaTemu.Add(new Komentar(splitter[0],splitter[1],splitter[2],DateTime.Parse(splitter[3]),splitter[4],new List<Komentar>(),splitter[5],Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),bool.Parse(splitter[8])));
                 }
             }
 

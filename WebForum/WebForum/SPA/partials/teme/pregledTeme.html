@@ -42,7 +42,7 @@
 
     </div>
 
-    <div class="ostaviKomentar"> 
+    <div class="ostaviKomentar" ng-show="ulogovan"> 
       <div class="form-group">
           <label>Ostavi komentar:</label>
           <textarea type="text" class="form-control" placeholder="Ostavi komentar na ovu temu..." ng-model="tekstKomentara"></textarea>
@@ -51,6 +51,7 @@
         <button class="btn button-success" ng-click="komentarisiTemu(tema.PodforumKomePripada,tema.Naslov,tekstKomentara)">Komentariši</button>
       </div>
     </div>
+    <div ng-show="!ulogovan"><h4>Ulogujte se da bi ste komentarisali</h4></div>
   </div>
   </div>
   
