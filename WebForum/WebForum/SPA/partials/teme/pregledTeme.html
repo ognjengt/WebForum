@@ -40,6 +40,16 @@
           </p>
         </div>
       </div>
+      <div class="odgovoriNaKomentarButton">
+        <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id">Odgovori na komentar</div>
+      </div>
+      <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
+        <h5>Odgovori na komentar</h5>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Napišite komentar"></textarea>
+        </div>
+        <button class="btn button-green">Odgovori</button>
+      </div>
 
     </div>
 

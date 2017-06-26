@@ -407,6 +407,20 @@
           color: #e74c3c; }
   .komentari .ostaviKomentar {
     margin-top: 20px; }
+  .komentari .odgovoriNaKomentarButton {
+    padding-top: 10px;
+    text-align: right; }
+    .komentari .odgovoriNaKomentarButton .button-success {
+      width: 200px;
+      height: 40px; }
+  .komentari .odgovoriNaKomentar {
+    padding-top: 10px;
+    padding-left: 30px; }
+    .komentari .odgovoriNaKomentar .button-green {
+      width: 200px; }
+    .komentari .odgovoriNaKomentar textarea {
+      width: 500px;
+      background: #fff; }
 
 * {
   font-family: 'Montserrat', sans-serif !important;
