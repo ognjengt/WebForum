@@ -15,11 +15,11 @@ namespace WebForum.Models
         public string Telefon { get; set; }
         public string Email { get; set; }
         public DateTime DatumRegistracije { get; set; }
-        public List<string> PraceniPodforumi { get; set; }
-        public List<string> SnimljeneTeme { get; set; }
-        public List<string> SnimljeniKomentari { get; set; }
+        public List<Podforum> PraceniPodforumi { get; set; }
+        public List<Tema> SnimljeneTeme { get; set; }
+        public List<Komentar> SnimljeniKomentari { get; set; }
 
-        public Korisnik(string username, string password,string ime, string prezime,string uloga, string telefon, string email, DateTime datumRegistracije, List<string> praceniPodforumi, List<string> snimljeneTeme, List<string> snimljeniKomentari)
+        public Korisnik(string username, string password,string ime, string prezime,string uloga, string telefon, string email, DateTime datumRegistracije, List<Podforum> praceniPodforumi, List<Tema> snimljeneTeme, List<Komentar> snimljeniKomentari)
         {
             this.Username = username;
             this.Password = password;

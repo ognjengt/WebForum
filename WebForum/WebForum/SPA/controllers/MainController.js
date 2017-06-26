@@ -17,7 +17,10 @@
         $rootScope.korisnik = {
             username: sessionStorage.getItem("username"),
             uloga: sessionStorage.getItem("uloga"),
-            imePrezime: sessionStorage.getItem("imePrezime")
+            imePrezime: sessionStorage.getItem("imePrezime"),
+            praceniPodforumi: parsed.PraceniPodforumi,
+            snimljeneTeme: parsed.SnimljeneTeme,
+            snimljeniKomentar: parsed.SnimljeniKomentari
         };
     } else {
         $rootScope.ulogovan = false;
