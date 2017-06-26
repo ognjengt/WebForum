@@ -11,7 +11,10 @@
             $scope.tema.DatumKreiranja = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
 
             KomentariFactory.getKomentariZaTemu($scope.nazivPodforuma, $scope.nazivTeme).then(function (response) {
-                console.log(response.data);
+                $scope.komentari = response.data;
+                $scope.komentari.forEach(function (komentar) {
+                    komentar.DatumKomentara = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
+                })
             });
         });
     }
@@ -22,6 +25,8 @@
         var username = sessionStorage.getItem("username");
         KomentariFactory.ostaviKomentarNaTemu(podforum, naslovTeme, tekstKomentara, username).then(function (response) {
             console.log(response.data);
+            $scope.tekstKomentara = "";
+            init();
         });
     }
 
