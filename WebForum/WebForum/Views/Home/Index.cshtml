@@ -27,7 +27,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li ng-class="checkActive('/pocetna')"><a href="#!/pocetna"><i class="ion ion-android-home"></i> Početna</a></li>
+                        <li ng-show="ulogovan" ng-class="checkActive('/pocetna')"><a href="#!/pocetna"><i class="ion ion-android-home"></i> Početna</a></li>
                         <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
                         <li ng-class="checkActive('/pretraga')"><a href="#!/pretraga"><i class="ion ion-ios-search-strong"></i> Pretraga</a></li>
                     </ul>

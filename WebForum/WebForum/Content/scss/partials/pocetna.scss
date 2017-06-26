@@ -1,0 +1,37 @@
+.praceneTeme{
+  background: #fff;
+  border: 2px solid $blue;
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+  max-height: auto;
+  border-radius: 8px;
+  margin-top: 100px;
+  padding: 30px;
+
+  .teme-repeat{
+      a{
+        color: $blue;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      a:hover{
+        
+      }
+    .tema{
+      width: 90%;
+      height: 80px;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      transition: 0.2s ease;
+      margin-top: 20px;
+    }
+    .tema:hover{
+      color: #fff;
+      background: $blue;
+    }
+  }
+}

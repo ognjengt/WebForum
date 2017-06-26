@@ -1,1 +1,21 @@
-﻿Pocetna strana batengaaaaaa
+﻿<div class="container-fluid">
+  <div class="podforumi-header">
+    <h1>Dobrodošao <span ng-show="ulogovan">{{korisnik.username}}</span> <span ng-show="korisnik.uloga.includes('Administrator')">(Admin)</span></h1>
+    <h4 ng-show="ulogovan">Ovo su teme koje pratiš</h4>
+    <h4 ng-show="!ulogovan">Ulogujte se da bi ste mogli da vršite više funkcija na forumu</h4>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="praceneTeme">
+      <div class="teme-repeat" ng-repeat="tema in snimljeneTeme">
+        <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
+        <div class="tema">
+          {{tema.PodforumKomePripada}} - {{tema.Naslov}}
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

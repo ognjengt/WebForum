@@ -19,6 +19,10 @@
         });
     }
 
+    factory.getSacuvaneTeme = function (username) {
+        return $http.get('/api/Account/GetSnimljeneTeme?username=' + username);
+    }
+
     return factory;
 
 });
