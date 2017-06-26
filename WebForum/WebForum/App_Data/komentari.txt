@@ -3,3 +3,6 @@
 23b46ef0-4e72-4ce9-af18-13fd0a4f355e;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Jos jedan comm;0;0;False
 9bf6b9f1-01c8-450a-9723-f5eb2f3eaca7;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;pooooozz;0;0;False
 4c0af8ea-f4fc-4adc-b632-7253a7e1f60c;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Odlicna tema;0;0;False
+deb24575-1202-4d2e-b609-02892801908c;Sport-Ajmo bree zvezda;ognjen;6/26/2017;nemaRoditelja;Bravo breee;0;0;False
+224171ab-dd59-481a-aba5-c0d9052f754e;Najnoviji podforum-Nova sa slikom;ognjen;6/26/2017;nemaRoditelja;Dobra slika;0;0;False
+ca0efb38-20ab-4bec-b952-5f052ec5acf3;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Jos jedan komentar;0;0;False

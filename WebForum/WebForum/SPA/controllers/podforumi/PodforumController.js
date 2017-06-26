@@ -60,6 +60,9 @@
 
         if (tema.tip == 'Tekst' || tema.tip == 'Link') {
             // dodaj tekstualnu ili temu sa Linkom
+
+            tema.sadrzaj = tema.sadrzaj.replace(/(\r\n|\n|\r)/gm, "{novired}");
+
             TemeFactory.dodajTemu(tema).then(function (response) {
                 $scope.dodavanjeTemePopupVisible = false;
                 if (response.data == null) {

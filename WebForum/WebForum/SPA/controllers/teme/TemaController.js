@@ -15,14 +15,12 @@
                 var spliter = $scope.tema.Sadrzaj.split('.');
                 $scope.tema.Sadrzaj = $scope.tema.Sadrzaj + "." + spliter[1];
             }
-            else {
-                $scope.tema.Sadrzaj = "noimage.png";
-            }
 
             // parsiranje stringa za noveredove
             $scope.tema.Sadrzaj = $scope.tema.Sadrzaj.replace(new RegExp('{novired}', 'g'), '\n');
 
             KomentariFactory.getKomentariZaTemu($scope.nazivPodforuma, $scope.nazivTeme).then(function (response) {
+                console.log(response.data);
                 $scope.komentari = response.data;
                 $scope.komentari.forEach(function (komentar) {
                     komentar.DatumKomentara = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
