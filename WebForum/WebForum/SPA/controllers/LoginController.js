@@ -48,15 +48,18 @@
                 sessionStorage.setItem("username", response.data.Username);
                 sessionStorage.setItem("uloga", response.data.Uloga);
                 sessionStorage.setItem("imePrezime", response.data.Ime + " " + response.data.Prezime);
-                sessionStorage.setItem("praceniPodforumi", response.data.PraceniPodforumi);
-                sessionStorage.setItem("snimljeneTeme", response.data.SnimljeneTeme);
-                sessionStorage.setItem("snimljeniKomentari", response.data.SnimljeniKomentari);
+                sessionStorage.setItem("praceniPodforumi", JSON.stringify(response.data.PraceniPodforumi));
+                sessionStorage.setItem("snimljeneTeme", JSON.stringify(response.data.SnimljeneTeme));
+                sessionStorage.setItem("snimljeniKomentari", JSON.stringify(response.data.SnimljeniKomentari));
 
                 $rootScope.ulogovan = true;
                 $rootScope.korisnik = {
                     username: sessionStorage.getItem("username"),
                     uloga: sessionStorage.getItem("uloga"),
-                    imePrezime: sessionStorage.getItem("imePrezime")
+                    imePrezime: sessionStorage.getItem("imePrezime"),
+                    praceniPodforumi: response.data.PraceniPodforumi,
+                    snimljeneTeme: response.data.SnimljeneTeme,
+                    snimljeniKomentar: response.data.SnimljeniKomentari
                 };
                 $window.location.href = "#!/";
             }
