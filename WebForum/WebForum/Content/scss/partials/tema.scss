@@ -55,6 +55,13 @@
   padding: 30px 100px 30px 100px;
   word-wrap: break-word;
 
+  .slika-teme{
+    min-width: 100px;
+    max-width: 800px;
+    min-height: 100px;
+    max-height: 800px;
+  }
+
   a{
     font-size: 1.1em;
   }

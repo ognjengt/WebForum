@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web.Hosting;
 using System.Web.Http;
 using WebForum.Helpers;
 using WebForum.Models;
@@ -124,6 +126,40 @@ namespace WebForum.Controllers
             sr.Close();
             dbOperater.Reader.Close();
             return null;
+        }
+
+        [HttpPost]
+        [ActionName("UploadImage")]
+        public HttpResponseMessage UploadImage()
+        {
+            var result = new HttpResponseMessage(HttpStatusCode.OK);
+            if (Request.Content.IsMimeMultipartContent())
+            {
+                Request.Content.ReadAsMultipartAsync<MultipartMemoryStreamProvider>(new MultipartMemoryStreamProvider()).ContinueWith((task) =>
+                {
+
+                    MultipartMemoryStreamProvider provider = task.Result;
+                    foreach (HttpContent content in provider.Contents)
+                    {
+                        Stream stream = content.ReadAsStreamAsync().Result;
+                        Image image = Image.FromStream(stream);
+                        var testName = content.Headers.ContentDisposition.Name;
+                        String filePath = HostingEnvironment.MapPath("~/Content/img/teme");
+                        string slika = Request.Headers.GetValues("slika").First();
+                        string[] spliter = slika.Split('.');
+                        string imeSlike = spliter[0];
+                        string ekstenzija = spliter[1];
+                        String fileName = slika + "." + ekstenzija;
+                        String fullPath = Path.Combine(filePath, fileName);
+                        image.Save(fullPath);
+                    }
+                });
+                return result;
+            }
+            else
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotAcceptable, "This request is not properly formatted"));
+            }
         }
     }
 }

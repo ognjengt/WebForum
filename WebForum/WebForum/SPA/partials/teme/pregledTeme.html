@@ -12,7 +12,8 @@
   <h4 ng-show="tema.Tip == 'Link'">[Link]</h4>
   <h4 ng-show="tema.Tip == 'Slika'">[Slika]</h4>
   <p ng-show="tema.Tip == 'Tekst'">{{tema.Sadrzaj}}</p>
-    <a ng-show="tema.Tip == 'Link'" href="{{tema.Sadrzaj}}" target="_blank">{{tema.Sadrzaj}}</a>
+  <a ng-show="tema.Tip == 'Link'" href="{{tema.Sadrzaj}}" target="_blank">{{tema.Sadrzaj}}</a>
+  <img class="slika-teme" src="Content/img/teme/{{tema.Sadrzaj}}" alt="" ng-show="tema.Tip == 'Slika'">
 </div>
 
 <div class="container-fluid">

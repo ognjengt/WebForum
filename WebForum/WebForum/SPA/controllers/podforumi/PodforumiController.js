@@ -83,6 +83,10 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
         podforum.moderator = sessionStorage.getItem("username");
 
         PodforumiFactory.dodajPodforum(podforum).then(function (response) {
+            if (response.data == null) {
+                alert('Podforum sa ovim nazivom vec postoji');
+                return;
+            }
             init();
             // podforum dodat, poziva se funkcija za dodavanje slike ukoliko je slika prikacena
             if (izmenjenNazivSlike != "") {

@@ -16,8 +16,12 @@
         });
     }
 
-    factory.dodajTemuSaSlikom = function (tema) {
-
+    factory.uploadImage = function (fd, imeSlike) {
+        return $http.post('/api/Teme/UploadImage', fd,
+        {
+            transformRequest: angular.identity,
+            headers: { 'Content-Type': undefined, slika: imeSlike }
+        });
     }
 
     factory.getTemaByNaziv = function (nazivTeme, nazivPodforuma) {

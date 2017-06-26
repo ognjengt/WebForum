@@ -10,6 +10,18 @@
             $scope.tema = response.data;
             $scope.tema.DatumKreiranja = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
 
+            // dodeljivanje putanje za sliku
+            if ($scope.tema.Sadrzaj.includes('.jpg') || $scope.tema.Sadrzaj.includes('.png')) {
+                var spliter = $scope.tema.Sadrzaj.split('.');
+                $scope.tema.Sadrzaj = $scope.tema.Sadrzaj + "." + spliter[1];
+            }
+            else {
+                $scope.tema.Sadrzaj = "noimage.png";
+            }
+
+            // parsiranje stringa za noveredove
+            $scope.tema.Sadrzaj = $scope.tema.Sadrzaj.replace(new RegExp('{novired}', 'g'), '\n');
+
             KomentariFactory.getKomentariZaTemu($scope.nazivPodforuma, $scope.nazivTeme).then(function (response) {
                 $scope.komentari = response.data;
                 $scope.komentari.forEach(function (komentar) {

@@ -3,7 +3,13 @@ var webForum = angular.module('webForum',['ngRoute']);
 webForum.config(function ($routeProvider) {
     $routeProvider.when('/',
 	{
-	    redirectTo: '/podforumi'
+	    redirectTo: '/pocetna'
+
+	}).when('/pocetna', {
+
+	    controller: 'PocetnaController',
+	    templateUrl: 'SPA/partials/pocetna.html',
+	    activetab: 'pocetna'
 
 	}).when('/podforumi',
 	{

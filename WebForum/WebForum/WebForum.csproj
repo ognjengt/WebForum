@@ -241,6 +241,7 @@
     <Content Include="Scripts\js\jquery-1.10.2.min.js" />
     <Content Include="Scripts\js\modernizr-2.6.2.js" />
     <Content Include="SPA\app.js" />
+    <Content Include="SPA\controllers\PocetnaController.js" />
     <Content Include="SPA\controllers\podforumi\PodforumController.js" />
     <Content Include="SPA\controllers\podforumi\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
@@ -248,6 +249,7 @@
     <Content Include="SPA\controllers\teme\TemaController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
     <Content Include="SPA\partials\login.html" />
+    <Content Include="SPA\partials\pocetna.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
     <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
     <Content Include="SPA\partials\register.html" />
