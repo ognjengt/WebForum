@@ -40,6 +40,10 @@
         });
     }
 
+    factory.getUserByUsername = function (username) {
+        return $http.get('/api/Account/GetUserByUsername?username=' + username);
+    }
+
     factory.getSacuvaniPodforumi = function (username) {
         return $http.get('/api/Account/GetSacuvaniPodforumi?username=' + username);
     }

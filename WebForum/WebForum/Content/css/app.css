@@ -514,6 +514,9 @@
     color: #fff;
     background: #0060FF; }
 
+.userProfileDetails h4 {
+  font-weight: 200; }
+
 * {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 1.01em; }

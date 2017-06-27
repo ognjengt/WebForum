@@ -79,6 +79,36 @@ namespace WebForum.Controllers
             return null;
         }
 
+        [ActionName("GetUserByUsername")]
+        public Korisnik GetUserByUsername(string username)
+        {
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == username)
+                {
+                    Korisnik kor = new Korisnik();
+                    kor.Username = splitter[0];
+                    kor.Ime = splitter[2];
+                    kor.Prezime = splitter[3];
+                    kor.Uloga = splitter[4];
+                    kor.Email = splitter[5];
+                    kor.Telefon = splitter[6];
+                    kor.DatumRegistracije = DateTime.Parse(splitter[7]);
+                    kor.Password = null;
+                    sr.Close();
+                    dbOperater.Reader.Close();
+                    return kor;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            return null;
+        }
+
         [ActionName("GetSacuvaniPodforumi")]
         public List<Podforum> GetSacuvaniPodforumi(string username)
         {

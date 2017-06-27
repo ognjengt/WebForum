@@ -1,1 +1,16 @@
-﻿PROFILCINA {{korisnik.username}}
+﻿<div class="container-fluid" ng-show="ulogovan">
+  <div class="podforumi-header">
+      <div class="userProfileDetails">
+        <h1><span>{{userProfile.Ime}} {{userProfile.Prezime}} ({{userProfile.Username}})</span></h1>
+            <h4>{{userProfile.Uloga}}</h4>
+            <h4>{{userProfile.Email}}</h4>
+            <h4>Telefon: {{userProfile.Telefon}}</h4>
+            <h4>Registrovao se: {{userProfile.DatumRegistracije}}</h4>
+      </div>
+    </div>
+
+
+</div>
+<div class="container-fluid" ng-show="!ulogovan">
+    <h1>Molimo vas ulogujte se kako bi ste mogli da gledate korisnicke profile</h1>
+</div>

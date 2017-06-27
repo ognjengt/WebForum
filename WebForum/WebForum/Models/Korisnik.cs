@@ -34,5 +34,7 @@ namespace WebForum.Models
             this.SnimljeniKomentari = snimljeniKomentari;
         }
 
+        public Korisnik() { }
+
     }
 }
