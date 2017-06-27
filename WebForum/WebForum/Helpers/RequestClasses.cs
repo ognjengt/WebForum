@@ -22,4 +22,10 @@ namespace WebForum.Helpers
         public string NazivPodforuma { get; set; }
         public string KorisnikKojiCuva { get; set; }
     }
+
+    public class TemaZaCuvanje
+    {
+        public string NaslovTeme { get; set; }
+        public string KorisnikKojiPrati { get; set; }
+    }
 }

@@ -275,5 +275,12 @@ namespace WebForum.Controllers
             return true;
         }
 
+        [HttpPost]
+        [ActionName("ZapratiTemu")]
+        public bool ZapratiTemu([FromBody]TemaZaCuvanje t)
+        {
+            string a = "proba";
+            return true;
+        }
     }
 }

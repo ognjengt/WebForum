@@ -3,7 +3,7 @@
   <h3>Autor: <a href="#!/profil/{{tema.Autor}}">{{tema.Autor}}</a></h3>
   <h3>Kreirana: {{tema.DatumKreiranja}}</h3>
   <h4><span><i class="ion ion-thumbsup"></i> Lajkovalo: {{tema.PozitivniGlasovi}}</span><span><i class="ion ion-thumbsdown"></i> Dislajkovalo: {{tema.NegativniGlasovi}}</span></h4>
-  <button class="btn btn-warning" ng-show="ulogovan"><i class="ion ion-archive"></i> Sačuvaj</button>
+  <button class="btn btn-warning" ng-show="ulogovan" ng-click="zapratiTemu(korisnik.username)"><i class="ion ion-archive"></i> Sačuvaj</button>
   <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor"> <i class="ion ion-trash-b"></i> Obriši</button>
   <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor"><i class="ion ion-edit"></i> Izmeni</button>
 </div>
@@ -40,7 +40,7 @@
           </p>
         </div>
       </div>
-      <div class="odgovoriNaKomentarButton">
+      <div class="odgovoriNaKomentarButton" ng-show="ulogovan">
         <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id">Odgovori na komentar</div>
       </div>
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">

@@ -26,6 +26,13 @@
         });
     }
 
+    factory.zapratiTemu = function (naslovTeme, username) {
+        return $http.post('/api/Account/ZapratiTemu', {
+            NaslovTeme: naslovTeme,
+            KorisnikKojiPrati: username
+        })
+    }
+
     factory.getSacuvaneTeme = function (username) {
         return $http.get('/api/Account/GetSnimljeneTeme?username=' + username);
     }

@@ -1,4 +1,4 @@
-﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, $routeParams) {
+﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
     $scope.nazivTeme = $routeParams.tema;
@@ -35,6 +35,10 @@
     init();
 
     $scope.komentarisiTemu = function (podforum, naslovTeme, tekstKomentara) {
+        if (tekstKomentara == null || tekstKomentara == "") {
+            alert('Popunite sadrzaj komentara');
+            return;
+        }
         var username = sessionStorage.getItem("username");
         KomentariFactory.ostaviKomentarNaTemu(podforum, naslovTeme, tekstKomentara, username).then(function (response) {
             console.log(response.data);
@@ -44,10 +48,24 @@
     }
 
     $scope.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara, podforum, tema) {
+        if (tekstPodkomentara == null || tekstPodkomentara == "") {
+            alert('Popunite sadrzaj komentara');
+            return;
+        }
         var autor = sessionStorage.getItem("username");
         var temaKojojPripada = podforum + '-' + tema;
         KomentariFactory.dodajPodkomentar(IdRoditelja, tekstPodkomentara, autor, temaKojojPripada).then(function (response) {
             init();
+        });
+    }
+
+    $scope.zapratiTemu = function (username) {
+        var naslovTeme = $scope.nazivPodforuma + '-' + $scope.nazivTeme;
+        AccountFactory.zapratiTemu(naslovTeme, username).then(function (response) {
+            if (response.data == false) {
+                alert('Vec pratite ovu temu!');
+            }
+            else alert('Tema dodata u listu pracenih');
         });
     }
 

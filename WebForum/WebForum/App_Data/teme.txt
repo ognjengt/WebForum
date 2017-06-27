@@ -1,4 +1,4 @@
-Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;nePostoje|1ba241b6-5471-49bc-b692-5cf74c2b2e06|6aa27b36-858a-45bc-9c4b-f2bc4419a9de
+Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;nePostoje|1ba241b6-5471-49bc-b692-5cf74c2b2e06|6aa27b36-858a-45bc-9c4b-f2bc4419a9de|1c0df0be-ffab-48ad-9f17-f44d6be72851
 Sport;Ajmo bree zvezda;Tekst;ognjen;Zvezda dobila partiazan;6/22/2017;200;150;nePostoje
 Nauka;Otkriven lek za sidu;Tekst;sofija;Lek za sidu je otkriven;6/22/2017;5000;2;nePostoje
 Sport;Nova tema;Tekst;ognjen;Najnovija tema iz sporta batenga moj;6/24/2017 11:15:49 PM;0;0;nePostoje
