@@ -69,4 +69,10 @@
         });
     }
 
+    $scope.sacuvajKomentar = function (idKomentara, username) {
+        AccountFactory.sacuvajKomentar(idKomentara, username).then(function (response) {
+            console.log(response.data);
+        });
+    }
+
 });

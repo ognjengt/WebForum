@@ -97,6 +97,17 @@
       }
     }
 
+    .dugmici{
+      position: absolute;
+      right: 0;
+      top: 2px;
+
+      .btn{
+        height: 20px;
+        padding-top: 0px;
+      }
+    }
+
     .glasovi{
         position: absolute;
         top: 0;
@@ -152,7 +163,17 @@
       .korisnik{
       padding-left: 50px;
       position: relative;
+      
+      .dugmici{
+      position: absolute;
+      right: 0;
+      top: 2px;
 
+      .btn{
+        height: 20px;
+        padding-top: 0px;
+      }
+    }
       .izmenjen{
         color: $blue;
           }

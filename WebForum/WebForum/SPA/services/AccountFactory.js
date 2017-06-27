@@ -33,8 +33,27 @@
         })
     }
 
+    factory.sacuvajKomentar = function (idKomentara, username) {
+        return $http.post('/api/Account/SacuvajKomentar', {
+            IdKomentara: idKomentara,
+            KoCuva: username
+        });
+    }
+
+    factory.getSacuvaniPodforumi = function (username) {
+        return $http.get('/api/Account/GetSacuvaniPodforumi?username=' + username);
+    }
+
     factory.getSacuvaneTeme = function (username) {
         return $http.get('/api/Account/GetSnimljeneTeme?username=' + username);
+    }
+
+    factory.getSacuvaniKomentari = function (username) {
+        return $http.get('/api/Account/GetSacuvaniKomentari?username=' + username);
+    }
+
+    factory.getSacuvaniPodkomentari = function (username) {
+        return $http.get('/api/Account/GetSacuvaniPodkomentari?username=' + username);
     }
 
     return factory;

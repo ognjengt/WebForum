@@ -1,3 +1,3 @@
-ognjen;123;Ognjen;Gatalo;Administrator;ognjen@ognjen.com;1212;6/22/2017;Sport|Najnoviji podforum|Knjizevnost;Sport-Nba draft 2017|Knjizevnost-Sofijina tema|Najnoviji podforum-Slikovita;nemaSnimljenihKomentara
+ognjen;123;Ognjen;Gatalo;Administrator;ognjen@ognjen.com;1212;6/22/2017;Sport|Najnoviji podforum|Knjizevnost;Sport-Nba draft 2017|Knjizevnost-Sofijina tema|Najnoviji podforum-Slikovita|Nauka-Nova vest iz nauke|Najnoviji podforum-Nova sa slikom;nemaSnimljenihKomentara|1c0df0be-ffab-48ad-9f17-f44d6be72851|33f327a9-e0e5-4673-b628-61f7d4530d50
 sofija;123;Sofija;Ilic;Moderator;sofija@sofija.com;2392;6/23/2017;nemaSnimljenihPodforuma;nemaSnimljenihTema;nemaSnimljenihKomentara
 obican;123;Obican;Obicnjakovic;Korisnik;obican@obican.com;021 454 342;6/24/2017;nemaSnimljenihPodforuma;nemaSnimljenihTema;nemaSnimljenihKomentara

@@ -212,6 +212,58 @@ namespace WebForum.Controllers
             return listaSacuvanihKomentara;
         }
 
+        [ActionName("GetSacuvaniPodkomentari")]
+        public List<Komentar> GetSacuvaniPodkomentari(string username)
+        {
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+            List<Komentar> listaSacuvanihKomentara = new List<Komentar>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == username)
+                {
+                    string[] komentariSplitter = splitter[10].Split('|');
+                    foreach (string komentarId in komentariSplitter)
+                    {
+                        if (komentarId != "nemaSnimljenihKomentara")
+                        {
+                            // Prodji kroz sve podkomentare, nadji taj sa tim id-em, napravi novi komentar, od podataka i dodaj ga u listu
+                            StreamReader srKomentari = dbOperaterKomentari.getReader("podkomentari.txt");
+
+                            string komentarLine = "";
+                            while ((komentarLine = srKomentari.ReadLine()) != null)
+                            {
+                                string[] komentarLineSplitter = komentarLine.Split(';');
+                                if (komentarLineSplitter[1] == komentarId)
+                                {
+                                    Komentar podkomentar = new Komentar();
+                                    podkomentar.RoditeljskiKomentar = komentarLineSplitter[0];
+                                    podkomentar.Id = komentarLineSplitter[1];
+                                    podkomentar.Autor = komentarLineSplitter[2];
+                                    podkomentar.DatumKomentara = DateTime.Parse(komentarLineSplitter[3]);
+                                    podkomentar.Tekst = komentarLineSplitter[4];
+                                    podkomentar.PozitivniGlasovi = Int32.Parse(komentarLineSplitter[5]);
+                                    podkomentar.NegativniGlasovi = Int32.Parse(komentarLineSplitter[6]);
+                                    podkomentar.Izmenjen = bool.Parse(komentarLineSplitter[7]);
+                                    podkomentar.Obrisan = bool.Parse(komentarLineSplitter[8]);
+                                    podkomentar.TemaKojojPripada = komentarLineSplitter[9];
+                                    listaSacuvanihKomentara.Add(podkomentar);
+                                    break;
+                                }
+                            }
+                            srKomentari.Close();
+                            dbOperaterKomentari.Reader.Close();
+                        }
+                    }
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            return listaSacuvanihKomentara;
+        }
+
         [HttpPost]
         [ActionName("SacuvajPodforum")]
         public bool SacuvajPodforum([FromBody]PodforumZaCuvanje pfZaCuvanje)
@@ -277,9 +329,127 @@ namespace WebForum.Controllers
 
         [HttpPost]
         [ActionName("ZapratiTemu")]
-        public bool ZapratiTemu([FromBody]TemaZaCuvanje t)
+        public bool ZapratiTemu([FromBody]TemaZaCuvanje temaZaCuvanje)
         {
-            string a = "proba";
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+
+            List<string> listaSvihKorisnika = new List<string>();
+            int brojac = 0;
+            int indexZaIzmenu = -1;
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                listaSvihKorisnika.Add(line);
+                brojac++;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == temaZaCuvanje.KorisnikKojiPrati)
+                {
+                    indexZaIzmenu = brojac;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            // splituj tu liniju koja treba da se menja tj na koju treba da se dodaje
+            string[] tokeniOdabranogKorisnika = listaSvihKorisnika[indexZaIzmenu - 1].Split(';');
+            // tokeniOdabranogKorisnika[9] tu se nalazi spisak pracenih tema
+            string[] splitterProvere = tokeniOdabranogKorisnika[9].Split('|');
+            // provera ukoliko korisnik vec prati postojeci podforum
+            foreach (string pracenaTema in splitterProvere)
+            {
+                if (pracenaTema == temaZaCuvanje.NaslovTeme)
+                {
+                    return false;
+                }
+            }
+            // otvori bulk writer
+            StreamWriter sw = dbOperater.getBulkWriter("korisnici.txt");
+
+            // tokeniOdabranogKorisnika[9] tu se nalazi spisak pracenih tema
+            tokeniOdabranogKorisnika[9] += "|" + temaZaCuvanje.NaslovTeme;
+
+            // linijaZaUpis se inicijalizuje na pocetku da je korisnicki username
+            string linijaZaUpis = tokeniOdabranogKorisnika[0];
+            // prodji kroz sve tokene odabranog korisnika i upisi ih u liniju, da ne pisem tokeni[0]+';'+tokeni[1] ...
+            for (int i = 1; i < 11; i++)
+            {
+                linijaZaUpis += ";" + tokeniOdabranogKorisnika[i];
+            }
+
+            // ubaci tu izmenjenu liniju na to mesto u listiSvih
+            listaSvihKorisnika[indexZaIzmenu - 1] = linijaZaUpis;
+            // prepisi ceo fajl
+            foreach (string korisnickaLinija in listaSvihKorisnika)
+            {
+                sw.WriteLine(korisnickaLinija);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+        }
+
+        [HttpPost]
+        [ActionName("SacuvajKomentar")]
+        public bool SacuvajKomentar([FromBody]KomentarZaCuvanje komentarZaCuvanje)
+        {
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+
+            List<string> listaSvihKorisnika = new List<string>();
+            int brojac = 0;
+            int indexZaIzmenu = -1;
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                listaSvihKorisnika.Add(line);
+                brojac++;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == komentarZaCuvanje.KoCuva)
+                {
+                    indexZaIzmenu = brojac;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            // splituj tu liniju koja treba da se menja tj na koju treba da se dodaje
+            string[] tokeniOdabranogKorisnika = listaSvihKorisnika[indexZaIzmenu - 1].Split(';');
+            // tokeniOdabranogKorisnika[10] tu se nalazi spisak pracenih komentara
+            string[] splitterProvere = tokeniOdabranogKorisnika[10].Split('|');
+            // provera ukoliko korisnik vec prati postojeci podforum
+            foreach (string idKomentara in splitterProvere)
+            {
+                if (idKomentara == komentarZaCuvanje.IdKomentara)
+                {
+                    return false;
+                }
+            }
+            // otvori bulk writer
+            StreamWriter sw = dbOperater.getBulkWriter("korisnici.txt");
+
+            // tokeniOdabranogKorisnika[10] tu se nalazi spisak pracenih komentara
+            tokeniOdabranogKorisnika[10] += "|" + komentarZaCuvanje.IdKomentara;
+
+            // linijaZaUpis se inicijalizuje na pocetku da je korisnicki username
+            string linijaZaUpis = tokeniOdabranogKorisnika[0];
+            // prodji kroz sve tokene odabranog korisnika i upisi ih u liniju, da ne pisem tokeni[0]+';'+tokeni[1] ...
+            for (int i = 1; i < 11; i++)
+            {
+                linijaZaUpis += ";" + tokeniOdabranogKorisnika[i];
+            }
+
+            // ubaci tu izmenjenu liniju na to mesto u listiSvih
+            listaSvihKorisnika[indexZaIzmenu - 1] = linijaZaUpis;
+            // prepisi ceo fajl
+            foreach (string korisnickaLinija in listaSvihKorisnika)
+            {
+                sw.WriteLine(korisnickaLinija);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
             return true;
         }
     }

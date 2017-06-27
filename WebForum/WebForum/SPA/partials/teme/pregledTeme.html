@@ -24,6 +24,11 @@
     <div class="komentar-repeat" ng-repeat="komentar in komentari">
       <div class="komentar" ng-show="!komentar.Obrisan">
         <div class="korisnik">
+          <div class="dugmici">
+            <div class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajKomentar(komentar.Id,korisnik.username)">Sačuvaj</div>
+            <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == komentar.Autor">Izmeni</div>
+            <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == komentar.Autor">Obriši</div>
+          </div>
           <div class="glasovi">
             <div class="up">
               <i class="ion ion-thumbsup"></i>
@@ -57,6 +62,11 @@
 
           <div class="podkomentar">
             <div class="korisnik">
+              <div class="dugmici">
+                <div class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajKomentar(podkomentar.Id,korisnik.username)">Sačuvaj</div>
+                <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor">Izmeni</div>
+                <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor">Obriši</div>
+              </div>
               <div class="glasovi">
                 <div class="up">
                   <i class="ion ion-thumbsup"></i>

@@ -41,6 +41,12 @@ webForum.config(function ($routeProvider) {
         templateUrl: 'SPA/partials/teme/pregledTeme.html',
         activetab: 'nijedan'
 
+    }).when('/profil/:username', {
+
+        controller: 'ProfilController',
+        templateUrl: 'SPA/partials/profil.html',
+        activetab: 'nijedan'
+
     })
 
 });

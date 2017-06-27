@@ -28,4 +28,10 @@ namespace WebForum.Helpers
         public string NaslovTeme { get; set; }
         public string KorisnikKojiPrati { get; set; }
     }
+
+    public class KomentarZaCuvanje
+    {
+        public string IdKomentara { get; set; }
+        public string KoCuva { get; set; }
+    }
 }

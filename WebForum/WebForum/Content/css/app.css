@@ -379,6 +379,13 @@
       .komentari .komentar .korisnik span {
         margin-left: 20px;
         font-weight: 300; }
+    .komentari .komentar .dugmici {
+      position: absolute;
+      right: 0;
+      top: 2px; }
+      .komentari .komentar .dugmici .btn {
+        height: 20px;
+        padding-top: 0px; }
     .komentari .komentar .glasovi {
       position: absolute;
       top: 0;
@@ -419,6 +426,13 @@
       .komentari .podkomentari .podkomentar .korisnik {
         padding-left: 50px;
         position: relative; }
+        .komentari .podkomentari .podkomentar .korisnik .dugmici {
+          position: absolute;
+          right: 0;
+          top: 2px; }
+          .komentari .podkomentari .podkomentar .korisnik .dugmici .btn {
+            height: 20px;
+            padding-top: 0px; }
         .komentari .podkomentari .podkomentar .korisnik .izmenjen {
           color: #0060FF; }
         .komentari .podkomentari .podkomentar .korisnik p {
@@ -480,7 +494,8 @@
   max-height: auto;
   border-radius: 8px;
   margin-top: 100px;
-  padding: 30px; }
+  padding: 30px;
+  margin-bottom: 50px; }
   .praceneTeme .teme-repeat a {
     color: #0060FF;
     font-weight: 500;

@@ -10,7 +10,7 @@ Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;0;nePostoje
 Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;0;nePostoje
 Najnoviji podforum;Najnovija tema;Tekst;ognjen;Najnovijaaaa;6/26/2017;0;0;nePostoje
 Knjizevnost;Sofijina tema;Tekst;sofija;Sofijina tema;6/26/2017;0;0;nePostoje
-Najnoviji podforum;Slikovita;Slika;ognjen;Najnoviji podforum-Slikovita.png;6/26/2017;0;0;nePostoje
+Najnoviji podforum;Slikovita;Slika;ognjen;Najnoviji podforum-Slikovita.png;6/26/2017;0;0;nePostoje|920a8c17-f9d8-44ce-aec9-0f79b67b9ad6
 Najnoviji podforum;Nova sa slikom;Slika;ognjen;Najnoviji podforum-Nova sa slikom.jpg;6/26/2017;0;0;nePostoje
 Najnoviji podforum;Testiranje za nove redove;Tekst;ognjen;noviia{novired}{novired}asd{novired}asd;6/26/2017;0;0;nePostoje
-Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;0;0;nePostoje
+Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;0;0;nePostoje|bc47b2b4-70d1-4197-a3ac-1feadbb5571a

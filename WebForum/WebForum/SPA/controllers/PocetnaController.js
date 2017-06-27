@@ -8,7 +8,7 @@
         AccountFactory.getSacuvaneTeme(sessionStorage.getItem("username")).then(function (response) {
             $scope.snimljeneTeme = response.data;
             console.log(response.data);
-        })
+        });
     }
 
     init();
