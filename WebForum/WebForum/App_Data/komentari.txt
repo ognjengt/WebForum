@@ -1,4 +1,2 @@
-550bf78a-3153-4a37-91ab-44527c13406c;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;Proba komentara;0;0;False;False;nemaPodkomentara|ae0786c3-1b6c-4e8f-bdf6-e54725b961a3
-abc4daa6-5ff9-434b-a55a-269b435a61a6;Sport-nova;ognjen;6/27/2017;nemaRoditelja;Novi komentar;0;0;False;False;nemaPodkomentara|b70eec4e-cdb4-4ba9-9df2-acea975e747e|e32fef2f-d601-4446-be51-231c98f1fc4e|157380be-b102-4fa0-a624-67f02825967c
-818c9b93-be93-45fb-9568-67725aba0e07;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;novi komentar;0;0;False;False;nemaPodkomentara
-d5756491-8b4d-451c-8200-04c364f2a82f;Sport-nova;ognjen;6/27/2017;nemaRoditelja;Careeeeeee;0;0;False;False;nemaPodkomentara|803775bb-7fc6-486b-88ea-0e561155947e
+1ba241b6-5471-49bc-b692-5cf74c2b2e06;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;Bukvalno ne mogu da poverujem;0;0;False;False;nemaPodkomentara|08d10cc8-8db6-4b27-b242-574b53299cd1|39f43cf7-898d-429a-9b4a-a394d2024e56
+6aa27b36-858a-45bc-9c4b-f2bc4419a9de;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;Srecan sam;0;0;False;False;nemaPodkomentara

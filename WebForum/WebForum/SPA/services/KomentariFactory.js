@@ -10,9 +10,10 @@
         })
     }
 
-    factory.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara, autor) {
+    factory.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara, autor, temaKojojPripada) {
         return $http.post('/api/Komentari/DodajPodkomentar', {
             RoditeljskiKomentar: IdRoditelja,
+            TemaKojojPripada: temaKojojPripada,
             Tekst: tekstPodkomentara,
             Autor: autor
         })

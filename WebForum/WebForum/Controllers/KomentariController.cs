@@ -115,6 +115,7 @@ namespace WebForum.Controllers
                                     podkomentar.NegativniGlasovi = Int32.Parse(podkomentarTokens[6]);
                                     podkomentar.Izmenjen = bool.Parse(podkomentarTokens[7]);
                                     podkomentar.Obrisan = bool.Parse(podkomentarTokens[8]);
+                                    podkomentar.TemaKojojPripada = podkomentarTokens[9];
 
                                     listaPodkomentara.Add(podkomentar);
                                 }
@@ -177,7 +178,7 @@ namespace WebForum.Controllers
 
             // Upis u podkomentari.txt
             StreamWriter swPodkomentari = dbOperater.getWriter("podkomentari.txt");
-            swPodkomentari.WriteLine(podkomentar.RoditeljskiKomentar+";"+podkomentar.Id+";"+podkomentar.Autor+";"+podkomentar.DatumKomentara.ToShortDateString()+";"+podkomentar.Tekst+";"+podkomentar.PozitivniGlasovi.ToString()+";"+podkomentar.NegativniGlasovi.ToString()+";"+podkomentar.Izmenjen.ToString()+";"+podkomentar.Obrisan.ToString());
+            swPodkomentari.WriteLine(podkomentar.RoditeljskiKomentar+";"+podkomentar.Id+";"+podkomentar.Autor+";"+podkomentar.DatumKomentara.ToShortDateString()+";"+podkomentar.Tekst+";"+podkomentar.PozitivniGlasovi.ToString()+";"+podkomentar.NegativniGlasovi.ToString()+";"+podkomentar.Izmenjen.ToString()+";"+podkomentar.Obrisan.ToString()+";"+podkomentar.TemaKojojPripada);
 
             swPodkomentari.Close();
             dbOperater.Writer.Close();

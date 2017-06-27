@@ -1,4 +1,4 @@
-Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;nePostoje|550bf78a-3153-4a37-91ab-44527c13406c|818c9b93-be93-45fb-9568-67725aba0e07
+Sport;Nba draft 2017;Tekst;ognjen;Nba draft za 2017 godinu ce se odrzati na neki tamo datum;6/22/2017;5;1;nePostoje|1ba241b6-5471-49bc-b692-5cf74c2b2e06|6aa27b36-858a-45bc-9c4b-f2bc4419a9de
 Sport;Ajmo bree zvezda;Tekst;ognjen;Zvezda dobila partiazan;6/22/2017;200;150;nePostoje
 Nauka;Otkriven lek za sidu;Tekst;sofija;Lek za sidu je otkriven;6/22/2017;5000;2;nePostoje
 Sport;Nova tema;Tekst;ognjen;Najnovija tema iz sporta batenga moj;6/24/2017 11:15:49 PM;0;0;nePostoje
@@ -7,7 +7,7 @@ Knjizevnost;Pogledajte na ovom linku novu temu iz knjizevnosti;Link;ognjen;https
 Sport;Nastup bittersweeta na ulicnim sviracima;Link;ognjen;https://www.youtube.com/watch?v=1sOytNdWMI4;6/25/2017;0;0;nePostoje
 Knjizevnost;Najnovija knjiga;Tekst;ognjen;Najnovija knjiga neka tamo se pojavila nekad;6/25/2017;0;0;nePostoje
 Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;0;nePostoje
-Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;0;nePostoje|abc4daa6-5ff9-434b-a55a-269b435a61a6|d5756491-8b4d-451c-8200-04c364f2a82f
+Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;0;nePostoje
 Najnoviji podforum;Najnovija tema;Tekst;ognjen;Najnovijaaaa;6/26/2017;0;0;nePostoje
 Knjizevnost;Sofijina tema;Tekst;sofija;Sofijina tema;6/26/2017;0;0;nePostoje
 Najnoviji podforum;Slikovita;Slika;ognjen;Najnoviji podforum-Slikovita.png;6/26/2017;0;0;nePostoje

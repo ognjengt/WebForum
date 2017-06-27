@@ -43,9 +43,10 @@
         });
     }
 
-    $scope.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara) {
+    $scope.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara, podforum, tema) {
         var autor = sessionStorage.getItem("username");
-        KomentariFactory.dodajPodkomentar(IdRoditelja, tekstPodkomentara, autor).then(function (response) {
+        var temaKojojPripada = podforum + '-' + tema;
+        KomentariFactory.dodajPodkomentar(IdRoditelja, tekstPodkomentara, autor, temaKojojPripada).then(function (response) {
             init();
         });
     }
