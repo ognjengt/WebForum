@@ -1,4 +1,4 @@
-﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, $routeParams) {
+﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
@@ -121,6 +121,15 @@
         TemeFactory.uploadImage(fd, nazivSlike).then(function (response) {
             // upload slike gotov
             console.log(response.data);
+        });
+    }
+
+    $scope.sacuvajPodforum = function (nazivPodforuma, username) {
+        AccountFactory.sacuvajPodforum(nazivPodforuma, username).then(function (response) {
+            if (response.data == false) {
+                alert('Vec pratite ovaj podforum!');
+            }
+            else alert('Podforum dodat u listu pracenih');
         });
     }
 

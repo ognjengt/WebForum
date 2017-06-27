@@ -211,6 +211,69 @@ namespace WebForum.Controllers
             dbOperater.Reader.Close();
             return listaSacuvanihKomentara;
         }
-        
+
+        [HttpPost]
+        [ActionName("SacuvajPodforum")]
+        public bool SacuvajPodforum([FromBody]PodforumZaCuvanje pfZaCuvanje)
+        {
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+
+            List<string> listaSvihKorisnika = new List<string>();
+            int brojac = 0;
+            int indexZaIzmenu = -1;
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                listaSvihKorisnika.Add(line);
+                brojac++;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == pfZaCuvanje.KorisnikKojiCuva)
+                {
+                    indexZaIzmenu = brojac;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            
+            // splituj tu liniju koja treba da se menja tj na koju treba da se dodaje
+            string[] tokeniOdabranogKorisnika = listaSvihKorisnika[indexZaIzmenu - 1].Split(';');
+            // tokeniOdabranogKorisnika[8] tu se nalazi spisak pracenih podforuma
+            string[] splitterProvere = tokeniOdabranogKorisnika[8].Split('|');
+            // provera ukoliko korisnik vec prati postojeci podforum
+            foreach (string praceniPodforum in splitterProvere)
+            {
+                if (praceniPodforum == pfZaCuvanje.NazivPodforuma)
+                {
+                    return false;
+                }
+            }
+            // otvori bulk writer
+            StreamWriter sw = dbOperater.getBulkWriter("korisnici.txt");
+
+            // tokeniOdabranogKorisnika[8] tu se nalazi spisak pracenih podforuma
+            tokeniOdabranogKorisnika[8] += "|" + pfZaCuvanje.NazivPodforuma;
+
+            // linijaZaUpis se inicijalizuje na pocetku da je korisnicki username
+            string linijaZaUpis = tokeniOdabranogKorisnika[0];
+            // prodji kroz sve tokene odabranog korisnika i upisi ih u liniju, da ne pisem tokeni[0]+';'+tokeni[1] ...
+            for (int i = 1; i < 11; i++)
+            {
+                linijaZaUpis += ";" + tokeniOdabranogKorisnika[i];
+            }
+
+            // ubaci tu izmenjenu liniju na to mesto u listiSvih
+            listaSvihKorisnika[indexZaIzmenu - 1] = linijaZaUpis;
+            // prepisi ceo fajl
+            foreach (string korisnickaLinija in listaSvihKorisnika)
+            {
+                sw.WriteLine(korisnickaLinija);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+        }
+
     }
 }

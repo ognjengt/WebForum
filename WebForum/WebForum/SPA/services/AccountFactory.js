@@ -19,6 +19,13 @@
         });
     }
 
+    factory.sacuvajPodforum = function (nazivPodforuma, username) {
+        return $http.post('/api/Account/SacuvajPodforum', {
+            NazivPodforuma: nazivPodforuma,
+            KorisnikKojiCuva: username
+        });
+    }
+
     factory.getSacuvaneTeme = function (username) {
         return $http.get('/api/Account/GetSnimljeneTeme?username=' + username);
     }

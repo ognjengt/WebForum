@@ -16,4 +16,10 @@ namespace WebForum.Helpers
         public string Email { get; set; }
 
     }
+
+    public class PodforumZaCuvanje
+    {
+        public string NazivPodforuma { get; set; }
+        public string KorisnikKojiCuva { get; set; }
+    }
 }

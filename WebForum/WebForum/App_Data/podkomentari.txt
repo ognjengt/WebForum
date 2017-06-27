@@ -2,3 +2,4 @@
 abc4daa6-5ff9-434b-a55a-269b435a61a6;e32fef2f-d601-4446-be51-231c98f1fc4e;ognjen;6/27/2017;jos jedan podkomentar;0;0;False;False
 abc4daa6-5ff9-434b-a55a-269b435a61a6;157380be-b102-4fa0-a624-67f02825967c;ognjen;6/27/2017;Da li se ponovo poziva init()?;0;0;False;False
 d5756491-8b4d-451c-8200-04c364f2a82f;803775bb-7fc6-486b-88ea-0e561155947e;ognjen;6/27/2017;Idemo ispod ovog;0;0;False;False
+550bf78a-3153-4a37-91ab-44527c13406c;ae0786c3-1b6c-4e8f-bdf6-e54725b961a3;ognjen;6/27/2017;Proba podkomentara;0;0;False;False
