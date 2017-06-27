@@ -3,3 +3,54 @@
         font-weight: 200;
     }
 }
+
+.profile-content{
+
+    .col-md-12{
+        padding-bottom: 50px;
+    }
+    .spisak{
+        width: 100%;
+        min-height: 200px;
+        max-height: auto;
+        background: #fff;
+        box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+        border: 1px solid #ddd;
+
+        margin-top: 20px;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 50px;
+    }
+
+    a{
+        color: $blue;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      a:hover{
+        
+      }
+    .item{
+      width: 90%;
+      min-height: 50px;
+      max-height: auto;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      padding: 7px;
+      padding-left: 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      transition: 0.2s ease;
+      margin-top: 20px;
+
+      p{
+          font-size: 0.78em;
+          color: #000;
+      }
+    }
+    .item:hover{
+      color: #fff;
+      background: $blue;
+    }
+}

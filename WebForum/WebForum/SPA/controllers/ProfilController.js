@@ -23,9 +23,13 @@
                         console.log(response.data);
 
                         AccountFactory.getSacuvaniPodkomentari($routeParams.username).then(function (response) {
-                            $scope.sacuvaniPodkomentari = response.data;
+                            var listaPodkomentara = response.data;
+                            listaPodkomentara.forEach(function (podkomentar) {
+                                $scope.sacuvaniKomentari.push(podkomentar);
+                            })
                             console.log(response.data);
 
+                            //$scope.sacuvaniKomentari.push($scope.sacuvaniPodkomentari);
                             // TODO ispisati sve lajkovane i dislajkovane entitete
 
                         });

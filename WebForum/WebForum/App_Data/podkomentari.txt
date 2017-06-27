@@ -3,3 +3,4 @@
 6aa27b36-858a-45bc-9c4b-f2bc4419a9de;02256f29-fc4b-46cd-9f3e-7c79448fc06d;sofija;6/27/2017;I ja;0;0;False;False;Sport-Nba draft 2017
 1c0df0be-ffab-48ad-9f17-f44d6be72851;f9f3c1f8-45f1-49f8-8207-315f450eb72b;ognjen;6/27/2017;ajde;0;0;False;False;Sport-Nba draft 2017
 bc47b2b4-70d1-4197-a3ac-1feadbb5571a;33f327a9-e0e5-4673-b628-61f7d4530d50;ognjen;6/27/2017;OVAJ SE CUVA BRATEEEEEEEEEEE;0;0;False;False;Najnoviji podforum-novi redovi
+9eafab54-1d8a-4104-9a58-50a500e5d7c5;3109292d-a66d-44c0-baa6-9405f7f8a4ef;ognjen;6/27/2017;Ajde ispod;0;0;False;False;Sport-Nastup bittersweeta na ulicnim sviracima

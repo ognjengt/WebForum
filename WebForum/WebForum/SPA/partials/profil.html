@@ -1,7 +1,7 @@
 ﻿<div class="container-fluid" ng-show="ulogovan">
   <div class="podforumi-header">
       <div class="userProfileDetails">
-        <h1><span>{{userProfile.Ime}} {{userProfile.Prezime}} ({{userProfile.Username}})</span></h1>
+        <h2><span>{{userProfile.Ime}} {{userProfile.Prezime}} ({{userProfile.Username}})</span></h2>
             <h4>{{userProfile.Uloga}}</h4>
             <h4>{{userProfile.Email}}</h4>
             <h4>Telefon: {{userProfile.Telefon}}</h4>
@@ -9,6 +9,67 @@
       </div>
     </div>
 
+    <div class="profile-content">
+        <div class="col-md-12">
+            <div class="row">
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4>Praćeni podforumi</h4>
+                    <div class="repeat-podforumi" ng-repeat="podforum in sacuvaniPodforumi">
+                        <a href="#!/podforumi/{{podforum.Naziv}}">
+                            <div class="item">
+                                <h5>{{podforum.Naziv}}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4>Snimljene teme</h4>
+                    <div class="repeat-teme" ng-repeat="tema in sacuvaneTeme">
+                        <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
+                            <div class="item">
+                                <h5>{{tema.PodforumKomePripada}} - {{tema.Naslov}}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4>Snimljeni komentari</h4>
+                    <div class="repeat-teme" ng-repeat="komentar in sacuvaniKomentari">
+                        <a>
+                            <div class="item">
+                                <p>{{komentar.Tekst}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4>Primljene poruke</h4>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4><i class="ion ion-thumbsup"></i> Lajkovani entiteti</h4>
+                </div>
+            </div>
+            
+
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4><i class="ion ion-thumbsdown"></i> Dislajkovani entiteti</h4>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <div class="container-fluid" ng-show="!ulogovan">

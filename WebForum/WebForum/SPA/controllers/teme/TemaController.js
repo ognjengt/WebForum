@@ -71,6 +71,9 @@
 
     $scope.sacuvajKomentar = function (idKomentara, username) {
         AccountFactory.sacuvajKomentar(idKomentara, username).then(function (response) {
+            if (response.data == false) {
+                alert('Vec ste sacuvali ovaj komentar!');
+            } else alert('Komentar uspesno sacuvan!');
             console.log(response.data);
         });
     }
