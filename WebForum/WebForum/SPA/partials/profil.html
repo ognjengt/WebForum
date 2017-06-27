@@ -15,7 +15,7 @@
             <div class="col-md-3">
                 <div class="spisak">
                     <h4>Praćeni podforumi</h4>
-                    <div class="repeat-podforumi" ng-repeat="podforum in sacuvaniPodforumi">
+                    <div class="repeat-podforumi" ng-repeat="podforum in sacuvaniPodforumi | orderBy:'-'">
                         <a href="#!/podforumi/{{podforum.Naziv}}">
                             <div class="item">
                                 <h5>{{podforum.Naziv}}</h5>
@@ -27,7 +27,7 @@
             <div class="col-md-3">
                 <div class="spisak">
                     <h4>Snimljene teme</h4>
-                    <div class="repeat-teme" ng-repeat="tema in sacuvaneTeme">
+                    <div class="repeat-teme" ng-repeat="tema in sacuvaneTeme | orderBy:'-'">
                         <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
                             <div class="item">
                                 <h5>{{tema.PodforumKomePripada}} - {{tema.Naslov}}</h5>
@@ -39,7 +39,7 @@
             <div class="col-md-3">
                 <div class="spisak">
                     <h4>Snimljeni komentari</h4>
-                    <div class="repeat-teme" ng-repeat="komentar in sacuvaniKomentari">
+                    <div class="repeat-teme" ng-repeat="komentar in sacuvaniKomentari | orderBy:'-'">
                         <a>
                             <div class="item">
                                 <p>{{komentar.Tekst}}</p>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" ng-show="userProfile.Username == korisnik.username">
                 <div class="spisak">
                     <h4>Primljene poruke</h4>
                 </div>

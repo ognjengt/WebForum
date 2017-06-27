@@ -9,7 +9,7 @@
 <div class="container">
   <div class="col-md-12">
     <div class="praceneTeme">
-      <div class="teme-repeat" ng-show="snimljeneTeme" ng-repeat="tema in snimljeneTeme">
+      <div class="teme-repeat" ng-show="snimljeneTeme" ng-repeat="tema in snimljeneTeme | orderBy:'-'">
         <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
         <div class="tema">
           {{tema.PodforumKomePripada}} - {{tema.Naslov}}

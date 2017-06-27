@@ -201,8 +201,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\dislajkovaneTeme.txt" />
+    <Content Include="App_Data\dislajkovaniKomentari.txt" />
     <Content Include="App_Data\komentari.txt" />
     <Content Include="App_Data\korisnici.txt" />
+    <Content Include="App_Data\lajkovaneTeme.txt" />
+    <Content Include="App_Data\lajkovaniKomentari.txt" />
     <Content Include="App_Data\podforumi.txt" />
     <Content Include="App_Data\podkomentari.txt" />
     <Content Include="App_Data\teme.txt" />

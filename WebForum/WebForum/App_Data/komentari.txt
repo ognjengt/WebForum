@@ -5,4 +5,4 @@
 bc47b2b4-70d1-4197-a3ac-1feadbb5571a;Najnoviji podforum-novi redovi;ognjen;6/27/2017;nemaRoditelja;Evo ga jedan glavni;0;0;False;False;nemaPodkomentara|33f327a9-e0e5-4673-b628-61f7d4530d50
 2aedc3cc-7b2a-45e5-af44-12ddb6e16676;Sport-Nova tema;ognjen;6/27/2017;nemaRoditelja;Brateeenga mooj;0;0;False;False;nemaPodkomentara
 9eafab54-1d8a-4104-9a58-50a500e5d7c5;Sport-Nastup bittersweeta na ulicnim sviracima;ognjen;6/27/2017;nemaRoditelja;Poz;0;0;False;False;nemaPodkomentara|3109292d-a66d-44c0-baa6-9405f7f8a4ef
-48cb67d5-da07-4c15-8f88-e82704aca582;Knjizevnost-Knjiga je znanje!;sofija;6/27/2017;nemaRoditelja;Vredi procitati!;0;0;False;False;nemaPodkomentara
+48cb67d5-da07-4c15-8f88-e82704aca582;Knjizevnost-Knjiga je znanje!;sofija;6/27/2017;nemaRoditelja;Vredi procitati!;0;0;False;False;nemaPodkomentara|cde84829-e313-4075-a962-803bd8417c43
