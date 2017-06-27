@@ -13,6 +13,7 @@ namespace WebForum.Controllers
     public class KomentariController : ApiController
     {
         DbOperater dbOperater = new DbOperater();
+        DbOperater dbOperaterPodkomentari = new DbOperater();
 
         [HttpPost]
         [ActionName("DodajKomentarNaTemu")]
@@ -52,6 +53,7 @@ namespace WebForum.Controllers
             k.PozitivniGlasovi = 0;
             k.Podkomentari = new List<Komentar>();
             k.RoditeljskiKomentar = "nemaRoditelja";
+            k.Obrisan = false;
 
             // Prvo ako ova tema nema komentar tj ako joj je spliter listaSvihTema[indexZaIzmenu-1][8] == 'nePostoje', obrisi to nePostoje
 
@@ -67,7 +69,7 @@ namespace WebForum.Controllers
 
             // Upis u komentari.txt
             StreamWriter swKomentari = dbOperater.getWriter("komentari.txt");
-            swKomentari.WriteLine(k.Id + ";" + k.TemaKojojPripada + ";" + k.Autor + ";" + k.DatumKomentara.ToShortDateString() +";"+k.RoditeljskiKomentar+";"+ k.Tekst + ";" + k.PozitivniGlasovi.ToString() +";"+ k.NegativniGlasovi.ToString() +";"+ k.Izmenjen.ToString());
+            swKomentari.WriteLine(k.Id + ";" + k.TemaKojojPripada + ";" + k.Autor + ";" + k.DatumKomentara.ToShortDateString() +";"+k.RoditeljskiKomentar+";"+ k.Tekst + ";" + k.PozitivniGlasovi.ToString() +";"+ k.NegativniGlasovi.ToString() +";"+ k.Izmenjen.ToString()+";"+k.Obrisan.ToString()+";"+"nemaPodkomentara");
 
             swKomentari.Close();
             dbOperater.Writer.Close();
@@ -81,19 +83,105 @@ namespace WebForum.Controllers
             string line = "";
 
             List<Komentar> listaKomentaraZaTemu = new List<Komentar>();
+            List<Komentar> listaPodkomentara = new List<Komentar>();
 
             while ((line = sr.ReadLine()) != null)
             {
                 string[] splitter = line.Split(';');
+                //ovaj splitter splituje komentare
                 if (splitter[1] == idTeme)
                 {
-                    listaKomentaraZaTemu.Add(new Komentar(splitter[0],splitter[1],splitter[2],DateTime.Parse(splitter[3]),splitter[4],new List<Komentar>(),splitter[5],Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),bool.Parse(splitter[8])));
+                    listaPodkomentara = new List<Komentar>();
+                    string[] ideviPodkomentara = splitter[10].Split('|');
+                    foreach (string idPodkomentaraUKomentarima in ideviPodkomentara)
+                    {
+                        if (idPodkomentaraUKomentarima != "nemaPodkomentara")
+                        {
+                            StreamReader readerPodkomentara = dbOperaterPodkomentari.getReader("podkomentari.txt");
+                            string podkomentarLinija = "";
+                            while ( (podkomentarLinija = readerPodkomentara.ReadLine()) != null )
+                            {
+
+                                string[] podkomentarTokens = podkomentarLinija.Split(';');
+                                if (podkomentarTokens[1] == idPodkomentaraUKomentarima)
+                                {
+                                    Komentar podkomentar = new Komentar();
+                                    podkomentar.Id = podkomentarTokens[1];
+                                    podkomentar.RoditeljskiKomentar = podkomentarTokens[0];
+                                    podkomentar.Autor = podkomentarTokens[2];
+                                    podkomentar.DatumKomentara = DateTime.Parse(podkomentarTokens[3]);
+                                    podkomentar.Tekst = podkomentarTokens[4];
+                                    podkomentar.PozitivniGlasovi = Int32.Parse(podkomentarTokens[5]);
+                                    podkomentar.NegativniGlasovi = Int32.Parse(podkomentarTokens[6]);
+                                    podkomentar.Izmenjen = bool.Parse(podkomentarTokens[7]);
+                                    podkomentar.Obrisan = bool.Parse(podkomentarTokens[8]);
+
+                                    listaPodkomentara.Add(podkomentar);
+                                }
+                            }
+                            readerPodkomentara.Close();
+                            dbOperaterPodkomentari.Reader.Close();
+                        }
+                        
+                    }
+                    listaKomentaraZaTemu.Add(new Komentar(splitter[0],splitter[1],splitter[2],DateTime.Parse(splitter[3]),splitter[4],listaPodkomentara,splitter[5],Int32.Parse(splitter[6]),Int32.Parse(splitter[7]),bool.Parse(splitter[8]), bool.Parse(splitter[9])));
                 }
             }
 
             sr.Close();
             dbOperater.Reader.Close();
             return listaKomentaraZaTemu;
+        }
+
+        [ActionName("DodajPodkomentar")]
+        public Komentar DodajPodkomentar([FromBody]Komentar podkomentar)
+        {
+            List<string> listaSvihKomentara = new List<string>();
+            int brojac = 0;
+            int indexZaIzmenu = -1;
+
+            StreamReader sr = dbOperater.getReader("komentari.txt");
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                // NE zaboravi: mora proci kroz sve da bi dodao u listuSvihKomentara, kako bi mogao celu listu ponovo da upisem
+                listaSvihKomentara.Add(line);
+                brojac++;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == podkomentar.RoditeljskiKomentar)
+                {
+                    indexZaIzmenu = brojac;
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            // Upis u komentari.txt tj dodavanje novog podkomentara na kraj
+            StreamWriter sw = dbOperater.getBulkWriter("komentari.txt");
+
+            podkomentar.Id = Guid.NewGuid().ToString();
+            podkomentar.DatumKomentara = DateTime.Now;
+            podkomentar.Izmenjen = false;
+            podkomentar.NegativniGlasovi = 0;
+            podkomentar.PozitivniGlasovi = 0;
+            podkomentar.Obrisan = false;
+
+            listaSvihKomentara[indexZaIzmenu - 1] += "|" + podkomentar.Id;
+
+            foreach (string komentar in listaSvihKomentara)
+            {
+                sw.WriteLine(komentar);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            // Upis u podkomentari.txt
+            StreamWriter swPodkomentari = dbOperater.getWriter("podkomentari.txt");
+            swPodkomentari.WriteLine(podkomentar.RoditeljskiKomentar+";"+podkomentar.Id+";"+podkomentar.Autor+";"+podkomentar.DatumKomentara.ToShortDateString()+";"+podkomentar.Tekst+";"+podkomentar.PozitivniGlasovi.ToString()+";"+podkomentar.NegativniGlasovi.ToString()+";"+podkomentar.Izmenjen.ToString()+";"+podkomentar.Obrisan.ToString());
+
+            swPodkomentari.Close();
+            dbOperater.Writer.Close();
+            return podkomentar;
         }
     }
 }

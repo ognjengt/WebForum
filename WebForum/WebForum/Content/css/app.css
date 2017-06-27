@@ -405,6 +405,54 @@
           font-size: 1.3em; }
         .komentari .komentar .glasovi .down i:hover {
           color: #e74c3c; }
+  .komentari .podkomentari {
+    padding-left: 40px; }
+    .komentari .podkomentari .podkomentar {
+      width: 70%;
+      min-height: 100px;
+      max-height: auto;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 1px 5px 5px 10px;
+      margin-top: 20px; }
+      .komentari .podkomentari .podkomentar .korisnik {
+        padding-left: 50px;
+        position: relative; }
+        .komentari .podkomentari .podkomentar .korisnik .izmenjen {
+          color: #0060FF; }
+        .komentari .podkomentari .podkomentar .korisnik p {
+          padding-left: 10px;
+          font-size: 0.9em; }
+        .komentari .podkomentari .podkomentar .korisnik span {
+          margin-left: 20px;
+          font-weight: 300; }
+      .komentari .podkomentari .podkomentar .glasovi {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        height: 100px;
+        width: 30px; }
+        .komentari .podkomentari .podkomentar .glasovi i {
+          transition: 0.2s ease;
+          color: #606060;
+          cursor: pointer; }
+        .komentari .podkomentari .podkomentar .glasovi .thumbsnum {
+          font-size: 0.8em !important; }
+        .komentari .podkomentari .podkomentar .glasovi .up {
+          width: 50px;
+          padding: 0; }
+          .komentari .podkomentari .podkomentar .glasovi .up i {
+            font-size: 1.3em; }
+          .komentari .podkomentari .podkomentar .glasovi .up i:hover {
+            color: #61DC73; }
+        .komentari .podkomentari .podkomentar .glasovi .down {
+          width: 50px;
+          padding: 10px 0 0 0; }
+          .komentari .podkomentari .podkomentar .glasovi .down i {
+            font-size: 1.3em; }
+          .komentari .podkomentari .podkomentar .glasovi .down i:hover {
+            color: #e74c3c; }
   .komentari .ostaviKomentar {
     margin-top: 20px; }
   .komentari .odgovoriNaKomentarButton {
@@ -415,7 +463,8 @@
       height: 40px; }
   .komentari .odgovoriNaKomentar {
     padding-top: 10px;
-    padding-left: 30px; }
+    padding-left: 30px;
+    padding-bottom: 30px; }
     .komentari .odgovoriNaKomentar .button-green {
       width: 200px; }
     .komentari .odgovoriNaKomentar textarea {

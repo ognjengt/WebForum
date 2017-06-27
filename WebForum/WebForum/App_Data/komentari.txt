@@ -1,12 +1,4 @@
-﻿399d933f-8ac7-41fb-92ad-a84ccd53ec3c;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;Desi bre najnobija temo;0;0;False
-93001a6d-d150-4061-9224-4f58d6867e53;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Pozdrav;0;0;False
-23b46ef0-4e72-4ce9-af18-13fd0a4f355e;Najnoviji podforum-Najnovija tema;sofija;6/26/2017;nemaRoditelja;Jos jedan comm;0;0;False
-9bf6b9f1-01c8-450a-9723-f5eb2f3eaca7;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;pooooozz;0;0;False
-4c0af8ea-f4fc-4adc-b632-7253a7e1f60c;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Odlicna tema;0;0;False
-deb24575-1202-4d2e-b609-02892801908c;Sport-Ajmo bree zvezda;ognjen;6/26/2017;nemaRoditelja;Bravo breee;0;0;False
-224171ab-dd59-481a-aba5-c0d9052f754e;Najnoviji podforum-Nova sa slikom;ognjen;6/26/2017;nemaRoditelja;Dobra slika;0;0;False
-ca0efb38-20ab-4bec-b952-5f052ec5acf3;Knjizevnost-Sofijina tema;ognjen;6/26/2017;nemaRoditelja;Jos jedan komentar;0;0;False
-4ba189aa-e446-48c2-9bbf-4559ab6d9430;Najnoviji podforum-Najnovija tema;ognjen;6/26/2017;nemaRoditelja;najnoviji komentar;0;0;False
-fb750de3-923f-41c4-a8b1-185eb72584c8;Najnoviji podforum-novi redovi;obican;6/26/2017;nemaRoditelja;jedan;0;0;False
-e729cd8b-2f87-4893-b3a9-cffad43adef6;Najnoviji podforum-novi redovi;ognjen;6/26/2017;nemaRoditelja;Moze jos jedan;0;0;False
-26e26b68-d51a-42dd-9bb7-c689a1d28ff8;Najnoviji podforum-Slikovita;ognjen;6/26/2017;nemaRoditelja;Odlicna slika;0;0;False
+550bf78a-3153-4a37-91ab-44527c13406c;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;Proba komentara;0;0;False;False;nemaPodkomentara
+abc4daa6-5ff9-434b-a55a-269b435a61a6;Sport-nova;ognjen;6/27/2017;nemaRoditelja;Novi komentar;0;0;False;False;nemaPodkomentara|b70eec4e-cdb4-4ba9-9df2-acea975e747e|e32fef2f-d601-4446-be51-231c98f1fc4e|157380be-b102-4fa0-a624-67f02825967c
+818c9b93-be93-45fb-9568-67725aba0e07;Sport-Nba draft 2017;ognjen;6/27/2017;nemaRoditelja;novi komentar;0;0;False;False;nemaPodkomentara
+d5756491-8b4d-451c-8200-04c364f2a82f;Sport-nova;ognjen;6/27/2017;nemaRoditelja;Careeeeeee;0;0;False;False;nemaPodkomentara|803775bb-7fc6-486b-88ea-0e561155947e

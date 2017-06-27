@@ -17,8 +17,9 @@ namespace WebForum.Models
         public int PozitivniGlasovi { get; set; }
         public int NegativniGlasovi { get; set; }
         public bool Izmenjen { get; set; }
+        public bool Obrisan { get; set; }
 
-        public Komentar(string id, string temaKojojPripada, string autor, DateTime datum, string roditeljskiKomentar, List<Komentar> podkomentari, string tekst, int pozitivni,int negativni, bool izmenjen)
+        public Komentar(string id, string temaKojojPripada, string autor, DateTime datum, string roditeljskiKomentar, List<Komentar> podkomentari, string tekst, int pozitivni,int negativni, bool izmenjen, bool obrisan)
         {
             this.Id = id;
             this.TemaKojojPripada = temaKojojPripada;
@@ -30,6 +31,9 @@ namespace WebForum.Models
             this.PozitivniGlasovi = pozitivni;
             this.NegativniGlasovi = negativni;
             this.Izmenjen = izmenjen;
+            this.Obrisan = obrisan;
         }
+
+        public Komentar() { }
     }
 }

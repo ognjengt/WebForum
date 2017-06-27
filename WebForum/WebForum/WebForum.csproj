@@ -204,6 +204,7 @@
     <Content Include="App_Data\komentari.txt" />
     <Content Include="App_Data\korisnici.txt" />
     <Content Include="App_Data\podforumi.txt" />
+    <Content Include="App_Data\podkomentari.txt" />
     <Content Include="App_Data\teme.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\app.css" />

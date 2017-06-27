@@ -23,7 +23,10 @@
                 console.log(response.data);
                 $scope.komentari = response.data;
                 $scope.komentari.forEach(function (komentar) {
-                    komentar.DatumKomentara = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
+                    komentar.DatumKomentara = new Date(komentar.DatumKomentara).toLocaleDateString();
+                    komentar.Podkomentari.forEach(function (podkomentar) {
+                        podkomentar.DatumKomentara = new Date(podkomentar.DatumKomentara).toLocaleDateString();
+                    });
                 })
             });
         });
@@ -36,6 +39,13 @@
         KomentariFactory.ostaviKomentarNaTemu(podforum, naslovTeme, tekstKomentara, username).then(function (response) {
             console.log(response.data);
             $scope.tekstKomentara = "";
+            init();
+        });
+    }
+
+    $scope.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara) {
+        var autor = sessionStorage.getItem("username");
+        KomentariFactory.dodajPodkomentar(IdRoditelja, tekstPodkomentara, autor).then(function (response) {
             init();
         });
     }

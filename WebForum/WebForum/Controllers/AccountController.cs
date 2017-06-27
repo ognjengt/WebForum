@@ -197,7 +197,7 @@ namespace WebForum.Controllers
                                 if (komentarLineSplitter[0] == komentarId)
                                 {
                                     // NOTE: kada dodajem ovde komentar, necu dodavati njegove podkomentare, posto to nije bitno za tu stranicu, korisnik treba samo da ima uvid u jedan komentar
-                                    listaSacuvanihKomentara.Add(new Komentar(komentarLineSplitter[0], komentarLineSplitter[1], komentarLineSplitter[2], DateTime.Parse(komentarLineSplitter[3]), komentarLineSplitter[4], new List<Komentar>(), komentarLineSplitter[5], Int32.Parse(komentarLineSplitter[6]), Int32.Parse(komentarLineSplitter[7]), bool.Parse(komentarLineSplitter[8])));
+                                    listaSacuvanihKomentara.Add(new Komentar(komentarLineSplitter[0], komentarLineSplitter[1], komentarLineSplitter[2], DateTime.Parse(komentarLineSplitter[3]), komentarLineSplitter[4], new List<Komentar>(), komentarLineSplitter[5], Int32.Parse(komentarLineSplitter[6]), Int32.Parse(komentarLineSplitter[7]), bool.Parse(komentarLineSplitter[8]), bool.Parse(komentarLineSplitter[9])));
                                     break;
                                 }
                             }

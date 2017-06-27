@@ -10,6 +10,14 @@
         })
     }
 
+    factory.dodajPodkomentar = function (IdRoditelja, tekstPodkomentara, autor) {
+        return $http.post('/api/Komentari/DodajPodkomentar', {
+            RoditeljskiKomentar: IdRoditelja,
+            Tekst: tekstPodkomentara,
+            Autor: autor
+        })
+    }
+
     factory.getKomentariZaTemu = function (podforum, tema) {
         return $http.get('/api/Komentari/GetKomentariZaTemu/?idTeme=' + podforum + '-' + tema);
     }

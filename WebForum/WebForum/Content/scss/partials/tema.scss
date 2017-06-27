@@ -137,6 +137,75 @@
     
   }
 
+  .podkomentari{
+    padding-left: 40px;
+    .podkomentar{
+      width: 70%;
+      min-height: 100px;
+      max-height: auto;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 1px 5px 5px 10px;
+      margin-top: 20px;
+
+      .korisnik{
+      padding-left: 50px;
+      position: relative;
+
+      .izmenjen{
+        color: $blue;
+          }
+          p{
+            padding-left: 10px;
+            font-size: 0.9em;
+          }
+          span{
+            margin-left: 20px;
+            font-weight: 300;
+          }
+      }
+
+      .glasovi{
+        position: absolute;
+        top: 0;
+        left: 5px;
+        height: 100px;
+        width: 30px;
+        i{
+          transition: 0.2s ease;
+          color: $mainText;
+          cursor: pointer;
+        }
+
+        .thumbsnum{
+          font-size: 0.8em !important;
+        }
+
+        .up{
+          width:50px;
+          padding: 0;
+          i{
+            font-size: 1.3em;
+          }
+          i:hover{
+          color: $green;
+        }
+        }
+        .down{
+          width:50px;
+          padding: 10px 0 0 0;
+          i{
+            font-size: 1.3em;
+          }
+          i:hover{
+          color: $red;
+        }
+        }
+      }
+    }
+  }
+
   .ostaviKomentar{
     margin-top: 20px;
   }
@@ -152,6 +221,7 @@
   .odgovoriNaKomentar{
     padding-top: 10px;
     padding-left: 30px;
+    padding-bottom: 30px;
 
     .button-green{
       width: 200px;

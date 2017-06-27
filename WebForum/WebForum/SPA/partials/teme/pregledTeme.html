@@ -22,7 +22,7 @@
     <div class="komentari">
 
     <div class="komentar-repeat" ng-repeat="komentar in komentari">
-      <div class="komentar">
+      <div class="komentar" ng-show="!komentar.Obrisan">
         <div class="korisnik">
           <div class="glasovi">
             <div class="up">
@@ -34,7 +34,7 @@
               <div class="thumbsnum">{{komentar.NegativniGlasovi}}</div>
             </div>
           </div>
-          <h5><b><a href="#!/profil/{{komentar.Autor}}">{{komentar.Autor}}</a></b> <span>{{komentar.DatumKomentara}}</span> <span class="izmenjen" ng-show="komentar.izmenjen">izmenjen</span></h5>
+          <h5><b><a href="#!/profil/{{komentar.Autor}}">{{komentar.Autor}}</a></b> <span>{{komentar.DatumKomentara}}</span> <span class="izmenjen" ng-show="komentar.Izmenjen">izmenjen</span></h5>
           <p>
             {{komentar.Tekst}}
           </p>
@@ -46,9 +46,35 @@
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
         <h5>Odgovori na komentar</h5>
         <div class="form-group">
-          <textarea class="form-control" placeholder="Napišite komentar"></textarea>
+          <textarea class="form-control" placeholder="Napišite komentar" ng-model="podkomentar.tekstKomentara"></textarea>
         </div>
-        <button class="btn button-green">Odgovori</button>
+        <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara)">Odgovori</button>
+      </div>
+
+      <div class="podkomentari"> 
+        <h5 ng-show="komentar.Podkomentari.length != 0">Podkomentari</h5>
+        <div class="podkomentari-repeat" ng-repeat="podkomentar in komentar.Podkomentari">
+
+          <div class="podkomentar">
+            <div class="korisnik">
+              <div class="glasovi">
+                <div class="up">
+                  <i class="ion ion-thumbsup"></i>
+                  <div class="thumbsnum">{{podkomentar.PozitivniGlasovi}}</div>
+                </div>
+                <div class="down">
+                  <i class="ion ion-thumbsdown"></i>
+                  <div class="thumbsnum">{{podkomentar.NegativniGlasovi}}</div>
+                </div>
+              </div>
+              <h5><b><a href="#!/profil/{{podkomentar.Autor}}">{{podkomentar.Autor}}</a></b> <span>{{podkomentar.DatumKomentara}}</span> <span class="izmenjen" ng-show="podkomentar.Izmenjen">izmenjen</span></h5>
+              <p>
+                {{podkomentar.Tekst}}
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
