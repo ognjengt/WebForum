@@ -544,5 +544,95 @@ namespace WebForum.Controllers
 
             return true;
         }
+
+        [HttpPost]
+        [ActionName("IzmeniKomentar")]
+        public bool IzmeniKomentar([FromBody]Komentar komentarZaIzmenu)
+        {
+            StreamReader sr = dbOperater.getReader("komentari.txt");
+            List<string> listaSvihKomentara = new List<string>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == komentarZaIzmenu.Id)
+                {
+                    nadjen = true;
+                    string izmenjen = "";
+                    if (splitter[8] == "True")
+                    {
+                        izmenjen = "True";
+                    }
+                    else izmenjen = komentarZaIzmenu.Izmenjen.ToString();
+                    listaSvihKomentara.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3] + ";" + splitter[4] + ";" + komentarZaIzmenu.Tekst + ";" + splitter[6] + ";" + splitter[7] + ";" + izmenjen + ";" + splitter[9] + ";" + splitter[10]);
+                }
+                if (!nadjen)
+                {
+                    listaSvihKomentara.Add(line);
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("komentari.txt");
+
+            foreach (string linijaKomentara in listaSvihKomentara)
+            {
+                sw.WriteLine(linijaKomentara);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+        }
+
+        [HttpPost]
+        [ActionName("IzmeniPodkomentar")]
+        public bool IzmeniPodkomentar([FromBody]Komentar komentarZaIzmenu)
+        {
+            StreamReader sr = dbOperater.getReader("podkomentari.txt");
+            List<string> listaSvihPodkomentara = new List<string>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+
+                string[] splitter = line.Split(';');
+                if (splitter[1] == komentarZaIzmenu.Id)
+                {
+                    nadjen = true;
+                    string izmenjen = "";
+                    if (splitter[7] == "True")
+                    {
+                        izmenjen = "True";
+                    }
+                    else izmenjen = komentarZaIzmenu.Izmenjen.ToString();
+                    listaSvihPodkomentara.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3] + ";" + komentarZaIzmenu.Tekst + ";" + splitter[5] + ";" + splitter[6] + ";" + izmenjen + ";" + splitter[8] + ";" + splitter[9]);
+                }
+                if (!nadjen)
+                {
+                    listaSvihPodkomentara.Add(line);
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("podkomentari.txt");
+
+            foreach (string linijaPodkomentara in listaSvihPodkomentara)
+            {
+                sw.WriteLine(linijaPodkomentara);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+        }
     }
 }

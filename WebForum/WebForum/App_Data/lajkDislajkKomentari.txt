@@ -7,3 +7,8 @@ sofija;1ba241b6-5471-49bc-b692-5cf74c2b2e06;like
 sofija;06f38480-7418-4af4-8999-be9e2f2f3ae0;like
 sofija;39f43cf7-898d-429a-9b4a-a394d2024e56;like
 sofija;cde84829-e313-4075-a962-803bd8417c43;like
+ognjen;0147b2b5-2b8e-47ee-b4a7-42188371049e;like
+obican;af013c19-9d0e-4b68-841d-e7ddb901f1a7;like
+ognjen;af013c19-9d0e-4b68-841d-e7ddb901f1a7;like
+ognjen;f22d0ea8-ee9b-48a0-9894-095e88ac4ee4;like
+obican;14e264d4-f4c6-4eb7-a2b3-392397a08aa7;like

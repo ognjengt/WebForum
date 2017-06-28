@@ -14,6 +14,10 @@ d1f9862a-4016-4568-ab23-944fc4d401c2;90b262cd-52df-4891-a0b1-119a4d7a66dd;ognjen
 92ee0afb-76ef-4332-9216-b0c65422a2d4;969204b5-33de-478e-abf1-b152215cd5f2;ognjen;6/28/2017;podkomentarrrr;0;0;False;True;Najnoviji podforum-novi redovi
 92ee0afb-76ef-4332-9216-b0c65422a2d4;245862f4-f50f-4fe6-a75c-91cfaf08a9e9;ognjen;6/28/2017;asdasdasdas;0;0;False;True;Najnoviji podforum-novi redovi
 92ee0afb-76ef-4332-9216-b0c65422a2d4;44315e78-8864-4747-8da2-0d41f8727473;ognjen;6/28/2017;jos jedan;0;0;False;True;Najnoviji podforum-novi redovi
-92ee0afb-76ef-4332-9216-b0c65422a2d4;726c90b7-9acf-477b-ad79-68a38f559113;ognjen;6/28/2017;podkomentar za test;0;0;False;False;Najnoviji podforum-novi redovi
+92ee0afb-76ef-4332-9216-b0c65422a2d4;726c90b7-9acf-477b-ad79-68a38f559113;ognjen;6/28/2017;podkomentar za test;0;0;False;True;Najnoviji podforum-novi redovi
 038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8;caa17fa6-e308-4890-91d3-ff557f07f555;ognjen;6/28/2017;Bla bla bla bla bla;0;0;False;True;Najnoviji podforum-novi redovi
 038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8;cef401af-89b3-440a-aab1-d193eeae2a97;ognjen;6/28/2017;baaaaaaaaaaaaaaaaaaaaaaaaaaaa;0;0;False;True;Najnoviji podforum-novi redovi
+fc52efac-5770-4c06-8651-a89bb43c99bb;8baadd20-ec25-4162-bdc4-ace5118ca965;ognjen;6/28/2017;podkom za izmenu;0;0;False;False;Sport-nova
+0147b2b5-2b8e-47ee-b4a7-42188371049e;af013c19-9d0e-4b68-841d-e7ddb901f1a7;ognjen;6/28/2017;ali moj ostaje ne promenjen;2;0;False;False;Najnoviji podforum-novi redovi
+19e7b14b-085b-4d8e-a23a-4ff02afed6a3;c07d0187-5ec6-4ba1-9ce3-23bb14264cc5;obican;6/28/2017;Da li se menja na korisnickom;0;0;True;False;Najnoviji podforum-novi redovi
+0147b2b5-2b8e-47ee-b4a7-42188371049e;f22d0ea8-ee9b-48a0-9894-095e88ac4ee4;obican;6/28/2017;Admin menja treba da ostane izmenjen;1;0;True;False;Najnoviji podforum-novi redovi

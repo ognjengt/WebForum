@@ -5,6 +5,8 @@
 
     function init() {
         $scope.tema = {};
+        $scope.komentarZaIzmenu = '';
+        $scope.podkomentarZaIzmenu = '';
 
         TemeFactory.getTemaByNaziv($scope.nazivTeme, $scope.nazivPodforuma).then(function (response) {
             $scope.tema = response.data;
@@ -123,6 +125,46 @@
 
     $scope.obrisiKomentar = function (komentar) {
         KomentariFactory.obrisiKomentar(komentar).then(function (response) {
+            console.log(response.data);
+            init();
+        });
+    }
+
+    // -------------------------------------------------------------------------------- Izmena
+
+    $scope.setKomentarZaIzmenu = function (komentar) {
+        $scope.komentarZaIzmenu = komentar.Id;
+        $scope.tekstKomentaraZaIzmenu = komentar.Tekst;
+    }
+
+    $scope.setPodkomentarZaIzmenu = function (komentar) {
+        $scope.podkomentarZaIzmenu = komentar.Id;
+        $scope.tekstPodkomentaraZaIzmenu = komentar.Tekst;
+    }
+
+    $scope.izmeniKomentar = function (idKomentara, tekstKomentara, tipKorisnika) {
+
+        var prikaziDaJeIzmenjeno = false;
+        // prodji kroz listu na sesiji za koje je taj korisnik odgovorni moderator, ako u toj listi nigde ne postoji ime ovog podforuma,
+        // stavi prikaziDaJeIzmenjeno = true, ili ako mu je uloga obican korisnik
+        if (tipKorisnika == 'Korisnik') {
+            prikaziDaJeIzmenjeno = true;
+        }
+        KomentariFactory.izmeniKomentar(idKomentara, tekstKomentara, prikaziDaJeIzmenjeno).then(function (response) {
+            console.log(response.data);
+            init();
+        });
+    }
+
+    $scope.izmeniPodkomentar = function (idKomentara, tekstKomentara, tipKorisnika) {
+
+        var prikaziDaJeIzmenjeno = false;
+        // prodji kroz listu na sesiji za koje je taj korisnik odgovorni moderator, ako u toj listi nigde ne postoji ime ovog podforuma,
+        // stavi prikaziDaJeIzmenjeno = true, ili ako mu je uloga obican korisnik
+        if (tipKorisnika == 'Korisnik') {
+            prikaziDaJeIzmenjeno = true;
+        }
+        KomentariFactory.izmeniPodkomentar(idKomentara, tekstKomentara,prikaziDaJeIzmenjeno).then(function (response) {
             console.log(response.data);
             init();
         });

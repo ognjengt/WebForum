@@ -7,11 +7,11 @@ Knjizevnost;Pogledajte na ovom linku novu temu iz knjizevnosti;Link;ognjen;https
 Sport;Nastup bittersweeta na ulicnim sviracima;Link;ognjen;https://www.youtube.com/watch?v=1sOytNdWMI4;6/25/2017;0;0;nePostoje|9eafab54-1d8a-4104-9a58-50a500e5d7c5
 Knjizevnost;Najnovija knjiga;Tekst;ognjen;Najnovija knjiga neka tamo se pojavila nekad;6/25/2017;0;0;nePostoje
 Knjizevnost;Proba inita;Tekst;ognjen;ajmo;6/25/2017;0;1;nePostoje
-Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;1;nePostoje
+Sport;nova;Link;ognjen;asdasdasd;6/25/2017;0;1;nePostoje|fc52efac-5770-4c06-8651-a89bb43c99bb
 Najnoviji podforum;Najnovija tema;Tekst;ognjen;Najnovijaaaa;6/26/2017;1;0;nePostoje
 Knjizevnost;Sofijina tema;Tekst;sofija;Sofijina tema;6/26/2017;0;0;nePostoje
 Najnoviji podforum;Slikovita;Slika;ognjen;Najnoviji podforum-Slikovita.png;6/26/2017;1;0;nePostoje|920a8c17-f9d8-44ce-aec9-0f79b67b9ad6
 Najnoviji podforum;Nova sa slikom;Slika;ognjen;Najnoviji podforum-Nova sa slikom.jpg;6/26/2017;0;0;nePostoje|d1f9862a-4016-4568-ab23-944fc4d401c2
 Najnoviji podforum;Testiranje za nove redove;Tekst;ognjen;noviia{novired}{novired}asd{novired}asd;6/26/2017;3;0;nePostoje
-Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;2;1;nePostoje|bc47b2b4-70d1-4197-a3ac-1feadbb5571a|92ee0afb-76ef-4332-9216-b0c65422a2d4|038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8|1f221b0e-8036-4234-94fd-c0ced2d456ca
+Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;2;1;nePostoje|bc47b2b4-70d1-4197-a3ac-1feadbb5571a|92ee0afb-76ef-4332-9216-b0c65422a2d4|038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8|1f221b0e-8036-4234-94fd-c0ced2d456ca|0147b2b5-2b8e-47ee-b4a7-42188371049e|19e7b14b-085b-4d8e-a23a-4ff02afed6a3|14e264d4-f4c6-4eb7-a2b3-392397a08aa7
 Knjizevnost;Knjiga je znanje!;Link;sofija;http://www.laguna.rs/knjiga_nedelje.html;6/27/2017;1;0;nePostoje|48cb67d5-da07-4c15-8f88-e82704aca582

@@ -26,7 +26,7 @@
         <div class="korisnik">
           <div class="dugmici">
             <div class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajKomentar(komentar.Id,korisnik.username)">Sačuvaj</div>
-            <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == komentar.Autor">Izmeni</div>
+            <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == komentar.Autor" ng-click="setKomentarZaIzmenu(komentar)">Izmeni</div>
             <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == komentar.Autor" ng-click="obrisiKomentar(komentar)">Obriši</div>
           </div>
           <div class="glasovi">
@@ -64,7 +64,7 @@
             <div class="korisnik">
               <div class="dugmici">
                 <div class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajKomentar(podkomentar.Id,korisnik.username)">Sačuvaj</div>
-                <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor">Izmeni</div>
+                <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor" ng-click="setPodkomentarZaIzmenu(podkomentar)">Izmeni</div>
                 <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor" ng-click="obrisiPodkomentar(podkomentar)">Obriši</div>
               </div>
               <div class="glasovi">
@@ -102,4 +102,50 @@
   </div>
   </div>
   
+</div>
+
+<div id="IzmenaModal" ng-show="komentarZaIzmenu != '' ">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Izmeni komentar
+        </div> 
+        <div class="popup-body">
+          <div class="form-group">
+            <label>Izmeni komentar:</label>
+            <textarea type="text" class="form-control" placeholder="Izmeni sadrzaj komentara..." ng-model="tekstKomentaraZaIzmenu"></textarea>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success" ng-click="izmeniKomentar(komentarZaIzmenu,tekstKomentaraZaIzmenu,korisnik.uloga)">Izmeni</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-default" ng-click="komentarZaIzmenu = '';tekstKomentaraZaIzmenu='';">Zatvori</button>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+<div id="IzmenaModal" ng-show="podkomentarZaIzmenu != '' ">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Izmeni komentar
+        </div> 
+        <div class="popup-body">
+          <div class="form-group">
+            <label>Izmeni komentar:</label>
+            <textarea type="text" class="form-control" placeholder="Izmeni sadrzaj komentara..." ng-model="tekstPodkomentaraZaIzmenu"></textarea>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success" ng-click="izmeniPodkomentar(podkomentarZaIzmenu,tekstPodkomentaraZaIzmenu,korisnik.uloga)">Izmeni</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-default" ng-click="podkomentarZaIzmenu = ''; tekstPodkomentaraZaIzmenu='';">Zatvori</button>
+          </div>
+        </div>
+        
+    </div>
+  </div>
 </div>

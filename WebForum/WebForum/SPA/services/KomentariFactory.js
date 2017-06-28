@@ -49,6 +49,22 @@
         });
     }
 
+    factory.izmeniKomentar = function (idKomentara, tekstKomentara, prikaziDaJeIzmenjeno) {
+        return $http.post('/api/Komentari/IzmeniKomentar', {
+            Id: idKomentara,
+            Tekst: tekstKomentara,
+            Izmenjen: prikaziDaJeIzmenjeno
+        });
+    }
+
+    factory.izmeniPodkomentar = function (idKomentara, tekstKomentara, prikaziDaJeIzmenjeno) {
+        return $http.post('/api/Komentari/IzmeniPodkomentar', {
+            Id: idKomentara,
+            Tekst: tekstKomentara,
+            Izmenjen: prikaziDaJeIzmenjeno
+        });
+    }
+
     return factory;
 
 });
