@@ -7,3 +7,6 @@ bc47b2b4-70d1-4197-a3ac-1feadbb5571a;33f327a9-e0e5-4673-b628-61f7d4530d50;ognjen
 48cb67d5-da07-4c15-8f88-e82704aca582;cde84829-e313-4075-a962-803bd8417c43;ognjen;6/28/2017;Fulex;1;0;False;False;Knjizevnost-Knjiga je znanje!
 bc47b2b4-70d1-4197-a3ac-1feadbb5571a;f757d519-eca5-4faa-9343-e948b2d87c4c;ognjen;6/28/2017;Bravo;1;0;False;False;Najnoviji podforum-novi redovi
 1ba241b6-5471-49bc-b692-5cf74c2b2e06;06f38480-7418-4af4-8999-be9e2f2f3ae0;sofija;6/28/2017;novi kom;1;0;False;False;Sport-Nba draft 2017
+d1f9862a-4016-4568-ab23-944fc4d401c2;90b262cd-52df-4891-a0b1-119a4d7a66dd;ognjen;6/28/2017;Novi komentar;0;0;False;False;Najnoviji podforum-Nova sa slikom
+48cb67d5-da07-4c15-8f88-e82704aca582;337a9d7f-09b3-4e02-af1f-036e64256b9e;obican;6/28/2017;Vredi!;0;0;False;False;Knjizevnost-Knjiga je znanje!
+48cb67d5-da07-4c15-8f88-e82704aca582;6d73ece0-d110-4e0a-8945-76a44ed14f5c;obican;6/28/2017;Stvarno!;0;0;False;False;Knjizevnost-Knjiga je znanje!

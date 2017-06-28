@@ -34,6 +34,8 @@
 
     init();
 
+    // -------------------------------------------------------------------------------- Komentarisanje
+
     $scope.komentarisiTemu = function (podforum, naslovTeme, tekstKomentara) {
         if (tekstKomentara == null || tekstKomentara == "") {
             alert('Popunite sadrzaj komentara');
@@ -59,6 +61,8 @@
         });
     }
 
+    // -------------------------------------------------------------------------------- Cuvanje entiteta
+
     $scope.zapratiTemu = function (username) {
         var naslovTeme = $scope.nazivPodforuma + '-' + $scope.nazivTeme;
         AccountFactory.zapratiTemu(naslovTeme, username).then(function (response) {
@@ -77,6 +81,8 @@
             console.log(response.data);
         });
     }
+
+    // -------------------------------------------------------------------------------- Lajkovanje
 
     $scope.thumbsUp = function (komentar) {
         if (!$rootScope.ulogovan) {
@@ -103,6 +109,14 @@
                 alert('Vec ste dali negativan glas ovom komentaru');
             }
             else init();
+        });
+    }
+
+    // -------------------------------------------------------------------------------- Brisanje
+
+    $scope.obrisiPodkomentar = function (podkomentar) {
+        KomentariFactory.obrisiPodkomentar(podkomentar).then(function (response) {
+            console.log(response.data);
         });
     }
 

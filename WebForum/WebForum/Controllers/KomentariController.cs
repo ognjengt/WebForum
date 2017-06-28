@@ -89,7 +89,8 @@ namespace WebForum.Controllers
             {
                 string[] splitter = line.Split(';');
                 //ovaj splitter splituje komentare
-                if (splitter[1] == idTeme)
+                // Daj mi taj komentar samo ako nije obrisan
+                if (splitter[1] == idTeme && splitter[9] == "False")
                 {
                     listaPodkomentara = new List<Komentar>();
                     string[] ideviPodkomentara = splitter[10].Split('|');
@@ -103,7 +104,8 @@ namespace WebForum.Controllers
                             {
 
                                 string[] podkomentarTokens = podkomentarLinija.Split(';');
-                                if (podkomentarTokens[1] == idPodkomentaraUKomentarima)
+                                // Vrati sve podkomentare koji nisu obrisani
+                                if (podkomentarTokens[1] == idPodkomentaraUKomentarima && podkomentarTokens[8] == "False")
                                 {
                                     Komentar podkomentar = new Komentar();
                                     podkomentar.Id = podkomentarTokens[1];
@@ -461,6 +463,14 @@ namespace WebForum.Controllers
             }
             podkomentariWriter.Close();
             dbOperater.Writer.Close();
+
+            return true;
+        }
+
+        [HttpPost]
+        [ActionName("ObrisiPodkomentar")]
+        public bool ObrisiPodkomentar([FromBody]Komentar podkomentar)
+        {
 
             return true;
         }

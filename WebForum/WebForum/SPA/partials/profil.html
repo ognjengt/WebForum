@@ -58,7 +58,7 @@
             <div class="col-md-3">
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsup"></i> Lajkovani entiteti</h4>
-                    <div class="repeat-teme" ng-repeat="lajkovanaTema in listaLajkovanihTema | orderBy:'+'">
+                    <div class="repeat-teme" ng-repeat="lajkovanaTema in listaLajkovanihTema | orderBy:'-'">
                         <a>
                             <div class="item">
                                 <p>{{lajkovanaTema}}</p>
@@ -72,7 +72,7 @@
             <div class="col-md-3">
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsdown"></i> Dislajkovani entiteti</h4>
-                    <div class="repeat-teme" ng-repeat="dislajkovanaTema in listaDislajkovanihTema | orderBy:'+'">
+                    <div class="repeat-teme" ng-repeat="dislajkovanaTema in listaDislajkovanihTema | orderBy:'-'">
                         <a>
                             <div class="item">
                                 <p>{{dislajkovanaTema}}</p>
@@ -87,5 +87,5 @@
 
 </div>
 <div class="container-fluid" ng-show="!ulogovan">
-    <h1>Molimo vas ulogujte se kako bi ste mogli da gledate korisnicke profile</h1>
+    <h1><center>Molimo vas ulogujte se kako bi ste mogli da gledate korisnicke profile</center></h1>
 </div>

@@ -37,6 +37,12 @@
         });
     }
 
+    factory.obrisiPodkomentar = function (podkomentar) {
+        return $http.post('/api/Komentari/ObrisiPodkomentar', {
+            Id: podkomentar.Id
+        });
+    }
+
     return factory;
 
 });

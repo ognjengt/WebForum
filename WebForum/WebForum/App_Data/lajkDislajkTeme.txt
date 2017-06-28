@@ -7,3 +7,7 @@ ognjen;Najnoviji podforum-Slikovita;like
 ognjen;Sport-nova;dislike
 ognjen;Najnoviji podforum-Najnovija tema;like
 ognjen;Knjizevnost-Knjiga je znanje!;like
+ognjen;Sport-Ajmo bree zvezda;dislike
+obican;Najnoviji podforum-Testiranje za nove redove;like
+obican;Sport-Nba draft 2017;like
+obican;Knjizevnost-Proba inita;dislike

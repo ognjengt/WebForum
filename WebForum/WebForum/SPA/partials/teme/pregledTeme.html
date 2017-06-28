@@ -45,7 +45,7 @@
           </p>
         </div>
       </div>
-      <div class="odgovoriNaKomentarButton" ng-show="ulogovan">
+      <div ng-show="!komentar.Obrisan" class="odgovoriNaKomentarButton" ng-show="ulogovan">
         <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id">Odgovori na komentar</div>
       </div>
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
@@ -56,16 +56,16 @@
         <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara,tema.PodforumKomePripada,tema.Naslov)">Odgovori</button>
       </div>
 
-      <div class="podkomentari"> 
+      <div class="podkomentari" ng-show="!komentar.Obrisan"> 
         <h5 ng-show="komentar.Podkomentari.length != 0">Podkomentari</h5>
         <div class="podkomentari-repeat" ng-repeat="podkomentar in komentar.Podkomentari">
 
-          <div class="podkomentar">
+          <div class="podkomentar" ng-show="!podkomentar.Obrisan">
             <div class="korisnik">
               <div class="dugmici">
                 <div class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajKomentar(podkomentar.Id,korisnik.username)">Sačuvaj</div>
                 <div class="btn btn-info" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor">Izmeni</div>
-                <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor">Obriši</div>
+                <div class="btn btn-danger" ng-show="korisnik.uloga == 'Administrator' || korisnik.username == podkomentar.Autor" ng-click="obrisiPodkomentar(podkomentar)">Obriši</div>
               </div>
               <div class="glasovi">
                 <div class="up">
