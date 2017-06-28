@@ -57,6 +57,14 @@
         });
     }
 
+    factory.izmeniTemu = function (tema, noviSadrzaj) {
+        return $http.post('/api/Teme/IzmeniTemu', {
+            PodforumKomePripada: tema.PodforumKomePripada,
+            Naslov: tema.Naslov,
+            Sadrzaj: noviSadrzaj
+        });
+    }
+
     return factory;
 
 });

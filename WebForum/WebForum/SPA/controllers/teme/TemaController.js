@@ -8,6 +8,8 @@
         $scope.komentarZaIzmenu = '';
         $scope.podkomentarZaIzmenu = '';
 
+        $scope.izmenaModalWindowVisible = false;
+
         TemeFactory.getTemaByNaziv($scope.nazivTeme, $scope.nazivPodforuma).then(function (response) {
             $scope.tema = response.data;
             $scope.tema.DatumKreiranja = new Date($scope.tema.DatumKreiranja).toLocaleDateString();
@@ -144,6 +146,11 @@
 
     // -------------------------------------------------------------------------------- Izmena
 
+    $scope.showIzmenaPopupWindow = function () {
+        $scope.izmenaModalWindowVisible = !$scope.izmenaModalWindowVisible;
+        $scope.noviSadrzajTeme = $scope.tema.Sadrzaj;
+    }
+
     $scope.setKomentarZaIzmenu = function (komentar) {
         $scope.komentarZaIzmenu = komentar.Id;
         $scope.tekstKomentaraZaIzmenu = komentar.Tekst;
@@ -179,6 +186,14 @@
         }
         tekstKomentara = tekstKomentara.replace(/(\r\n|\n|\r)/gm, "{novired}");
         KomentariFactory.izmeniPodkomentar(idKomentara, tekstKomentara,prikaziDaJeIzmenjeno).then(function (response) {
+            console.log(response.data);
+            init();
+        });
+    }
+
+    $scope.izmeniTemu = function (tema, noviSadrzaj) {
+        noviSadrzaj = noviSadrzaj.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        TemeFactory.izmeniTemu(tema, noviSadrzaj).then(function (response) {
             console.log(response.data);
             init();
         });

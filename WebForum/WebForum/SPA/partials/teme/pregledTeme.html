@@ -5,7 +5,7 @@
   <h4><span><i class="ion ion-thumbsup"></i> Lajkovalo: {{tema.PozitivniGlasovi}}</span><span><i class="ion ion-thumbsdown"></i> Dislajkovalo: {{tema.NegativniGlasovi}}</span></h4>
   <button class="btn btn-warning" ng-show="ulogovan" ng-click="zapratiTemu(korisnik.username)"><i class="ion ion-archive"></i> Zaprati</button>
   <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor" ng-click="obrisiTemu(tema)"> <i class="ion ion-trash-b"></i> Obriši</button>
-  <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor"><i class="ion ion-edit"></i> Izmeni</button>
+  <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor" ng-click="showIzmenaPopupWindow()"><i class="ion ion-edit"></i> Izmeni</button>
 </div>
 <div class="tema-sadrzaj">
   <h4 ng-show="tema.Tip == 'Tekst'">[Tekst]</h4>
@@ -143,6 +143,33 @@
           </div>
           <div class="col-md-3">
             <button class="btn btn-default" ng-click="podkomentarZaIzmenu = ''; tekstPodkomentaraZaIzmenu='';">Zatvori</button>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+<div id="IzmenaModal" ng-show="izmenaModalWindowVisible">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Izmeni temu
+        </div> 
+        <div class="popup-body">
+          <div class="form-group" ng-show="tema.Tip == 'Tekst'">
+            <label>Izmeni tekstualni sadrzaj:</label>
+            <textarea type="text" ng-model="noviSadrzajTeme" class="form-control" placeholder="Izmeni sadrzaj teme..."></textarea>
+          </div>
+          <div class="form-group" ng-show="tema.Tip == 'Link'">
+            <label>Izmeni sadrzaj linka:</label>
+            <input type="text" ng-model="noviSadrzajTeme" class="form-control" ng-model="" />
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success" ng-click="izmeniTemu(tema,noviSadrzajTeme)">Izmeni</button>
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-default" ng-click="izmenaModalWindowVisible = !izmenaModalWindowVisible">Zatvori</button>
           </div>
         </div>
         

@@ -614,5 +614,40 @@ namespace WebForum.Controllers
 
             return true;
         }
+
+        [HttpPost]
+        [ActionName("IzmeniTemu")]
+        public bool IzmeniTemu([FromBody]Tema temaZaIzmenu)
+        {
+            StreamReader sr = dbOperater.getReader("teme.txt");
+            List<string> temeZaDodavanje = new List<string>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+                string[] splitter = line.Split(';');
+                if (splitter[0] == temaZaIzmenu.PodforumKomePripada && splitter[1] == temaZaIzmenu.Naslov)
+                {
+                    nadjen = true;
+                    temeZaDodavanje.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3] + ";" + temaZaIzmenu.Sadrzaj + ";" + splitter[5] + ";" + splitter[6] + ";" + splitter[7] + ";" + splitter[8]);
+                }
+                if (!nadjen)
+                {
+                    temeZaDodavanje.Add(line);
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("teme.txt");
+            foreach (string temaLn in temeZaDodavanje)
+            {
+                sw.WriteLine(temaLn);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+            return true;
+        }
     }
 }
