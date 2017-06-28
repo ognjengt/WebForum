@@ -1,4 +1,4 @@
-﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams) {
+﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams, $rootScope) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
@@ -134,6 +134,10 @@
     }
 
     $scope.thumbDown = function (tema) {
+        if (!$rootScope.ulogovan) {
+            alert('Ulogujte se da bi dali glas temi!');
+            return;
+        }
         TemeFactory.ThumbsDown(tema, sessionStorage.getItem("username")).then(function (response) {
             console.log(response.data);
             if (response.data == false) {
@@ -145,6 +149,10 @@
     }
 
     $scope.thumbUp = function (tema) {
+        if (!$rootScope.ulogovan) {
+            alert('Ulogujte se da bi dali glas temi!');
+            return;
+        }
         TemeFactory.ThumbsUp(tema, sessionStorage.getItem("username")).then(function (response) {
             console.log(response.data);
             if (response.data == false) {

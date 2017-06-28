@@ -12,6 +12,6 @@ Najnoviji podforum;Najnovija tema;Tekst;ognjen;Najnovijaaaa;6/26/2017;0;0;nePost
 Knjizevnost;Sofijina tema;Tekst;sofija;Sofijina tema;6/26/2017;0;0;nePostoje
 Najnoviji podforum;Slikovita;Slika;ognjen;Najnoviji podforum-Slikovita.png;6/26/2017;0;0;nePostoje|920a8c17-f9d8-44ce-aec9-0f79b67b9ad6
 Najnoviji podforum;Nova sa slikom;Slika;ognjen;Najnoviji podforum-Nova sa slikom.jpg;6/26/2017;0;0;nePostoje
-Najnoviji podforum;Testiranje za nove redove;Tekst;ognjen;noviia{novired}{novired}asd{novired}asd;6/26/2017;1;0;nePostoje
-Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;1;1;nePostoje|bc47b2b4-70d1-4197-a3ac-1feadbb5571a
+Najnoviji podforum;Testiranje za nove redove;Tekst;ognjen;noviia{novired}{novired}asd{novired}asd;6/26/2017;2;0;nePostoje
+Najnoviji podforum;novi redovi;Tekst;ognjen;asdasd{novired}as{novired}das{novired}da{novired}sd{novired}as;6/26/2017;2;1;nePostoje|bc47b2b4-70d1-4197-a3ac-1feadbb5571a
 Knjizevnost;Knjiga je znanje!;Link;sofija;http://www.laguna.rs/knjiga_nedelje.html;6/27/2017;0;0;nePostoje|48cb67d5-da07-4c15-8f88-e82704aca582
