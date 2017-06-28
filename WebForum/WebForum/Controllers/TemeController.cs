@@ -89,8 +89,6 @@ namespace WebForum.Controllers
             t.NegativniGlasovi = 0;
 
             sw.WriteLine(t.PodforumKomePripada + ";" + t.Naslov + ";" + t.Tip + ";" + t.Autor + ";" + t.Sadrzaj + ";" + t.DatumKreiranja.ToShortDateString() + ";" + t.PozitivniGlasovi.ToString() + ";" + t.NegativniGlasovi.ToString() + ";" + "nePostoje");
-
-            sw.WriteLine();
             sw.Close();
             dbOperater.Writer.Close();
             return t;
@@ -160,6 +158,215 @@ namespace WebForum.Controllers
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotAcceptable, "This request is not properly formatted"));
             }
+        }
+
+        [HttpPost]
+        [ActionName("ThumbsUp")]
+        public bool ThumbsUp([FromBody]TemaLikeDislikeRequest temaRequest)
+        {
+            StreamReader sr = dbOperater.getReader("lajkDislajkTeme.txt");
+
+            List<string> listaSvih = new List<string>();
+
+            string[] temaRequestSplit = temaRequest.PunNazivTeme.Split('-');
+            string podforumKomePripada = temaRequestSplit[0];
+            string naslovTeme = temaRequestSplit[1];
+
+            string line = "";
+            bool changed = false;
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool isDisliked = false;
+
+                string[] splitter = line.Split(';');
+                // U slucaju da je vec lajkovao tu temu vrati false
+                if (splitter[0] == temaRequest.KoVrsiAkciju && splitter[1] == temaRequest.PunNazivTeme && splitter[2] == "like")
+                {
+                    sr.Close();
+                    dbOperater.Reader.Close();
+                    return false;
+                }
+                else if (splitter[0] == temaRequest.KoVrsiAkciju && splitter[1] == temaRequest.PunNazivTeme && splitter[2] == "dislike")
+                {
+                    isDisliked = true;
+                    changed = true;
+                    listaSvih.Add(temaRequest.KoVrsiAkciju + ";" + temaRequest.PunNazivTeme + ";like");
+
+                }
+                if (!isDisliked)
+                {
+                    listaSvih.Add(line);
+                }
+                
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            if (!changed)
+            {
+                StreamWriter sw = dbOperater.getWriter("lajkDislajkTeme.txt");
+
+                sw.WriteLine(temaRequest.KoVrsiAkciju + ";" + temaRequest.PunNazivTeme + ";like");
+                sw.Close();
+                dbOperater.Writer.Close();
+            }
+            else
+            {
+                StreamWriter sw = dbOperater.getBulkWriter("lajkDislajkTeme.txt");
+
+                foreach (string lajkDislajk in listaSvih)
+                {
+                    sw.WriteLine(lajkDislajk);
+                }
+                sw.Close();
+                dbOperater.Writer.Close();
+            }
+            // Nakon sto sam dodao u .txt fajl ko je lajkovao , sada nadji tu temu i povecaj joj brojlajkovanih
+            StreamReader temeReader = dbOperater.getReader("teme.txt");
+            List<string> sveTeme = new List<string>();
+
+            string tema = "";
+            while ((tema = temeReader.ReadLine()) != null)
+            {
+                bool nadjena = false;
+
+                string[] temaTokens = tema.Split(';');
+                if (temaTokens[0] == podforumKomePripada && temaTokens[1] == naslovTeme)
+                {
+                    // nasli smo temu kojoj treba povecati pozitivne glasove
+                    nadjena = true;
+                    int brojTrenutnoPozitivnih = Int32.Parse(temaTokens[6]);
+                    int brojTrenutnoNegativnih = Int32.Parse(temaTokens[7]);
+                    brojTrenutnoPozitivnih++;
+                    if (changed)
+                    {
+                        brojTrenutnoNegativnih--;
+                    }
+                    sveTeme.Add(temaTokens[0] + ";" + temaTokens[1] + ";" + temaTokens[2] + ";" + temaTokens[3] + ";" + temaTokens[4] + ";" + temaTokens[5] + ";" + brojTrenutnoPozitivnih.ToString() + ";" + brojTrenutnoNegativnih.ToString() + ";" + temaTokens[8]);
+
+                }
+                if (!nadjena)
+                {
+                    sveTeme.Add(tema);
+                }
+            }
+            temeReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter temeWriter = dbOperater.getBulkWriter("teme.txt");
+            foreach (string linijaTeme in sveTeme)
+            {
+                temeWriter.WriteLine(linijaTeme);
+            }
+            temeWriter.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+
+        }
+
+        [HttpPost]
+        [ActionName("ThumbsDown")]
+        public bool ThumbsDown([FromBody]TemaLikeDislikeRequest temaRequest)
+        {
+            StreamReader sr = dbOperater.getReader("lajkDislajkTeme.txt");
+
+            List<string> listaSvih = new List<string>();
+
+            string[] temaRequestSplit = temaRequest.PunNazivTeme.Split('-');
+            string podforumKomePripada = temaRequestSplit[0];
+            string naslovTeme = temaRequestSplit[1];
+
+            string line = "";
+            bool changed = false;
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool isLiked = false;
+
+                string[] splitter = line.Split(';');
+                // U slucaju da je vec lajkovao tu temu vrati false
+                if (splitter[0] == temaRequest.KoVrsiAkciju && splitter[1] == temaRequest.PunNazivTeme && splitter[2] == "dislike")
+                {
+                    sr.Close();
+                    dbOperater.Reader.Close();
+                    return false;
+                }
+                else if (splitter[0] == temaRequest.KoVrsiAkciju && splitter[1] == temaRequest.PunNazivTeme && splitter[2] == "like")
+                {
+                    isLiked = true;
+                    changed = true;
+                    listaSvih.Add(temaRequest.KoVrsiAkciju + ";" + temaRequest.PunNazivTeme + ";dislike");
+
+                }
+                if (!isLiked)
+                {
+                    listaSvih.Add(line);
+                }
+
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            if (!changed)
+            {
+                StreamWriter sw = dbOperater.getWriter("lajkDislajkTeme.txt");
+
+                sw.WriteLine(temaRequest.KoVrsiAkciju + ";" + temaRequest.PunNazivTeme + ";dislike");
+                sw.Close();
+                dbOperater.Writer.Close();
+            }
+            else
+            {
+                StreamWriter sw = dbOperater.getBulkWriter("lajkDislajkTeme.txt");
+
+                foreach (string lajkDislajk in listaSvih)
+                {
+                    sw.WriteLine(lajkDislajk);
+                }
+                sw.Close();
+                dbOperater.Writer.Close();
+            }
+            // Nakon sto sam dodao u .txt fajl ko je dislajkovao , sada nadji tu temu i povecaj joj brojDislajkovanih
+            StreamReader temeReader = dbOperater.getReader("teme.txt");
+            List<string> sveTeme = new List<string>();
+
+            string tema = "";
+            while ((tema = temeReader.ReadLine()) != null)
+            {
+                bool nadjena = false;
+
+                string[] temaTokens = tema.Split(';');
+                if (temaTokens[0] == podforumKomePripada && temaTokens[1] == naslovTeme)
+                {
+                    // nasli smo temu kojoj treba povecati negativne glasove
+                    nadjena = true;
+                    int brojTrenutnoPozitivnih = Int32.Parse(temaTokens[6]);
+                    int brojTrenutnoNegativnih = Int32.Parse(temaTokens[7]);
+                    brojTrenutnoNegativnih++;
+                    if (changed)
+                    {
+                        brojTrenutnoPozitivnih--;
+                    }
+                    sveTeme.Add(temaTokens[0] + ";" + temaTokens[1] + ";" + temaTokens[2] + ";" + temaTokens[3] + ";" + temaTokens[4] + ";" + temaTokens[5] + ";" + brojTrenutnoPozitivnih.ToString() + ";" + brojTrenutnoNegativnih.ToString() + ";" + temaTokens[8]);
+
+                }
+                if (!nadjena)
+                {
+                    sveTeme.Add(tema);
+                }
+            }
+            temeReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter temeWriter = dbOperater.getBulkWriter("teme.txt");
+            foreach (string linijaTeme in sveTeme)
+            {
+                temeWriter.WriteLine(linijaTeme);
+            }
+            temeWriter.Close();
+            dbOperater.Writer.Close();
+
+            return true;
         }
     }
 }

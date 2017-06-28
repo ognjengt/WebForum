@@ -134,14 +134,25 @@
     }
 
     $scope.thumbDown = function (tema) {
-        //TODO
-        alert('Sprzi mu thumb down');
+        TemeFactory.ThumbsDown(tema, sessionStorage.getItem("username")).then(function (response) {
+            console.log(response.data);
+            if (response.data == false) {
+                alert('Vec ste dali negativan glas ovoj temi');
+            } else {
+                init();
+            }
+        });
     }
 
     $scope.thumbUp = function (tema) {
-        // TODO
-        alert('Sprzi mu thumb up');
-        console.log(tema);
+        TemeFactory.ThumbsUp(tema, sessionStorage.getItem("username")).then(function (response) {
+            console.log(response.data);
+            if (response.data == false) {
+                alert('Vec ste dali pozitivan glas ovoj temi');
+            } else {
+                init();
+            }
+        });
     }
 
 });

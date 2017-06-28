@@ -34,4 +34,10 @@ namespace WebForum.Helpers
         public string IdKomentara { get; set; }
         public string KoCuva { get; set; }
     }
+
+    public class TemaLikeDislikeRequest
+    {
+        public string PunNazivTeme { get; set; }
+        public string KoVrsiAkciju { get; set; }
+    }
 }

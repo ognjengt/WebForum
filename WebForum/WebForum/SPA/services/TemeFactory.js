@@ -28,6 +28,20 @@
         return $http.get('/api/Teme/GetTemaByNaziv/?podforum=' + nazivPodforuma + '&tema=' + nazivTeme);
     }
 
+    factory.ThumbsUp = function (tema, username) {
+        return $http.post('/api/Teme/ThumbsUp', {
+            PunNazivTeme: tema.PodforumKomePripada + '-' + tema.Naslov,
+            KoVrsiAkciju: username
+        })
+    }
+
+    factory.ThumbsDown = function (tema, username) {
+        return $http.post('/api/Teme/ThumbsDown', {
+            PunNazivTeme: tema.PodforumKomePripada + '-' + tema.Naslov,
+            KoVrsiAkciju: username
+        })
+    }
+
     return factory;
 
 });
