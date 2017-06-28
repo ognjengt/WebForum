@@ -10,3 +10,4 @@ bc47b2b4-70d1-4197-a3ac-1feadbb5571a;Najnoviji podforum-novi redovi;ognjen;6/27/
 d1f9862a-4016-4568-ab23-944fc4d401c2;Najnoviji podforum-Nova sa slikom;ognjen;6/28/2017;nemaRoditelja;Komentar 1;0;0;False;False;nemaPodkomentara|90b262cd-52df-4891-a0b1-119a4d7a66dd
 92ee0afb-76ef-4332-9216-b0c65422a2d4;Najnoviji podforum-novi redovi;ognjen;6/28/2017;nemaRoditelja;Novi kom;0;0;False;True;nemaPodkomentara|07f30dfb-3802-4f6f-9577-22b4d424f852|969204b5-33de-478e-abf1-b152215cd5f2|245862f4-f50f-4fe6-a75c-91cfaf08a9e9|44315e78-8864-4747-8da2-0d41f8727473|726c90b7-9acf-477b-ad79-68a38f559113
 038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8;Najnoviji podforum-novi redovi;ognjen;6/28/2017;nemaRoditelja;AJDE OVAJ BRATE OBRISI;0;0;False;True;nemaPodkomentara|caa17fa6-e308-4890-91d3-ff557f07f555|cef401af-89b3-440a-aab1-d193eeae2a97
+1f221b0e-8036-4234-94fd-c0ced2d456ca;Najnoviji podforum-novi redovi;ognjen;6/28/2017;nemaRoditelja;NAJNOVIJI ZA CUVANJE;0;0;False;True;nemaPodkomentara

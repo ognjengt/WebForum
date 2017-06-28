@@ -4,7 +4,7 @@
 1c0df0be-ffab-48ad-9f17-f44d6be72851;f9f3c1f8-45f1-49f8-8207-315f450eb72b;ognjen;6/27/2017;ajde;0;0;False;False;Sport-Nba draft 2017
 bc47b2b4-70d1-4197-a3ac-1feadbb5571a;33f327a9-e0e5-4673-b628-61f7d4530d50;ognjen;6/27/2017;OVAJ SE CUVA BRATEEEEEEEEEEE;0;1;False;False;Najnoviji podforum-novi redovi
 9eafab54-1d8a-4104-9a58-50a500e5d7c5;3109292d-a66d-44c0-baa6-9405f7f8a4ef;ognjen;6/27/2017;Ajde ispod;0;0;False;False;Sport-Nastup bittersweeta na ulicnim sviracima
-48cb67d5-da07-4c15-8f88-e82704aca582;cde84829-e313-4075-a962-803bd8417c43;ognjen;6/28/2017;Fulex;1;0;False;False;Knjizevnost-Knjiga je znanje!
+48cb67d5-da07-4c15-8f88-e82704aca582;cde84829-e313-4075-a962-803bd8417c43;ognjen;6/28/2017;Fulex;1;0;False;True;Knjizevnost-Knjiga je znanje!
 bc47b2b4-70d1-4197-a3ac-1feadbb5571a;f757d519-eca5-4faa-9343-e948b2d87c4c;ognjen;6/28/2017;Bravo;1;0;False;False;Najnoviji podforum-novi redovi
 1ba241b6-5471-49bc-b692-5cf74c2b2e06;06f38480-7418-4af4-8999-be9e2f2f3ae0;sofija;6/28/2017;novi kom;1;0;False;False;Sport-Nba draft 2017
 d1f9862a-4016-4568-ab23-944fc4d401c2;90b262cd-52df-4891-a0b1-119a4d7a66dd;ognjen;6/28/2017;Novi komentar;0;0;False;False;Najnoviji podforum-Nova sa slikom
