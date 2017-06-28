@@ -539,6 +539,79 @@ namespace WebForum.Controllers
 
             // ------------------------------------------ 3 close ---------------------------------------------
 
+            // ------------------------------------------ 4 ---------------------------------------------------
+
+            StreamReader lajkDislajkKomentariReader = dbOperater.getReader("lajkDislajkKomentari.txt");
+            List<string> listaLajkovanihDislajkovanihKomentaraZaPonovniUpis = new List<string>();
+
+            string likeDislikeComLine = "";
+            while ((likeDislikeComLine = lajkDislajkKomentariReader.ReadLine()) != null)
+            {
+                bool nadjen = false;
+                string[] likeDislikeSplitter = likeDislikeComLine.Split(';');
+                foreach (string idKomentara in listaKomentaraZaBrisanje)
+                {
+                    if (likeDislikeSplitter[1] == idKomentara)
+                    {
+                        nadjen = true;
+                    }
+                }
+                if (!nadjen)
+                {
+                    listaLajkovanihDislajkovanihKomentaraZaPonovniUpis.Add(likeDislikeComLine);
+                }
+            }
+            lajkDislajkKomentariReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter lajkovaniDislajkovaniWriter = dbOperater.getBulkWriter("lajkDislajkKomentari.txt");
+            foreach (string likeDislikeLn in listaLajkovanihDislajkovanihKomentaraZaPonovniUpis)
+            {
+                lajkovaniDislajkovaniWriter.Write(likeDislikeLn);
+            }
+            lajkovaniDislajkovaniWriter.Close();
+            dbOperater.Reader.Close();
+
+
+            // ------------------------------------------ 4 close ---------------------------------------------
+
+            // ------------------------------------------ 5 ---------------------------------------------------
+            StreamReader lajkDislajkTemeReader = dbOperater.getReader("lajkDislajkTeme.txt");
+
+            List<string> listaLajkovanihDislajkovanihTemaZaPonovniUpis = new List<string>();
+
+            string likeDislikeTemeLinija = "";
+            while ((likeDislikeTemeLinija = lajkDislajkTemeReader.ReadLine()) != null)
+            {
+                bool nadjen = false;
+
+                string[] likeDislikeTemeLineSplitter = likeDislikeTemeLinija.Split(';');
+                string[] podforumNazivSplitter = likeDislikeTemeLineSplitter[1].Split('-');
+                string podforum = podforumNazivSplitter[0];
+                string nazivTeme = podforumNazivSplitter[1];
+
+                if (podforum == temaZaBrisanje.PodforumKomePripada && nazivTeme == temaZaBrisanje.Naslov)
+                {
+                    nadjen = true;
+                }
+                if (!nadjen)
+                {
+                    listaLajkovanihDislajkovanihTemaZaPonovniUpis.Add(likeDislikeTemeLinija);
+                }
+            }
+            lajkDislajkTemeReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter writerLikeDislikeTeme = dbOperater.getBulkWriter("lajkDislajkTeme.txt");
+            foreach (string temaLn in listaLajkovanihDislajkovanihTemaZaPonovniUpis)
+            {
+                writerLikeDislikeTeme.WriteLine(temaLn);
+            }
+            writerLikeDislikeTeme.Close();
+            dbOperater.Writer.Close();
+
+            // ------------------------------------------ 5 close ---------------------------------------------
+
             return true;
         }
     }

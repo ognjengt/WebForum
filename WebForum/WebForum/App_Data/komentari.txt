@@ -1,2 +1,1 @@
-9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;Najnoviji podforum-ova treba da se ne obrise;ognjen;6/28/2017;nemaRoditelja;Komentar koji treba da ostane;1;0;False;False;nemaPodkomentara|a10a5b86-4e02-42f5-b70e-0413b90c3327|7c9c0231-ee89-4594-a353-d8e182231b67|90e6d702-4053-4469-8823-16684dcd8d60
-d7ff5938-5ab6-42c4-8876-60a1232e6ade;Najnoviji podforum-ova treba da se ne obrise;ognjen;6/28/2017;nemaRoditelja;Jos jedan koji treba da ostane;0;0;False;False;nemaPodkomentara
+8337017e-7b56-4051-a423-10acf469dafe;Najnoviji podforum-Preach!;ognjen;6/28/2017;nemaRoditelja;Ayeyeyeye;0;0;False;False;nemaPodkomentara|ed2d3edb-5124-44c7-85af-a2b3f094a70a

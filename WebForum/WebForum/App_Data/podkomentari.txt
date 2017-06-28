@@ -1,3 +1,1 @@
-9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;a10a5b86-4e02-42f5-b70e-0413b90c3327;ognjen;6/28/2017;Podkomentar koji treba da ostane;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
-9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;7c9c0231-ee89-4594-a353-d8e182231b67;ognjen;6/28/2017;Jos jedan podkomentar koji treba da oasdosakadsk;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
-9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;90e6d702-4053-4469-8823-16684dcd8d60;ognjen;6/28/2017;i jos jedan;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
+8337017e-7b56-4051-a423-10acf469dafe;ed2d3edb-5124-44c7-85af-a2b3f094a70a;ognjen;6/28/2017;PODCOM;0;0;False;False;Najnoviji podforum-Preach!

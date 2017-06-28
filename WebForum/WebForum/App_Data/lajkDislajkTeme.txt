@@ -1,14 +1,1 @@
-ognjen;Najnoviji podforum-novi redovi;like
-sofija;Najnoviji podforum-novi redovi;like
-sofija;Najnoviji podforum-Testiranje za nove redove;like
-obican;Najnoviji podforum-novi redovi;dislike
-ognjen;Najnoviji podforum-Testiranje za nove redove;like
-ognjen;Najnoviji podforum-Slikovita;like
-ognjen;Sport-nova;dislike
-ognjen;Najnoviji podforum-Najnovija tema;like
-ognjen;Knjizevnost-Knjiga je znanje!;like
-ognjen;Sport-Ajmo bree zvezda;dislike
-obican;Najnoviji podforum-Testiranje za nove redove;like
-obican;Sport-Nba draft 2017;like
-obican;Knjizevnost-Proba inita;dislike
-ognjen;Najnoviji podforum-ova treba da se ne obrise;like
+ognjen;Najnoviji podforum-Preach!;like

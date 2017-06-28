@@ -1,16 +1,1 @@
-ognjen;bc47b2b4-70d1-4197-a3ac-1feadbb5571a;like
-ognjen;1ba241b6-5471-49bc-b692-5cf74c2b2e06;like
-ognjen;33f327a9-e0e5-4673-b628-61f7d4530d50;dislike
-ognjen;f757d519-eca5-4faa-9343-e948b2d87c4c;like
-ognjen;92a2a7b0-2a55-4535-b596-c090695633a2;like
-sofija;1ba241b6-5471-49bc-b692-5cf74c2b2e06;like
-sofija;06f38480-7418-4af4-8999-be9e2f2f3ae0;like
-sofija;39f43cf7-898d-429a-9b4a-a394d2024e56;like
-sofija;cde84829-e313-4075-a962-803bd8417c43;like
-ognjen;0147b2b5-2b8e-47ee-b4a7-42188371049e;like
-obican;af013c19-9d0e-4b68-841d-e7ddb901f1a7;like
-ognjen;af013c19-9d0e-4b68-841d-e7ddb901f1a7;like
-ognjen;f22d0ea8-ee9b-48a0-9894-095e88ac4ee4;like
-obican;14e264d4-f4c6-4eb7-a2b3-392397a08aa7;like
-obican;d4f170e4-3509-4706-9b50-36550a3e106a;like
-ognjen;9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;like
+ognjen;70a6ce16-60d2-4885-8a3e-855937687937;likeognjen;63cecc1a-2084-4a99-ad35-1d3a5a145ac3;dislike
