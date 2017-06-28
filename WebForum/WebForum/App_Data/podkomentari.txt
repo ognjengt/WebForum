@@ -21,3 +21,4 @@ fc52efac-5770-4c06-8651-a89bb43c99bb;8baadd20-ec25-4162-bdc4-ace5118ca965;ognjen
 0147b2b5-2b8e-47ee-b4a7-42188371049e;af013c19-9d0e-4b68-841d-e7ddb901f1a7;ognjen;6/28/2017;ali moj ostaje ne promenjen;2;0;False;False;Najnoviji podforum-novi redovi
 19e7b14b-085b-4d8e-a23a-4ff02afed6a3;c07d0187-5ec6-4ba1-9ce3-23bb14264cc5;obican;6/28/2017;Da li se menja na korisnickom;0;0;True;False;Najnoviji podforum-novi redovi
 0147b2b5-2b8e-47ee-b4a7-42188371049e;f22d0ea8-ee9b-48a0-9894-095e88ac4ee4;obican;6/28/2017;Admin menja treba da ostane izmenjen;1;0;True;False;Najnoviji podforum-novi redovi
+0147b2b5-2b8e-47ee-b4a7-42188371049e;d4f170e4-3509-4706-9b50-36550a3e106a;obican;6/28/2017;Rade fulex;1;0;True;False;Najnoviji podforum-novi redovi

@@ -26,8 +26,10 @@
                 $scope.komentari = response.data;
                 $scope.komentari.forEach(function (komentar) {
                     komentar.DatumKomentara = new Date(komentar.DatumKomentara).toLocaleDateString();
+                    komentar.Tekst = komentar.Tekst.replace(new RegExp('{novired}', 'g'), '\n');
                     komentar.Podkomentari.forEach(function (podkomentar) {
                         podkomentar.DatumKomentara = new Date(podkomentar.DatumKomentara).toLocaleDateString();
+                        podkomentar.Tekst = podkomentar.Tekst.replace(new RegExp('{novired}', 'g'), '\n');
                     });
                 })
             });
@@ -43,6 +45,7 @@
             alert('Popunite sadrzaj komentara');
             return;
         }
+        tekstKomentara = tekstKomentara.replace(/(\r\n|\n|\r)/gm, "{novired}");
         var username = sessionStorage.getItem("username");
         KomentariFactory.ostaviKomentarNaTemu(podforum, naslovTeme, tekstKomentara, username).then(function (response) {
             console.log(response.data);
@@ -56,6 +59,7 @@
             alert('Popunite sadrzaj komentara');
             return;
         }
+        tekstPodkomentara = tekstPodkomentara.replace(/(\r\n|\n|\r)/gm, "{novired}");
         var autor = sessionStorage.getItem("username");
         var temaKojojPripada = podforum + '-' + tema;
         KomentariFactory.dodajPodkomentar(IdRoditelja, tekstPodkomentara, autor, temaKojojPripada).then(function (response) {
@@ -150,6 +154,7 @@
         if (tipKorisnika == 'Korisnik') {
             prikaziDaJeIzmenjeno = true;
         }
+        tekstKomentara = tekstKomentara.replace(/(\r\n|\n|\r)/gm, "{novired}");
         KomentariFactory.izmeniKomentar(idKomentara, tekstKomentara, prikaziDaJeIzmenjeno).then(function (response) {
             console.log(response.data);
             init();
@@ -164,6 +169,7 @@
         if (tipKorisnika == 'Korisnik') {
             prikaziDaJeIzmenjeno = true;
         }
+        tekstKomentara = tekstKomentara.replace(/(\r\n|\n|\r)/gm, "{novired}");
         KomentariFactory.izmeniPodkomentar(idKomentara, tekstKomentara,prikaziDaJeIzmenjeno).then(function (response) {
             console.log(response.data);
             init();
