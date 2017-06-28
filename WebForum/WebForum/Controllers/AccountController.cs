@@ -268,6 +268,10 @@ namespace WebForum.Controllers
                                 string[] komentarLineSplitter = komentarLine.Split(';');
                                 if (komentarLineSplitter[1] == komentarId && komentarLineSplitter[8] == "False")
                                 {
+                                    // evenutalno: prodji kroz sve teme i pogledaj da li komentarLineSplitter[9] odgovara nekoj
+                                    // ako ne odgovara nijednoj, to znaci da ta tema ne postoji tj da je obrisana i nemoj dodati ovaj
+                                    // podkomentar u listu
+
                                     Komentar podkomentar = new Komentar();
                                     podkomentar.RoditeljskiKomentar = komentarLineSplitter[0];
                                     podkomentar.Id = komentarLineSplitter[1];

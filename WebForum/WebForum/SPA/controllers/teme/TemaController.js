@@ -1,4 +1,4 @@
-﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams, $rootScope) {
+﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams, $rootScope, $window) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
     $scope.nazivTeme = $routeParams.tema;
@@ -131,6 +131,14 @@
         KomentariFactory.obrisiKomentar(komentar).then(function (response) {
             console.log(response.data);
             init();
+        });
+    }
+
+    $scope.obrisiTemu = function (tema) {
+        TemeFactory.obrisiTemu(tema).then(function (response) {
+            console.log(response.data);
+
+            $window.location.href = "#!/podforumi"
         });
     }
 

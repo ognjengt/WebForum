@@ -412,5 +412,134 @@ namespace WebForum.Controllers
 
             return listaDislajkovanihTema;
         }
+
+        [HttpPost]
+        [ActionName("ObrisiTemu")]
+        public bool ObrisiTemu([FromBody]Tema temaZaBrisanje)
+        {
+            // 1. Prodji kroz sve teme.txt i kada nadjes da je splitter[0] == temaZaBrisanje.PodforumKomePripada i splitter[1] == temaZaBrisanje.Naslov tu nemoj dodati
+            // 2. Prodji kroz sve komentare, i svaki koji u sebi sadrzi tu temu obrisi ga, tj prepisi komentare.txt a nemoj dodati te koji sadrze tu temu
+            // 3. Za svaki komentar koji ne sadrzi tu temu dodaj njegov id u neku listu stringova, zatim prodji kroz sve podkomentari.txt i obrisi sve podkomentare ciji je splitter[0] == id-em iz liste obrisanih komentara, i takodje te obrisane ideve dodaj u jos neku listuObrisanihPodkomentara
+            // 4. Prodji kroz lajkDislajkKomentari i obrisi svaki koji sadrzi neki id ili iz listeObrisanihKomentara ili iz listeObrisanihPodkomentara
+            // 5. Prodji kroz lajkDislajkTeme i obrisi svaku temu ciji je splitter[1] == temaZaBrisanje.PodforumKomePripada-tema.Naslov
+            // 6. Prodji kroz korisnici.txt i skloni iz splittera[9] sve nepotrebne teme i iz splittera[10] sve nepotrebne komentare koji se nalaze u listiObrisanihKomentara i listiObrisanihPodkomentara
+
+            // -------------------------------- 1 ---------------------------------
+            StreamReader readerTema = dbOperater.getReader("teme.txt");
+            List<string> listaTemaZaPonovniUpis = new List<string>();
+
+            string linijaTema = "";
+            while ( (linijaTema = readerTema.ReadLine()) != null )
+            {
+                bool nadjena = false;
+                string[] temaSplitter = linijaTema.Split(';');
+                if (temaSplitter[0] == temaZaBrisanje.PodforumKomePripada && temaSplitter[1] == temaZaBrisanje.Naslov)
+                {
+                    nadjena = true;
+                }
+                if (!nadjena)
+                {
+                    listaTemaZaPonovniUpis.Add(linijaTema);
+                }
+            }
+
+            readerTema.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter writerTema = dbOperater.getBulkWriter("teme.txt");
+
+            foreach (string temaLn in listaTemaZaPonovniUpis)
+            {
+                writerTema.WriteLine(temaLn);
+            }
+            writerTema.Close();
+            dbOperater.Writer.Close();
+
+            // ------------------------------------------ 1 close ---------------------------------------------
+
+            // ------------------------------------------ 2 ---------------------------------------------------
+
+            StreamReader komentariReader = dbOperater.getReader("komentari.txt");
+            List<string> listaKomentaraZaBrisanje = new List<string>();
+
+            List<string> listaKomentaraZaPonovniUpis = new List<string>();
+
+            string komentarLinija = "";
+
+            while ( (komentarLinija = komentariReader.ReadLine()) != null )
+            {
+                bool nadjen = false;
+
+                string[] komentarSplitter = komentarLinija.Split(';');
+                string[] podforumNaslovTemeSplitter = komentarSplitter[1].Split('-');
+                string podforum = podforumNaslovTemeSplitter[0];
+                string naslov = podforumNaslovTemeSplitter[1];
+
+                if (podforum == temaZaBrisanje.PodforumKomePripada && naslov == temaZaBrisanje.Naslov)
+                {
+                    listaKomentaraZaBrisanje.Add(komentarSplitter[0]);
+                    nadjen = true;
+                }
+                if (!nadjen)
+                {
+                    listaKomentaraZaPonovniUpis.Add(komentarLinija);
+                }
+            }
+            komentariReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter writerKomentara = dbOperater.getBulkWriter("komentari.txt");
+
+            foreach (string komentarLn in listaKomentaraZaPonovniUpis)
+            {
+                writerKomentara.WriteLine(komentarLn);
+            }
+            writerKomentara.Close();
+            dbOperater.Writer.Close();
+
+            // ------------------------------------------ 2 close ---------------------------------------------
+
+            // ------------------------------------------ 3 ---------------------------------------------------
+
+            StreamReader podkomentariReader = dbOperater.getReader("podkomentari.txt");
+
+            List<string> listaPodkomentaraZaBrisanje = new List<string>();
+
+            List<string> listaPodkomentaraZaPonovniUpis = new List<string>();
+
+            string podkomentarLinija = "";
+            while ( (podkomentarLinija = podkomentariReader.ReadLine()) != null )
+            {
+                bool nadjen = false;
+                string[] podkomentarSplitter = podkomentarLinija.Split(';');
+                foreach (string idRoditelja in listaKomentaraZaBrisanje)
+                {
+                    if (podkomentarSplitter[0] == idRoditelja)
+                    {
+                        nadjen = true;
+                        listaPodkomentaraZaBrisanje.Add(podkomentarSplitter[1]);
+                    }
+                }
+                if (!nadjen)
+                {
+                    listaPodkomentaraZaPonovniUpis.Add(podkomentarLinija);
+                }
+            }
+
+            podkomentariReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter podkomentariWriter = dbOperater.getBulkWriter("podkomentari.txt");
+            foreach (string podkomentarLn in listaPodkomentaraZaPonovniUpis)
+            {
+                podkomentariWriter.WriteLine(podkomentarLn);
+            }
+            podkomentariWriter.Close();
+            dbOperater.Writer.Close();
+
+            // ------------------------------------------ 3 close ---------------------------------------------
+
+            return true;
+        }
     }
 }

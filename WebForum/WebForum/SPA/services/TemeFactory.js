@@ -50,6 +50,13 @@
         return $http.get('/api/Teme/GetDislajkovaneTeme?username=' + username);
     }
 
+    factory.obrisiTemu = function (tema) {
+        return $http.post('/api/Teme/ObrisiTemu', {
+            PodforumKomePripada: tema.PodforumKomePripada,
+            Naslov: tema.Naslov
+        });
+    }
+
     return factory;
 
 });

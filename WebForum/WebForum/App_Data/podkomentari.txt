@@ -1,24 +1,3 @@
-1ba241b6-5471-49bc-b692-5cf74c2b2e06;08d10cc8-8db6-4b27-b242-574b53299cd1;ognjen;6/27/2017;Ni ja tebra;0;0;False;False;Sport-Nba draft 2017
-1ba241b6-5471-49bc-b692-5cf74c2b2e06;39f43cf7-898d-429a-9b4a-a394d2024e56;ognjen;6/27/2017;Brate ajde ono;1;0;False;False;Sport-Nba draft 2017
-6aa27b36-858a-45bc-9c4b-f2bc4419a9de;02256f29-fc4b-46cd-9f3e-7c79448fc06d;sofija;6/27/2017;I ja;0;0;False;False;Sport-Nba draft 2017
-1c0df0be-ffab-48ad-9f17-f44d6be72851;f9f3c1f8-45f1-49f8-8207-315f450eb72b;ognjen;6/27/2017;ajde;0;0;False;False;Sport-Nba draft 2017
-bc47b2b4-70d1-4197-a3ac-1feadbb5571a;33f327a9-e0e5-4673-b628-61f7d4530d50;ognjen;6/27/2017;OVAJ SE CUVA BRATEEEEEEEEEEE;0;1;False;False;Najnoviji podforum-novi redovi
-9eafab54-1d8a-4104-9a58-50a500e5d7c5;3109292d-a66d-44c0-baa6-9405f7f8a4ef;ognjen;6/27/2017;Ajde ispod;0;0;False;False;Sport-Nastup bittersweeta na ulicnim sviracima
-48cb67d5-da07-4c15-8f88-e82704aca582;cde84829-e313-4075-a962-803bd8417c43;ognjen;6/28/2017;Fulex;1;0;False;True;Knjizevnost-Knjiga je znanje!
-bc47b2b4-70d1-4197-a3ac-1feadbb5571a;f757d519-eca5-4faa-9343-e948b2d87c4c;ognjen;6/28/2017;Bravo;1;0;False;False;Najnoviji podforum-novi redovi
-1ba241b6-5471-49bc-b692-5cf74c2b2e06;06f38480-7418-4af4-8999-be9e2f2f3ae0;sofija;6/28/2017;novi kom;1;0;False;False;Sport-Nba draft 2017
-d1f9862a-4016-4568-ab23-944fc4d401c2;90b262cd-52df-4891-a0b1-119a4d7a66dd;ognjen;6/28/2017;Novi komentar;0;0;False;False;Najnoviji podforum-Nova sa slikom
-48cb67d5-da07-4c15-8f88-e82704aca582;337a9d7f-09b3-4e02-af1f-036e64256b9e;obican;6/28/2017;Vredi!;0;0;False;False;Knjizevnost-Knjiga je znanje!
-48cb67d5-da07-4c15-8f88-e82704aca582;6d73ece0-d110-4e0a-8945-76a44ed14f5c;obican;6/28/2017;Stvarno!;0;0;False;False;Knjizevnost-Knjiga je znanje!
-92ee0afb-76ef-4332-9216-b0c65422a2d4;07f30dfb-3802-4f6f-9577-22b4d424f852;ognjen;6/28/2017;Novi podkom;0;0;False;True;Najnoviji podforum-novi redovi
-92ee0afb-76ef-4332-9216-b0c65422a2d4;969204b5-33de-478e-abf1-b152215cd5f2;ognjen;6/28/2017;podkomentarrrr;0;0;False;True;Najnoviji podforum-novi redovi
-92ee0afb-76ef-4332-9216-b0c65422a2d4;245862f4-f50f-4fe6-a75c-91cfaf08a9e9;ognjen;6/28/2017;asdasdasdas;0;0;False;True;Najnoviji podforum-novi redovi
-92ee0afb-76ef-4332-9216-b0c65422a2d4;44315e78-8864-4747-8da2-0d41f8727473;ognjen;6/28/2017;jos jedan;0;0;False;True;Najnoviji podforum-novi redovi
-92ee0afb-76ef-4332-9216-b0c65422a2d4;726c90b7-9acf-477b-ad79-68a38f559113;ognjen;6/28/2017;podkomentar za test;0;0;False;True;Najnoviji podforum-novi redovi
-038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8;caa17fa6-e308-4890-91d3-ff557f07f555;ognjen;6/28/2017;Bla bla bla bla bla;0;0;False;True;Najnoviji podforum-novi redovi
-038e8a30-b8c2-40e1-bbc7-1b5f609ec7c8;cef401af-89b3-440a-aab1-d193eeae2a97;ognjen;6/28/2017;baaaaaaaaaaaaaaaaaaaaaaaaaaaa;0;0;False;True;Najnoviji podforum-novi redovi
-fc52efac-5770-4c06-8651-a89bb43c99bb;8baadd20-ec25-4162-bdc4-ace5118ca965;ognjen;6/28/2017;podkom za izmenu;0;0;False;False;Sport-nova
-0147b2b5-2b8e-47ee-b4a7-42188371049e;af013c19-9d0e-4b68-841d-e7ddb901f1a7;ognjen;6/28/2017;ali moj ostaje ne promenjen;2;0;False;False;Najnoviji podforum-novi redovi
-19e7b14b-085b-4d8e-a23a-4ff02afed6a3;c07d0187-5ec6-4ba1-9ce3-23bb14264cc5;obican;6/28/2017;Da li se menja na korisnickom;0;0;True;False;Najnoviji podforum-novi redovi
-0147b2b5-2b8e-47ee-b4a7-42188371049e;f22d0ea8-ee9b-48a0-9894-095e88ac4ee4;obican;6/28/2017;Admin menja treba da ostane izmenjen;1;0;True;False;Najnoviji podforum-novi redovi
-0147b2b5-2b8e-47ee-b4a7-42188371049e;d4f170e4-3509-4706-9b50-36550a3e106a;obican;6/28/2017;Rade fulex;1;0;True;False;Najnoviji podforum-novi redovi
+9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;a10a5b86-4e02-42f5-b70e-0413b90c3327;ognjen;6/28/2017;Podkomentar koji treba da ostane;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
+9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;7c9c0231-ee89-4594-a353-d8e182231b67;ognjen;6/28/2017;Jos jedan podkomentar koji treba da oasdosakadsk;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
+9e24d939-ab40-490c-b1cd-e1efa7c6ebfb;90e6d702-4053-4469-8823-16684dcd8d60;ognjen;6/28/2017;i jos jedan;0;0;False;False;Najnoviji podforum-ova treba da se ne obrise
