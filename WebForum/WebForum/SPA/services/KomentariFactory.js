@@ -43,6 +43,12 @@
         });
     }
 
+    factory.obrisiKomentar = function (komentar) {
+        return $http.post('/api/Komentari/ObrisiKomentar', {
+            Id: komentar.Id
+        });
+    }
+
     return factory;
 
 });

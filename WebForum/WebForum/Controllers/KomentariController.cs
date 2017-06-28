@@ -471,6 +471,76 @@ namespace WebForum.Controllers
         [ActionName("ObrisiPodkomentar")]
         public bool ObrisiPodkomentar([FromBody]Komentar podkomentar)
         {
+            StreamReader sr = dbOperater.getReader("podkomentari.txt");
+            List<string> listaSvihPodkomentara = new List<string>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+
+                string[] splitter = line.Split(';');
+                if (splitter[1] == podkomentar.Id)
+                {
+                    nadjen = true;
+                    listaSvihPodkomentara.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3] + ";" + splitter[4] + ";" + splitter[5] + ";" + splitter[6] + ";" + splitter[7] + ";" + "True" + ";" + splitter[9]);
+                }
+                if (!nadjen)
+                {
+                    listaSvihPodkomentara.Add(line);
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("podkomentari.txt");
+
+            foreach (string linijaPodkomentara in listaSvihPodkomentara)
+            {
+                sw.WriteLine(linijaPodkomentara);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+
+            return true;
+        }
+
+        [HttpPost]
+        [ActionName("ObrisiKomentar")]
+        public bool ObrisiKomentar([FromBody]Komentar komentar)
+        {
+            StreamReader sr = dbOperater.getReader("komentari.txt");
+            List<string> listaSvihKomentara = new List<string>();
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+
+                string[] splitter = line.Split(';');
+                if (splitter[0] == komentar.Id)
+                {
+                    nadjen = true;
+                    listaSvihKomentara.Add(splitter[0]+";"+splitter[1]+ ";" + splitter[2]+ ";" + splitter[3]+ ";" + splitter[4]+ ";" + splitter[5]+ ";" + splitter[6]+ ";" + splitter[7]+ ";" + splitter[8]+";"+"True"+";"+splitter[10]);
+                }
+                if (!nadjen)
+                {
+                    listaSvihKomentara.Add(line);
+                }
+            }
+
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("komentari.txt");
+
+            foreach (string linijaKomentara in listaSvihKomentara)
+            {
+                sw.WriteLine(linijaKomentara);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
 
             return true;
         }

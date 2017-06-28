@@ -117,6 +117,14 @@
     $scope.obrisiPodkomentar = function (podkomentar) {
         KomentariFactory.obrisiPodkomentar(podkomentar).then(function (response) {
             console.log(response.data);
+            init();
+        });
+    }
+
+    $scope.obrisiKomentar = function (komentar) {
+        KomentariFactory.obrisiKomentar(komentar).then(function (response) {
+            console.log(response.data);
+            init();
         });
     }
 
