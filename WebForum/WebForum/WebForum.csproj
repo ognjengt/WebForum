@@ -203,6 +203,7 @@
   <ItemGroup>
     <Content Include="App_Data\komentari.txt" />
     <Content Include="App_Data\korisnici.txt" />
+    <Content Include="App_Data\lajkDislajkKomentari.txt" />
     <Content Include="App_Data\lajkDislajkTeme.txt" />
     <Content Include="App_Data\podforumi.txt" />
     <Content Include="App_Data\podkomentari.txt" />

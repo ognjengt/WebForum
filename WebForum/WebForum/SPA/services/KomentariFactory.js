@@ -23,6 +23,20 @@
         return $http.get('/api/Komentari/GetKomentariZaTemu/?idTeme=' + podforum + '-' + tema);
     }
 
+    factory.ThumbsUp = function (komentar, username) {
+        return $http.post('/api/Komentari/ThumbsUp', {
+            IdKomentara: komentar.Id,
+            KoVrsiAkciju: username
+        });
+    }
+
+    factory.ThumbsDown = function (komentar, username) {
+        return $http.post('/api/Komentari/ThumbsDown', {
+            IdKomentara: komentar.Id,
+            KoVrsiAkciju: username
+        });
+    }
+
     return factory;
 
 });

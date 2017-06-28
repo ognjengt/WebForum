@@ -284,7 +284,7 @@ namespace WebForum.Controllers
                 bool isLiked = false;
 
                 string[] splitter = line.Split(';');
-                // U slucaju da je vec lajkovao tu temu vrati false
+                // U slucaju da je vec dislajkovao tu temu vrati false
                 if (splitter[0] == temaRequest.KoVrsiAkciju && splitter[1] == temaRequest.PunNazivTeme && splitter[2] == "dislike")
                 {
                     sr.Close();
@@ -367,6 +367,13 @@ namespace WebForum.Controllers
             dbOperater.Writer.Close();
 
             return true;
+        }
+
+        [ActionName("GetLajkovaneTeme")]
+        public List<Tema> GetLajkovaneTeme(string username)
+        {
+            List<Tema> listaLajkovanihTema = new List<Tema>();
+            return listaLajkovanihTema;
         }
     }
 }

@@ -31,11 +31,11 @@
           </div>
           <div class="glasovi">
             <div class="up">
-              <i class="ion ion-thumbsup"></i>
+              <i class="ion ion-thumbsup" ng-click="thumbsUp(komentar)"></i>
               <div class="thumbsnum">{{komentar.PozitivniGlasovi}}</div>
             </div>
             <div class="down">
-              <i class="ion ion-thumbsdown"></i>
+              <i class="ion ion-thumbsdown" ng-click="thumbsDown(komentar)"></i>
               <div class="thumbsnum">{{komentar.NegativniGlasovi}}</div>
             </div>
           </div>
@@ -69,11 +69,11 @@
               </div>
               <div class="glasovi">
                 <div class="up">
-                  <i class="ion ion-thumbsup"></i>
+                  <i class="ion ion-thumbsup" ng-click="thumbsUp(podkomentar)"></i>
                   <div class="thumbsnum">{{podkomentar.PozitivniGlasovi}}</div>
                 </div>
                 <div class="down">
-                  <i class="ion ion-thumbsdown"></i>
+                  <i class="ion ion-thumbsdown" ng-click="thumbsDown(podkomentar)"></i>
                   <div class="thumbsnum">{{podkomentar.NegativniGlasovi}}</div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams) {
+﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams, $rootScope) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
     $scope.nazivTeme = $routeParams.tema;
@@ -75,6 +75,34 @@
                 alert('Vec ste sacuvali ovaj komentar!');
             } else alert('Komentar uspesno sacuvan!');
             console.log(response.data);
+        });
+    }
+
+    $scope.thumbsUp = function (komentar) {
+        if (!$rootScope.ulogovan) {
+            alert('Ulogujte se da bi ste dali glas komentaru!');
+            return;
+        }
+        KomentariFactory.ThumbsUp(komentar, sessionStorage.getItem("username")).then(function (response) {
+            console.log(response.data);
+            if (response.data == false) {
+                alert('Vec ste dali pozitivan glas ovom komentaru');
+            }
+            else init();
+        });
+    }
+
+    $scope.thumbsDown = function (komentar) {
+        if (!$rootScope.ulogovan) {
+            alert('Ulogujte se da bi ste dali glas komentaru!');
+            return;
+        }
+        KomentariFactory.ThumbsDown(komentar, sessionStorage.getItem("username")).then(function (response) {
+            console.log(response.data);
+            if (response.data == false) {
+                alert('Vec ste dali negativan glas ovom komentaru');
+            }
+            else init();
         });
     }
 

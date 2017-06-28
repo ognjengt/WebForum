@@ -40,4 +40,9 @@ namespace WebForum.Helpers
         public string PunNazivTeme { get; set; }
         public string KoVrsiAkciju { get; set; }
     }
+    public class KomentarLikeDislikeRequest
+    {
+        public string IdKomentara { get; set; }
+        public string KoVrsiAkciju { get; set; }
+    }
 }

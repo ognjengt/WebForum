@@ -69,8 +69,8 @@
           <h4>Moderatori</h4>
         </div>
         <div class="body-moderatori">
-          <ul>
-            <a href="#" ng-repeat="mod in podforum.Moderatori"><li>{{mod}}</li></a> <!--ovde ng-repeat-->
+          <ul ng-repeat="mod in podforum.Moderatori">
+            <a href="#!/profil/{{mod}}"><li>{{mod}}</li></a> <!--ovde ng-repeat-->
           </ul>
         </div>
       </div>

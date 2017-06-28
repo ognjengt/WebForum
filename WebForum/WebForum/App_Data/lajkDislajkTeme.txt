@@ -3,3 +3,5 @@ sofija;Najnoviji podforum-novi redovi;like
 sofija;Najnoviji podforum-Testiranje za nove redove;like
 obican;Najnoviji podforum-novi redovi;dislike
 ognjen;Najnoviji podforum-Testiranje za nove redove;like
+ognjen;Najnoviji podforum-Slikovita;like
+ognjen;Sport-nova;dislike
