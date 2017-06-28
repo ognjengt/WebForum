@@ -42,6 +42,14 @@
         })
     }
 
+    factory.getLajkovaneTeme = function (username) {
+        return $http.get('/api/Teme/GetLajkovaneTeme?username=' + username);
+    }
+
+    factory.getDislajkovaneTeme = function (username) {
+        return $http.get('/api/Teme/GetDislajkovaneTeme?username=' + username);
+    }
+
     return factory;
 
 });

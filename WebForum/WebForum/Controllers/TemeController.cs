@@ -370,10 +370,47 @@ namespace WebForum.Controllers
         }
 
         [ActionName("GetLajkovaneTeme")]
-        public List<Tema> GetLajkovaneTeme(string username)
+        public List<string> GetLajkovaneTeme(string username)
         {
-            List<Tema> listaLajkovanihTema = new List<Tema>();
+            List<string> listaLajkovanihTema = new List<string>();
+
+            StreamReader sr = dbOperater.getReader("lajkDislajkTeme.txt");
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == username && splitter[2] == "like")
+                {
+                    listaLajkovanihTema.Add(splitter[1]);
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
             return listaLajkovanihTema;
+        }
+
+        [ActionName("GetDislajkovaneTeme")]
+        public List<string> GetDislajkovaneTeme(string username)
+        {
+            List<string> listaDislajkovanihTema = new List<string>();
+
+            StreamReader sr = dbOperater.getReader("lajkDislajkTeme.txt");
+
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] == username && splitter[2] == "dislike")
+                {
+                    listaDislajkovanihTema.Add(splitter[1]);
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            return listaDislajkovanihTema;
         }
     }
 }

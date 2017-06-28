@@ -1,4 +1,4 @@
-﻿webForum.controller('ProfilController', function ($scope, AccountFactory, $routeParams) {
+﻿webForum.controller('ProfilController', function ($scope, AccountFactory, TemeFactory, $routeParams) {
 
     function init() {
         console.log('Profil kontroler inicijalizovan');
@@ -28,9 +28,17 @@
                                 $scope.sacuvaniKomentari.push(podkomentar);
                             })
                             console.log(response.data);
+                            
+                            TemeFactory.getLajkovaneTeme($routeParams.username).then(function (response) {
+                                $scope.listaLajkovanihTema = response.data;
+                                console.log(response.data);
 
-                            //$scope.sacuvaniKomentari.push($scope.sacuvaniPodkomentari);
-                            // TODO ispisati sve lajkovane i dislajkovane entitete
+                                TemeFactory.getDislajkovaneTeme($routeParams.username).then(function (response) {
+                                    $scope.listaDislajkovanihTema = response.data;
+                                    console.log(response.data);
+                                });
+
+                            });
 
                         });
 

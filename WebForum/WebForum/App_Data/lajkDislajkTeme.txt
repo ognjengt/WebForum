@@ -5,3 +5,5 @@ obican;Najnoviji podforum-novi redovi;dislike
 ognjen;Najnoviji podforum-Testiranje za nove redove;like
 ognjen;Najnoviji podforum-Slikovita;like
 ognjen;Sport-nova;dislike
+ognjen;Najnoviji podforum-Najnovija tema;like
+ognjen;Knjizevnost-Knjiga je znanje!;like
