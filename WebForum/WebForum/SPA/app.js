@@ -15,7 +15,7 @@ webForum.config(function ($routeProvider) {
 	{
 	    controller: 'PodforumiController',
 	    templateUrl: 'SPA/partials/podforumi/podforumi.html',
-        activeTab: 'podforumi'
+	    activeTab: 'podforumi'
 
 	}).when('/login',
     {
@@ -29,7 +29,7 @@ webForum.config(function ($routeProvider) {
         templateUrl: 'SPA/partials/register.html',
         activeTab: 'register'
 
-    }).when('/podforumi/:naziv', 
+    }).when('/podforumi/:naziv',
     {
         controller: 'PodforumController',
         templateUrl: 'SPA/partials/podforumi/pregledPodforuma.html',
@@ -52,6 +52,12 @@ webForum.config(function ($routeProvider) {
         controller: 'PretragaController',
         templateUrl: 'SPA/partials/pretraga.html',
         activetab: 'pretraga'
+
+    }).when('/promenaTipa', {
+
+        controller: 'PromenaTipaController',
+        templateUrl: 'SPA/partials/promenaTipa.html',
+        activetab: 'promenaTipa'
 
     })
 

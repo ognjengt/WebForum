@@ -30,11 +30,12 @@
                         <li ng-show="ulogovan" ng-class="checkActive('/pocetna')"><a href="#!/pocetna"><i class="ion ion-android-home"></i> Početna</a></li>
                         <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
                         <li ng-class="checkActive('/pretraga')"><a href="#!/pretraga"><i class="ion ion-ios-search-strong"></i> Pretraga</a></li>
+                        <li ng-show="korisnik.uloga == 'Administrator'" ng-class="checkActive('/promenaTipa')"><a href="#!/promenaTipa"><i class="ion ion-lock-combination"></i> Promena tipa</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
                         <li ng-show="!ulogovan" ng-class="checkActive('/register')"><a href="#!/register">Registracija</a></li>
-                        <li ng-show="ulogovan"><a ng-class="checkActive('/inbox')" href="#!/inbox"><i class="ion ion-email"></i> Inbox</a></li>
+                        <li ng-show="ulogovan"><a ng-class="checkActive('/poruke')" href="#!/poruke"><i class="ion ion-email"></i> Poruke</a></li>
                         <li ng-show="ulogovan"><a href="#!/profil/{{korisnik.username}}"><i class="ion ion-person"></i> {{korisnik.imePrezime}}</a></li>
                         <li ng-show="ulogovan"><a href ng-click="Logout()"><i class="ion ion-log-out"></i> Logout</a></li>
                     </ul>
@@ -59,6 +60,7 @@
     <script src="../../SPA/controllers/ProfilController.js"></script>
     <script src="../../SPA/controllers/teme/TemaController.js"></script>
     <script src="../../SPA/controllers/PretragaController.js"></script>
+    <script src="../../SPA/controllers/PromenaTipaController.js"></script>
     <!--Factories-->
     <script src="../../SPA/services/AccountFactory.js"></script>
     <script src="../../SPA/services/PodforumiFactory.js"></script>

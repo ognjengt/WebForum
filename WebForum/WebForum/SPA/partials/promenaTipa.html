@@ -1,0 +1,21 @@
+﻿<div class="container">
+    <div class="promenaWrapper">
+        <h4>Izaberite korisnika kom želite da promenite tip</h4>
+        <div class="form-data">
+            <select class="form-control" ng-model="korisnikZaPromenu">
+                <option ng-repeat="korisnik in korisnici" value="{{korisnik.Username}}">{{korisnik.Username}}</option>
+            </select>
+        </div>
+
+        <h4>Izaberite tip</h4>
+        <div class="form-data">
+            <select class="form-control" ng-model="tipKorisnika">
+                <option value="Korisnik">Korisnik</option>
+                <option value="Moderator">Moderator</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+        </div>
+        <br>
+        <button class="btn button-success" ng-click="promeniTipKorisniku(korisnikZaPromenu,tipKorisnika)">Promeni tip</button>
+    </div>
+</div>

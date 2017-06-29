@@ -60,6 +60,17 @@
         return $http.get('/api/Account/GetSacuvaniPodkomentari?username=' + username);
     }
 
+    factory.uzmiSveKorisnikeOsimMene = function (username) {
+        return $http.get('/api/Account/UzmiSveKorisnikeOsimMene?username=' + username);
+    }
+
+    factory.promeniTipKorisniku = function (username, tip) {
+        return $http.post('/api/Account/PromeniTipKorisniku', {
+            Username: username,
+            Uloga: tip
+        });
+    }
+
     return factory;
 
 });

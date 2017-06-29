@@ -252,6 +252,7 @@
     <Content Include="SPA\controllers\MainController.js" />
     <Content Include="SPA\controllers\PretragaController.js" />
     <Content Include="SPA\controllers\ProfilController.js" />
+    <Content Include="SPA\controllers\PromenaTipaController.js" />
     <Content Include="SPA\controllers\teme\TemaController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
     <Content Include="SPA\partials\login.html" />
@@ -260,6 +261,7 @@
     <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
     <Content Include="SPA\partials\pretraga.html" />
     <Content Include="SPA\partials\profil.html" />
+    <Content Include="SPA\partials\promenaTipa.html" />
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\partials\teme\pregledTeme.html" />
     <Content Include="SPA\services\AccountFactory.js" />

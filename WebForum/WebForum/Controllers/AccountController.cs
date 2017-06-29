@@ -486,5 +486,63 @@ namespace WebForum.Controllers
 
             return true;
         }
+
+        [HttpGet]
+        [ActionName("UzmiSveKorisnikeOsimMene")]
+        public List<Korisnik> UzmiSveKorisnikeOsimMene(string username)
+        {
+            List<Korisnik> listaKorisnika = new List<Korisnik>();
+
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[0] != username)
+                {
+                    Korisnik k = new Korisnik();
+                    k.Username = splitter[0];
+                    listaKorisnika.Add(k);
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+            return listaKorisnika;
+        }
+
+        [HttpPost]
+        [ActionName("PromeniTipKorisniku")]
+        public bool PromeniTipKorisniku([FromBody]Korisnik korisnikZaPromenu)
+        {
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+            List<string> listaKorisnikaZaPonovniUpis = new List<string>();
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                bool nadjen = false;
+                string[] splitter = line.Split(';');
+                if (splitter[0] == korisnikZaPromenu.Username)
+                {
+                    nadjen = true;
+                    listaKorisnikaZaPonovniUpis.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3]+ ";" + korisnikZaPromenu.Uloga + ";" + splitter[5] + ";" + splitter[6] + ";" + splitter[7] + ";" + splitter[8] + ";" + splitter[9] + ";" + splitter[10]);
+                }
+                if (!nadjen)
+                {
+                    listaKorisnikaZaPonovniUpis.Add(line);
+                }
+
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getBulkWriter("korisnici.txt");
+            foreach (string korisnik in listaKorisnikaZaPonovniUpis)
+            {
+                sw.WriteLine(korisnik);
+            }
+            sw.Close();
+            dbOperater.Writer.Close();
+            return true;
+        }
     }
 }
