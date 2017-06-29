@@ -14,6 +14,7 @@
             } else {
                 $scope.podforum.Ikonica = "noimage.png";
             }
+            
             console.log(response.data);
             
             $scope.podforum.Opis = $scope.podforum.Opis.replace(new RegExp('{novired}', 'g'), '\n');
@@ -26,6 +27,7 @@
 
                 })
                 console.log(response.data);
+
             });
         });
     }

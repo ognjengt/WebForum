@@ -33,7 +33,20 @@
                         podkomentar.DatumKomentara = new Date(podkomentar.DatumKomentara).toLocaleDateString();
                         podkomentar.Tekst = podkomentar.Tekst.replace(new RegExp('{novired}', 'g'), '\n');
                     });
-                })
+                });
+
+                //Uzmi podatke od podforuma u kom se tema nalazi da bih mogao da radim sa moderatorima itd
+                PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
+                    console.log(response.data);
+                    $scope.JeUListiModeratora = false;
+                    $scope.podforumUKomeSeTemaNalazi = response.data;
+                    $scope.podforumUKomeSeTemaNalazi.Moderatori.forEach(function (moderator) {
+                        if (moderator == sessionStorage.getItem("username")) {
+                            $scope.JeUListiModeratora = true;
+                        }
+                    });
+                });
+
             });
         });
     }
