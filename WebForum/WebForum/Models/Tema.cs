@@ -29,5 +29,7 @@ namespace WebForum.Models
             this.PozitivniGlasovi = pozitivniG;
             this.NegativniGlasovi = negativniG;
         }
+
+        public Tema() { }
     }
 }

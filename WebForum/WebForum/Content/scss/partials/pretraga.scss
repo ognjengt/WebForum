@@ -4,17 +4,27 @@
 }
 .rezultati{
   margin-top: 20px;
-  padding: 20px;
-  min-height: 100px;
+  padding: 10px;
+  min-height: 10px;
   max-height: auto;
-
-  .rezultat{
-    height: 100px;
+  a{
+    text-decoration: none;
+    .rezultat{
+    min-height: 60px;
+    max-height: auto;
     width: 100%;
     background: #fff;
     box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
-    margin-bottom: 20px;
     padding: 20px;
+    padding-top: 10px;
+    color: $blue;
+    transition: 0.2s ease;
+    }
+    .rezultat:hover{
+      background: $blue;
+      color:#fff;
+    }
   }
+  
 }

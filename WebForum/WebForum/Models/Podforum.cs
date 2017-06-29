@@ -23,5 +23,7 @@ namespace WebForum.Models
             this.OdgovorniModerator = odgovorniMod;
             this.Moderatori = moderatori;
         }
+
+        public Podforum() { }
     }
 }

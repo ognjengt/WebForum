@@ -598,17 +598,25 @@
 
 .rezultati {
   margin-top: 20px;
-  padding: 20px;
-  min-height: 100px;
+  padding: 10px;
+  min-height: 10px;
   max-height: auto; }
-  .rezultati .rezultat {
-    height: 100px;
-    width: 100%;
-    background: #fff;
-    box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 20px; }
+  .rezultati a {
+    text-decoration: none; }
+    .rezultati a .rezultat {
+      min-height: 60px;
+      max-height: auto;
+      width: 100%;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 20px;
+      padding-top: 10px;
+      color: #0060FF;
+      transition: 0.2s ease; }
+    .rezultati a .rezultat:hover {
+      background: #0060FF;
+      color: #fff; }
 
 * {
   font-family: 'Montserrat', sans-serif !important;

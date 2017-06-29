@@ -13,11 +13,16 @@
     </div>
 
         <div class="container-fluid">
-        <div class="rezultati"> <!--ng repeat-->
+          <h4 ng-show="rezultatiPretragePodforumi">Podforumi koji zadovoljavaju kriterijume</h4>
+        <div class="rezultati" ng-repeat="podforum in rezultatiPretragePodforumi"> <!--ng repeat-->
 
-        <div class="rezultat">
-
+        <a href="#!/podforumi/{{podforum.Naziv}}">
+          <div class="rezultat">
+            <h4>{{podforum.Naziv}}</h4>
+            <p>{{podforum.Opis}}</p>
+            <p>{{podforum.OdgovorniModerator}}</p>
         </div>
+        </a>
 
         </div>
       </div>
@@ -36,11 +41,16 @@
       <button class="btn button-success" ng-click="pretraziTeme(pretragaTeme)">Pretraži</button>
     </div>
       <div class="container-fluid">
-        <div class="rezultati"> <!--ng repeat-->
+        <h4 ng-show="rezultatiPretragePodforumi">Teme koje zadovoljavaju kriterijume</h4>
+        <div class="rezultati" ng-repeat="tema in rezultatiPretrageTeme"> <!--ng repeat-->
 
-        <div class="rezultat">
-
+        <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
+          <div class="rezultat">
+            <h4>{{tema.PodforumKomePripada}} - {{tema.Naslov}}</h4>
+            <p>{{tema.Tip}}</p>
+            <p>{{tema.Autor}}</p>
         </div>
+        </a>
 
         </div>
       </div>
@@ -55,11 +65,15 @@
     </div>
     
       <div class="container-fluid">
-        <div class="rezultati"> <!--ng repeat-->
+        <div class="rezultati" ng-repeat="korisnik in rezultatiPretrageKorisnika"> <!--ng repeat-->
 
-        <div class="rezultat">
-
+        <a href="#!/profil/{{korisnik.Username}}">
+          <div class="rezultat">
+            <h4>{{korisnik.Ime}} {{korisnik.Prezime}}</h4>
+            <p>{{korisnik.Username}}</p>
+            <p>{{korisnik.Uloga}}</p>
         </div>
+        </a>
 
         </div>
       </div>
