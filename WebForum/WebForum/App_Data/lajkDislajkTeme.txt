@@ -1,1 +1,3 @@
 ognjen;Nauka-U korak sa tehnologijom;like
+sofija;Muzika-Jazz;like
+sofija;Muzika-Pop;like

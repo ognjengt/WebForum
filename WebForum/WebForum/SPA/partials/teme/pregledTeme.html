@@ -45,7 +45,7 @@
           </p>
         </div>
       </div>
-      <div ng-show="!komentar.Obrisan" class="odgovoriNaKomentarButton" ng-show="ulogovan">
+      <div ng-show="!komentar.Obrisan && ulogovan" class="odgovoriNaKomentarButton">
         <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id">Odgovori na komentar</div>
       </div>
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
