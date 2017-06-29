@@ -335,6 +335,13 @@ namespace WebForum.Controllers
                         nadjen = true;
                     }
                 }
+                foreach (string idPodkomentara in listaPodkomentaraZaBrisanje)
+                {
+                    if (likeDislikeSplitter[1] == idPodkomentara)
+                    {
+                        nadjen = true;
+                    }
+                }
                 if (!nadjen)
                 {
                     listaLajkovanihDislajkovanihKomentaraZaPonovniUpis.Add(likeDislikeComLine);
