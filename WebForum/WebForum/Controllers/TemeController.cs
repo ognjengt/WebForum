@@ -422,7 +422,7 @@ namespace WebForum.Controllers
             // 3. Za svaki komentar koji ne sadrzi tu temu dodaj njegov id u neku listu stringova, zatim prodji kroz sve podkomentari.txt i obrisi sve podkomentare ciji je splitter[0] == id-em iz liste obrisanih komentara, i takodje te obrisane ideve dodaj u jos neku listuObrisanihPodkomentara
             // 4. Prodji kroz lajkDislajkKomentari i obrisi svaki koji sadrzi neki id ili iz listeObrisanihKomentara ili iz listeObrisanihPodkomentara
             // 5. Prodji kroz lajkDislajkTeme i obrisi svaku temu ciji je splitter[1] == temaZaBrisanje.PodforumKomePripada-tema.Naslov
-            // 6. Prodji kroz korisnici.txt i skloni iz splittera[9] sve nepotrebne teme i iz splittera[10] sve nepotrebne komentare koji se nalaze u listiObrisanihKomentara i listiObrisanihPodkomentara
+            
 
             // -------------------------------- 1 ---------------------------------
             StreamReader readerTema = dbOperater.getReader("teme.txt");
@@ -567,7 +567,7 @@ namespace WebForum.Controllers
             StreamWriter lajkovaniDislajkovaniWriter = dbOperater.getBulkWriter("lajkDislajkKomentari.txt");
             foreach (string likeDislikeLn in listaLajkovanihDislajkovanihKomentaraZaPonovniUpis)
             {
-                lajkovaniDislajkovaniWriter.Write(likeDislikeLn);
+                lajkovaniDislajkovaniWriter.WriteLine(likeDislikeLn);
             }
             lajkovaniDislajkovaniWriter.Close();
             dbOperater.Reader.Close();

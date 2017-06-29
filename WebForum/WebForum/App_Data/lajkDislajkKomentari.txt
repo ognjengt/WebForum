@@ -1,1 +1,2 @@
-ognjen;70a6ce16-60d2-4885-8a3e-855937687937;likeognjen;63cecc1a-2084-4a99-ad35-1d3a5a145ac3;dislike
+ognjen;12fa6d8a-a00f-48a8-b841-21c6c2a9cdfa;like
+ognjen;9a05f1d2-eeb6-475b-bafc-41a7eb0922a9;dislike
