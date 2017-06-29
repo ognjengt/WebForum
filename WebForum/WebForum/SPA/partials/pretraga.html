@@ -1,0 +1,69 @@
+﻿<div class="container-fluid">
+  <div class="search-wrapper">
+    <div class="col-md-4">
+      <h3> <i class="ion ion-android-search"></i> Pretraži podforume</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Naslov" ng-model="pretragaPodforuma.naziv"/>
+      <br>
+      <input type="text" class="form-control" placeholder="Opis" ng-model="pretragaPodforuma.opis"/>
+      <br>
+      <input type="text" class="form-control" placeholder="Moderator" ng-model="pretragaPodforuma.moderator"/>
+      <br>
+      <button class="btn button-success" ng-click="pretraziPodforume(pretragaPodforuma)">Pretraži</button>
+    </div>
+
+        <div class="container-fluid">
+        <div class="rezultati"> <!--ng repeat-->
+
+        <div class="rezultat">
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3> <i class="ion ion-android-search"></i> Pretraži teme</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Naslov" ng-model="pretragaTeme.naslov"/>
+      <br>
+      <input type="text" class="form-control" placeholder="Sadrzaj" ng-model="pretragaTeme.sadrzaj"/>
+      <br>
+      <input type="text" class="form-control" placeholder="Autor" ng-model="pretragaTeme.autor"/>
+      <br>
+      <input type="text" class="form-control" placeholder="Podforum kome pripada" ng-model="pretragaTeme.podforum"/>
+      <br>
+      <button class="btn button-success" ng-click="pretraziTeme(pretragaTeme)">Pretraži</button>
+    </div>
+      <div class="container-fluid">
+        <div class="rezultati"> <!--ng repeat-->
+
+        <div class="rezultat">
+
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <h3> <i class="ion ion-android-search"></i> Pretraži korisnike</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="KorisnickoIme" ng-model="pretragaKorisnickogImena"/>
+      <br>
+      <button class="btn button-success" ng-click="pretraziKorisnike(pretragaKorisnickogImena)">Pretraži</button>
+    </div>
+    
+      <div class="container-fluid">
+        <div class="rezultati"> <!--ng repeat-->
+
+        <div class="rezultat">
+
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

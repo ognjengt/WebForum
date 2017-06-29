@@ -186,6 +186,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\PodforumiController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -249,6 +250,7 @@
     <Content Include="SPA\controllers\podforumi\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\controllers\MainController.js" />
+    <Content Include="SPA\controllers\PretragaController.js" />
     <Content Include="SPA\controllers\ProfilController.js" />
     <Content Include="SPA\controllers\teme\TemaController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
@@ -256,12 +258,14 @@
     <Content Include="SPA\partials\pocetna.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
     <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
+    <Content Include="SPA\partials\pretraga.html" />
     <Content Include="SPA\partials\profil.html" />
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\partials\teme\pregledTeme.html" />
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\KomentariFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
+    <Content Include="SPA\services\SearchFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

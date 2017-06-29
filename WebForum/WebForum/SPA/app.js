@@ -47,6 +47,12 @@ webForum.config(function ($routeProvider) {
         templateUrl: 'SPA/partials/profil.html',
         activetab: 'nijedan'
 
+    }).when('/pretraga', {
+
+        controller: 'PretragaController',
+        templateUrl: 'SPA/partials/pretraga.html',
+        activetab: 'pretraga'
+
     })
 
 });
