@@ -37,6 +37,16 @@
                                 TemeFactory.getDislajkovaneTeme($routeParams.username).then(function (response) {
                                     $scope.listaDislajkovanihTema = response.data;
                                     console.log(response.data);
+
+                                    // uzmi poruke ako sam ja taj koji je ulogovan
+                                    if ($scope.userProfile.Username == sessionStorage.getItem("username")) {
+                                        PorukeFactory.getAllUserMessages(sessionStorage.getItem("username")).then(function (response) {
+                                            console.log(response.data);
+                                            $scope.primljenePoruke = response.data;
+                                        });
+                                    }
+                                    
+
                                 });
 
                             });
@@ -68,6 +78,13 @@
             $scope.poruka = {};
             $scope.showPorukaPopup = false;
             alert('Poruka uspesno poslata!');
+        });
+    }
+
+    $scope.markirajKaoProcitano = function (poruka) {
+        PorukeFactory.markirajKaoProcitano(poruka).then(function (response) {
+            console.log(response.data);
+            init();
         });
     }
 

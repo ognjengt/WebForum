@@ -1,3 +1,5 @@
-﻿sofija;obican;Pozdrav druze;False
-sofija;obican;rekla sam pozdrav jbt;False
-sofija;obican;ae brt;False
+dbfdc012-8a60-4433-95ac-4a670c28aa77;obican;sofija;zdravooo;False
+94e58378-ac08-4534-9db9-fe18f5565eb4;sofija;ognjen;Molim te postavi me za administratora;True
+97d47f3e-d15d-48fd-a059-a7415d912003;ognjen;sofija;Ne zelim;True
+c493e08c-64cc-4c2c-809f-6147fe5b3e2b;sofija;ognjen;Y do?;True
+6892463e-4331-4e10-b617-81ff4c8b9126;sofija;ognjen;IDEMO BREEE;True

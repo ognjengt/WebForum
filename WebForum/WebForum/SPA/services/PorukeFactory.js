@@ -10,6 +10,15 @@
             Procitana: false
         });
     }
+
+    factory.getAllUserMessages = function (username) {
+        return $http.get('/api/Poruke/GetAllUserMessages?username=' + username);
+    }
+
+    factory.markirajKaoProcitano = function (poruka) {
+        return $http.post('/api/Poruke/MarkirajKaoProcitano?id=' + poruka.Id);
+    }
+
     return factory;
 
 });

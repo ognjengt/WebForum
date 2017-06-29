@@ -43,6 +43,9 @@
       border: 1px solid #ddd;
       transition: 0.2s ease;
       margin-top: 20px;
+      .label{
+          cursor: pointer;
+      }
 
       p{
           font-size: 0.78em;
@@ -53,4 +56,8 @@
       color: #fff;
       background: $blue;
     }
+}
+.nohover:hover{
+    background: #fff !important;
+    color: $blue !important;
 }

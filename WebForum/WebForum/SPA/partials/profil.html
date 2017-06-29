@@ -52,6 +52,16 @@
             <div class="col-md-3" ng-show="userProfile.Username == korisnik.username">
                 <div class="spisak">
                     <h4>Primljene poruke</h4>
+                    <div class="repeat-teme" ng-repeat="poruka in primljenePoruke | orderBy:'-'">
+                        <a>
+                            <div class="item nohover">
+                                <h5><a href="#!/profil/{{poruka.Posiljalac}}">{{poruka.Posiljalac}}</a></h5>
+                                <p>{{poruka.Sadrzaj}}</p>
+                                <span ng-show="poruka.Procitana" class="label label-success">Pročitano</span>
+                                <span ng-click="markirajKaoProcitano(poruka)" ng-show="!poruka.Procitana" class="label label-warning">Markiraj kao pročitano</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             </div>

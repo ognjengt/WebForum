@@ -546,12 +546,18 @@
   border: 1px solid #ddd;
   transition: 0.2s ease;
   margin-top: 20px; }
+  .profile-content .item .label {
+    cursor: pointer; }
   .profile-content .item p {
     font-size: 0.78em;
     color: #000; }
 .profile-content .item:hover {
   color: #fff;
   background: #0060FF; }
+
+.nohover:hover {
+  background: #fff !important;
+  color: #0060FF !important; }
 
 #IzmenaModal .overlay {
   position: fixed;
