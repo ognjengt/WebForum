@@ -6,6 +6,7 @@
       <p>{{podforum.Opis}}</p>
       <button class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajPodforum(podforum.Naziv,korisnik.username)"><i class="ion ion-archive"></i> Sačuvaj</button>
       <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || ( podforum.OdgovorniModerator == korisnik.username && korisnik.uloga == 'Moderator')" ng-click="obrisiPodforum(podforum)"> <i class="ion ion-trash-b"></i> Obriši</button>
+      <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="korisnik.uloga == 'Korisnik'" class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
     </div>
   </div>
   </div>
@@ -129,5 +130,24 @@
               
             </div>
         </div>
+  </div>
+</div>
+
+<div id="IzmenaModal" ng-show="zalbaModalVisible">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Priloži žalbu
+        </div> 
+        <div class="popup-body">
+          <div class="form-group">
+            <label>Žalba</label>
+            <textarea type="text" ng-model="zalba.tekst" class="form-control" placeholder="Opisite vasu zalbu..."></textarea>
+          </div>
+          <div class="btn btn-success" ng-click="priloziZalbuNaPodforum(zalba)">Pošalji</div>
+            <div class="btn btn-default" ng-click="zalbaModalVisible = !zalbaModalVisible">Zatvori</div>
+        </div>
+            
+    </div>
   </div>
 </div>

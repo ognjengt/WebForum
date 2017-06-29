@@ -190,6 +190,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ZalbeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +201,7 @@
     <Compile Include="Models\Podforum.cs" />
     <Compile Include="Models\Poruka.cs" />
     <Compile Include="Models\Tema.cs" />
+    <Compile Include="Models\Zalba.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +258,7 @@
     <Content Include="SPA\controllers\ProfilController.js" />
     <Content Include="SPA\controllers\PromenaTipaController.js" />
     <Content Include="SPA\controllers\teme\TemaController.js" />
+    <Content Include="SPA\controllers\ZalbeController.js" />
     <Content Include="SPA\directives\fileUploadDirective.js" />
     <Content Include="SPA\partials\login.html" />
     <Content Include="SPA\partials\pocetna.html" />
@@ -266,12 +269,14 @@
     <Content Include="SPA\partials\promenaTipa.html" />
     <Content Include="SPA\partials\register.html" />
     <Content Include="SPA\partials\teme\pregledTeme.html" />
+    <Content Include="SPA\partials\zalbe.html" />
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\KomentariFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
     <Content Include="SPA\services\PorukeFactory.js" />
     <Content Include="SPA\services\SearchFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />
+    <Content Include="SPA\services\ZalbeFactory.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

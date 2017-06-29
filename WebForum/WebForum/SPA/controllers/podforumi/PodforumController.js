@@ -1,10 +1,13 @@
-﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams, $rootScope, $window) {
+﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, ZalbeFactory, $routeParams, $rootScope, $window) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
     function init() {
         $scope.dodavanjeTemePopupVisible = false;
+        $scope.zalbaModalVisible = false;
         $scope.tema = {};
+        $scope.zalba = {};
+
         PodforumiFactory.getPodforumByNaziv($scope.nazivPodforuma).then(function (response) {
             $scope.podforum = response.data;
             if ($scope.podforum.Ikonica.includes('.jpg') || $scope.podforum.Ikonica.includes('.png')) {
@@ -169,6 +172,19 @@
         PodforumiFactory.obrisiPodforum(podforum).then(function (response) {
             console.log(response.data);
             $window.location.href = "#!/podforumi";
+        });
+    }
+
+    $scope.priloziZalbuNaPodforum = function (zalba) {
+        if (zalba.tekst == "" || zalba.tekst == null) {
+            alert('Popunite tekst zalbe!');
+            return;
+        }
+        zalba.entitet = $scope.nazivPodforuma;
+        zalba.korisnikKojiJeUlozio = sessionStorage.getItem("username");
+
+        ZalbeFactory.priloziZalbuNaPodforum(zalba).then(function (response) {
+            console.log(response);
         });
     }
 

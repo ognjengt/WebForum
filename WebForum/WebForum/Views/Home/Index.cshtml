@@ -35,6 +35,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
                         <li ng-show="!ulogovan" ng-class="checkActive('/register')"><a href="#!/register">Registracija</a></li>
+                        <li ng-show="korisnik.uloga == 'Administrator' || korisnik.uloga == 'Moderator'" ng-class="checkActive('/zalbe')"><a href="#!/zalbe"><i class="ion ion-alert-circled"></i> Žalbe</a></li>
                         <li ng-show="ulogovan"><a href="#!/profil/{{korisnik.username}}"><i class="ion ion-person"></i> {{korisnik.imePrezime}}</a></li>
                         <li ng-show="ulogovan"><a href ng-click="Logout()"><i class="ion ion-log-out"></i> Logout</a></li>
                     </ul>
@@ -60,6 +61,7 @@
     <script src="../../SPA/controllers/teme/TemaController.js"></script>
     <script src="../../SPA/controllers/PretragaController.js"></script>
     <script src="../../SPA/controllers/PromenaTipaController.js"></script>
+    <script src="../../SPA/controllers/ZalbeController.js"></script>
     <!--Factories-->
     <script src="../../SPA/services/AccountFactory.js"></script>
     <script src="../../SPA/services/PodforumiFactory.js"></script>
@@ -67,6 +69,7 @@
     <script src="../../SPA/services/KomentariFactory.js"></script>
     <script src="../../SPA/services/SearchFactory.js"></script>
     <script src="../../SPA/services/PorukeFactory.js"></script>
+    <script src="../../SPA/services/ZalbeFactory.js"></script>
     <!--Directives-->
     <script src="../../SPA/directives/fileUploadDirective.js"></script>
 </body>

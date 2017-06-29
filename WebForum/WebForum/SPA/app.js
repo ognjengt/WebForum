@@ -59,6 +59,12 @@ webForum.config(function ($routeProvider) {
         templateUrl: 'SPA/partials/promenaTipa.html',
         activetab: 'promenaTipa'
 
+    }).when('/zalbe', {
+
+        controller: 'ZalbeController',
+        templateUrl: 'SPA/partials/zalbe.html',
+        activetab: 'zalbe'
+
     })
 
 });

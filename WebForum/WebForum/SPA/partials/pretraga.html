@@ -41,7 +41,7 @@
       <button class="btn button-success" ng-click="pretraziTeme(pretragaTeme)">Pretraži</button>
     </div>
       <div class="container-fluid">
-        <h4 ng-show="rezultatiPretragePodforumi">Teme koje zadovoljavaju kriterijume</h4>
+        <h4 ng-show="rezultatiPretrageTeme">Teme koje zadovoljavaju kriterijume</h4>
         <div class="rezultati" ng-repeat="tema in rezultatiPretrageTeme"> <!--ng repeat-->
 
         <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
@@ -65,6 +65,7 @@
     </div>
     
       <div class="container-fluid">
+        <h4 ng-show="rezultatiPretrageKorisnika">Rezultati pretrage korisnika</h4>
         <div class="rezultati" ng-repeat="korisnik in rezultatiPretrageKorisnika"> <!--ng repeat-->
 
         <a href="#!/profil/{{korisnik.Username}}">
