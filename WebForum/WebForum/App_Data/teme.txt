@@ -5,5 +5,5 @@ Muzika;Koju muziku volite;Tekst;sofija;Ovde mozete pisati koju vrstu muzike najv
 Muzika;Rock;Tekst;sofija;rock;6/29/2017;0;0;nePostoje
 Muzika;Pop;Tekst;sofija;popo;6/29/2017;1;0;nePostoje
 Muzika;Jazz;Tekst;sofija;jazz;6/29/2017;1;0;nePostoje
-Muzika;Hip hop;Tekst;sofija;hiphop;6/29/2017;0;0;nePostoje|2dd8ac9b-e95d-4f1a-9e56-409721e74181
+Muzika;Hip hop;Tekst;sofija;hiphop;6/29/2017;0;0;nePostoje|2dd8ac9b-e95d-4f1a-9e56-409721e74181|373752e2-ea52-4f94-bbd0-01537e41dda5
 Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;asdasd;6/29/2017;0;0;nePostoje|3c280ec3-bed2-4bba-88ae-7ad10404ac53

@@ -1,3 +1,4 @@
 c794dd59-86e4-4775-81f4-10b621fe24d1;Knjizevnost-U korak sa tehnologijom;ognjen;6/29/2017;nemaRoditelja;Ali ova je u knjizevnosti;0;0;False;False;nemaPodkomentara
-3c280ec3-bed2-4bba-88ae-7ad10404ac53;Testiranje za moderatore-Ajde testiraj da li ovu mozes da obrises;obican;6/29/2017;nemaRoditelja;Da li moderator moze da obrise ovaj komentar nakon sto ga vratim da bude korisnik opet?;0;0;False;False;nemaPodkomentara|cdd36f0b-6829-437b-a96d-54b2820b1035
+3c280ec3-bed2-4bba-88ae-7ad10404ac53;Testiranje za moderatore-Ajde testiraj da li ovu mozes da obrises;obican;6/29/2017;nemaRoditelja;Da li moderator moze da obrise ovaj komentar nakon sto ga vratim da bude korisnik opet?;1;0;False;False;nemaPodkomentara|cdd36f0b-6829-437b-a96d-54b2820b1035
 2dd8ac9b-e95d-4f1a-9e56-409721e74181;Muzika-Hip hop;ognjen;6/29/2017;nemaRoditelja;Volim;0;0;False;False;nemaPodkomentara
+373752e2-ea52-4f94-bbd0-01537e41dda5;Muzika-Hip hop;obican;6/29/2017;nemaRoditelja;Super;0;0;False;False;nemaPodkomentara

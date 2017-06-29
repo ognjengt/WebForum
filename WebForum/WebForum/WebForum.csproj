@@ -186,6 +186,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\PodforumiController.cs" />
+    <Compile Include="Controllers\PorukeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -208,6 +209,7 @@
     <Content Include="App_Data\lajkDislajkTeme.txt" />
     <Content Include="App_Data\podforumi.txt" />
     <Content Include="App_Data\podkomentari.txt" />
+    <Content Include="App_Data\poruke.txt" />
     <Content Include="App_Data\teme.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\app.css" />
@@ -267,6 +269,7 @@
     <Content Include="SPA\services\AccountFactory.js" />
     <Content Include="SPA\services\KomentariFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
+    <Content Include="SPA\services\PorukeFactory.js" />
     <Content Include="SPA\services\SearchFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />
     <Content Include="Web.config" />

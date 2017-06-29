@@ -6,6 +6,7 @@
             <h4>{{userProfile.Email}}</h4>
             <h4>Telefon: {{userProfile.Telefon}}</h4>
             <h4>Registrovao se: {{userProfile.DatumRegistracije}}</h4>
+            <button ng-show="korisnik.username != userProfile.Username" ng-click="showPorukaPopup = !showPorukaPopup" class="btn btn-info"><i class="ion ion-paper-airplane"></i> Pošalji poruku</button>
       </div>
     </div>
 
@@ -88,4 +89,24 @@
 </div>
 <div class="container-fluid" ng-show="!ulogovan">
     <h1><center>Molimo vas ulogujte se kako bi ste mogli da gledate korisnicke profile</center></h1>
+</div>
+
+<div id="IzmenaModal" ng-show="showPorukaPopup">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Pošalji poruku
+        </div> 
+        <div class="popup-body">
+          <div class="form-group">
+            <label>Poruka</label>
+            <textarea type="text" ng-model="poruka.sadrzaj" class="form-control" placeholder="Sadrzaj poruke..."></textarea>
+          </div>
+          <div class="btn btn-success" ng-click="posaljiPoruku(poruka)">Pošalji</div>
+          <div class="btn btn-default" ng-click="showPorukaPopup = !showPorukaPopup">Zatvori</div>
+
+        </div>
+        
+    </div>
+  </div>
 </div>

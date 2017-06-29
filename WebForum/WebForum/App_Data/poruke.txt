@@ -1,0 +1,3 @@
+﻿sofija;obican;Pozdrav druze;False
+sofija;obican;rekla sam pozdrav jbt;False
+sofija;obican;ae brt;False

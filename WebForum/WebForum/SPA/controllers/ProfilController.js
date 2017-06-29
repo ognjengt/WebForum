@@ -1,7 +1,8 @@
-﻿webForum.controller('ProfilController', function ($scope, AccountFactory, TemeFactory, $routeParams) {
+﻿webForum.controller('ProfilController', function ($scope, AccountFactory, TemeFactory, PorukeFactory, $routeParams) {
 
     function init() {
         console.log('Profil kontroler inicijalizovan');
+        $scope.showPorukaPopup = false;
 
         AccountFactory.getUserByUsername($routeParams.username).then(function (response) {
             console.log(response.data);
@@ -53,5 +54,21 @@
     }
 
     init();
+
+    $scope.posaljiPoruku = function (poruka) {
+        if (poruka.sadrzaj == "" || poruka.sadrzaj == null) {
+            alert('Popunite sadrzaj poruke za slanje!');
+            return;
+        }
+        poruka.sadrzaj = poruka.sadrzaj.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        poruka.posiljalac = sessionStorage.getItem("username");
+        poruka.primalac = $routeParams.username;
+        PorukeFactory.posaljiPoruku(poruka).then(function (response) {
+            console.log(response.data);
+            $scope.poruka = {};
+            $scope.showPorukaPopup = false;
+            alert('Poruka uspesno poslata!');
+        });
+    }
 
 });

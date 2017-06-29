@@ -35,7 +35,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
                         <li ng-show="!ulogovan" ng-class="checkActive('/register')"><a href="#!/register">Registracija</a></li>
-                        <li ng-show="ulogovan"><a ng-class="checkActive('/poruke')" href="#!/poruke"><i class="ion ion-email"></i> Poruke</a></li>
                         <li ng-show="ulogovan"><a href="#!/profil/{{korisnik.username}}"><i class="ion ion-person"></i> {{korisnik.imePrezime}}</a></li>
                         <li ng-show="ulogovan"><a href ng-click="Logout()"><i class="ion ion-log-out"></i> Logout</a></li>
                     </ul>
@@ -67,6 +66,7 @@
     <script src="../../SPA/services/TemeFactory.js"></script>
     <script src="../../SPA/services/KomentariFactory.js"></script>
     <script src="../../SPA/services/SearchFactory.js"></script>
+    <script src="../../SPA/services/PorukeFactory.js"></script>
     <!--Directives-->
     <script src="../../SPA/directives/fileUploadDirective.js"></script>
 </body>
