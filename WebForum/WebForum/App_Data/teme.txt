@@ -6,3 +6,4 @@ Muzika;Rock;Tekst;sofija;rock;6/29/2017;0;0;nePostoje
 Muzika;Pop;Tekst;sofija;popo;6/29/2017;0;0;nePostoje
 Muzika;Jazz;Tekst;sofija;jazz;6/29/2017;0;0;nePostoje
 Muzika;Hip hop;Tekst;sofija;hiphop;6/29/2017;0;0;nePostoje
+Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;asdasd;6/29/2017;0;0;nePostoje|3c280ec3-bed2-4bba-88ae-7ad10404ac53
