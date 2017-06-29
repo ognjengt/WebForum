@@ -157,5 +157,13 @@ namespace WebForum.Controllers
             }
         }
 
+        [HttpPost]
+        [ActionName("ObrisiPodforum")]
+        public bool ObrisiPodforum([FromBody]Podforum p)
+        {
+
+            return true;
+        }
+
     }
 }

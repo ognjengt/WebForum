@@ -1,4 +1,4 @@
-﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams, $rootScope) {
+﻿webForum.controller('PodforumController', function ($scope, PodforumiFactory, TemeFactory, AccountFactory, $routeParams, $rootScope, $window) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
 
@@ -162,6 +162,13 @@
             } else {
                 init();
             }
+        });
+    }
+
+    $scope.obrisiPodforum = function (podforum) {
+        PodforumiFactory.obrisiPodforum(podforum).then(function (response) {
+            console.log(response.data);
+            $window.location.href = "#!/podforumi";
         });
     }
 

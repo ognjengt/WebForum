@@ -5,7 +5,7 @@
       <h1>{{podforum.Naziv}}</h1>
       <p>{{podforum.Opis}}</p>
       <button class="btn btn-warning" ng-show="ulogovan" ng-click="sacuvajPodforum(podforum.Naziv,korisnik.username)"><i class="ion ion-archive"></i> Sačuvaj</button>
-      <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator')"> <i class="ion ion-trash-b"></i> Obriši</button>
+      <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || podforum.OdgovorniModerator == korisnik.username" ng-click="obrisiPodforum(podforum)"> <i class="ion ion-trash-b"></i> Obriši</button>
     </div>
   </div>
   </div>
