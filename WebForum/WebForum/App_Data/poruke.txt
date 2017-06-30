@@ -6,3 +6,4 @@ d31427c4-b05b-40be-87de-d94dcb7ffa76;sofija;noviKorisnik;Postovani, obrisali smo
 9c04ddf8-5a74-4cfa-9783-f33f1276d934;sofija;obican;Obavestavamo vas da je vas komentar sa id-em a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce obrisan zbog zalbi.;False
 10e2cb87-833e-41d1-8efc-8c44bc2dfb8c;ognjen;sofija;Postovani, obrisali smo temu Muzika-Ognjenova muzika na koju ste se zalili.;True
 9fd8b605-bda4-4ed0-ac8e-a36de5a8bd7b;ognjen;ognjen;Obavestavamo vas da je vasa tema Muzika-Ognjenova muzika obrisana zbog zalbi.;True
+4cc63d57-6c7c-4dc2-aaa1-70c008934918;ognjen;noviKorisnik;z;False

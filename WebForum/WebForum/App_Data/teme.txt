@@ -4,4 +4,7 @@ Nauka;jos jedna naucna;Slika;sofija;Nauka-jos jedna naucna.jpg;6/29/2017;10;0;ne
 Muzika;Koju muziku volite;Tekst;sofija;Ovde mozete pisati koju vrstu muzike najvise volite;6/29/2017;0;0;nePostoje
 Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;asdasd;6/29/2017;10;0;nePostoje
 Muzika;Rock;Link;ognjen;asd;6/30/2017;0;0;nePostoje
-Muzika;jazz;Tekst;ognjen;asd;6/30/2017;8;0;nePostoje
+Muzika;nova;Tekst;ognjen;asdasd;6/30/2017;10;0;nePostoje
+Muzika;najnajnaj od obicnog;Tekst;obican;asd;6/30/2017;0;0;nePostoje
+blea;bllll;Slika;sofija;blea-bllll.jpg;6/30/2017;0;0;nePostoje
+blea;dobre tike;Slika;sofija;blea-dobre tike.jpg;6/30/2017;0;0;nePostoje

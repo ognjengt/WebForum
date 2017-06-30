@@ -127,33 +127,68 @@ namespace WebForum.Controllers
         [ActionName("UploadImage")]
         public HttpResponseMessage UploadImage()
         {
-            var result = new HttpResponseMessage(HttpStatusCode.OK);
-            if (Request.Content.IsMimeMultipartContent())
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            try
             {
-                Request.Content.ReadAsMultipartAsync<MultipartMemoryStreamProvider>(new MultipartMemoryStreamProvider()).ContinueWith((task) =>
-                {
 
-                    MultipartMemoryStreamProvider provider = task.Result;
-                    foreach (HttpContent content in provider.Contents)
+                var httpRequest = HttpContext.Current.Request;
+
+                foreach (string file in httpRequest.Files)
+                {
+                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
+
+                    var postedFile = httpRequest.Files[file];
+                    if (postedFile != null && postedFile.ContentLength > 0)
                     {
-                        Stream stream = content.ReadAsStreamAsync().Result;
-                        Image image = Image.FromStream(stream);
-                        var testName = content.Headers.ContentDisposition.Name;
-                        String filePath = HostingEnvironment.MapPath("~/Content/img/podforumi");
-                        string slika = Request.Headers.GetValues("slika").First();
-                        string[] spliter = slika.Split('.');
-                        string imeSlike = spliter[0];
-                        string ekstenzija = spliter[1];
-                        String fileName = slika + "." + ekstenzija;
-                        String fullPath = Path.Combine(filePath, fileName);
-                        image.Save(fullPath);
+
+                        int MaxContentLength = 1024 * 1024 * 1; //Size = 1 MB  
+
+                        IList<string> AllowedFileExtensions = new List<string> { ".jpg", ".gif", ".png" };
+                        var ext = postedFile.FileName.Substring(postedFile.FileName.LastIndexOf('.'));
+                        var extension = ext.ToLower();
+                        if (!AllowedFileExtensions.Contains(extension))
+                        {
+
+                            var message = string.Format("Please Upload image of type .jpg,.gif,.png.");
+
+                            dict.Add("error", message);
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
+                        }
+                        else if (postedFile.ContentLength > MaxContentLength)
+                        {
+
+                            var message = string.Format("Please Upload a file upto 1 mb.");
+
+                            dict.Add("error", message);
+                            return Request.CreateResponse(HttpStatusCode.BadRequest, dict);
+                        }
+                        else
+                        {
+
+                            string slika = Request.Headers.GetValues("slika").First();
+                            string[] spliter = slika.Split('.');
+                            string imeSlike = spliter[0];
+                            string ekstenzija = spliter[1];
+
+                            var filePath = HttpContext.Current.Server.MapPath("~/Content/img/podforumi/" + slika + "."+ekstenzija);
+
+                            postedFile.SaveAs(filePath);
+
+                        }
                     }
-                });
-                return result;
+
+                    var message1 = string.Format("Image Updated Successfully.");
+                    return Request.CreateErrorResponse(HttpStatusCode.Created, message1); ;
+                }
+                var res = string.Format("Please Upload a image.");
+                dict.Add("error", res);
+                return Request.CreateResponse(HttpStatusCode.NotFound, dict);
             }
-            else
+            catch (Exception ex)
             {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotAcceptable, "This request is not properly formatted"));
+                var res = string.Format("some Message");
+                dict.Add("error", res);
+                return Request.CreateResponse(HttpStatusCode.NotFound, dict);
             }
         }
 

@@ -6,7 +6,7 @@
   <button class="btn btn-warning" ng-show="ulogovan" ng-click="zapratiTemu(korisnik.username)"><i class="ion ion-archive"></i> Zaprati</button>
   <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="obrisiTemu(tema)"> <i class="ion ion-trash-b"></i> Obriši</button>
   <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="showIzmenaPopupWindow()"><i class="ion ion-edit"></i> Izmeni</button>
-  <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="(korisnik.uloga == 'Korisnik' && tema.Autor != korisnik.username) || (korisnik.uloga == 'Moderator' && tema.Autor != korisnik.username)" class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
+  <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="(korisnik.uloga == 'Korisnik' && tema.Autor != korisnik.username) || (podforumUKomeSeTemaNalazi.OdgovorniModerator != korisnik.username && tema.Autor != korisnik.username)" class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
 </div>
 <div class="tema-sadrzaj">
   <h4 ng-show="tema.Tip == 'Tekst'">[Tekst]</h4>
@@ -48,14 +48,14 @@
         </div>
       </div>
       <div ng-show="!komentar.Obrisan && ulogovan" class="odgovoriNaKomentarButton">
-        <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id">Odgovori na komentar</div>
+        <div class="btn button-success" ng-hide="prikazanKomentar == komentar.Id" ng-click="prikazanKomentar = komentar.Id"><i class="ion ion-reply-all"></i> Odgovori na komentar</div>
       </div>
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
         <h5>Odgovori na komentar</h5>
         <div class="form-group">
           <textarea class="form-control" placeholder="Odgovorite na ovaj komentar..." ng-model="podkomentar.tekstKomentara"></textarea>
         </div>
-        <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara,tema.PodforumKomePripada,tema.Naslov)"><i class="ion ion-reply"></i> Odgovori</button>
+        <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara,tema.PodforumKomePripada,tema.Naslov)"><i class="ion ion-reply-all"></i> Odgovori</button>
       </div>
 
       <div class="podkomentari" ng-show="!komentar.Obrisan"> 

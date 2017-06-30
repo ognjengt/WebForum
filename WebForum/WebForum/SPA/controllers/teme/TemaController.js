@@ -163,7 +163,7 @@
     $scope.obrisiTemu = function (tema) {
         TemeFactory.obrisiTemu(tema).then(function (response) {
             console.log(response.data);
-
+            alert('Tema uspesno obrisana');
             $window.location.href = "#!/podforumi"
         });
     }

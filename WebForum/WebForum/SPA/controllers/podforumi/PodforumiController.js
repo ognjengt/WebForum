@@ -1,4 +1,4 @@
-webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$rootScope) {
+webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$rootScope, $window, $route) {
 
 
     function init() {
@@ -92,9 +92,6 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
             if (izmenjenNazivSlike != "") {
                 upload(izmenjenNazivSlike);
             }
-            //else {
-            //    $window.location.href = "#!/podforumi";
-            //}
         }); 
     }
 
@@ -107,6 +104,7 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
         PodforumiFactory.uploadImage(fd, nazivSlike).then(function (response) {
             // upload slike gotov
             console.log(response.data);
+            $route.reload();
         });
     }
 

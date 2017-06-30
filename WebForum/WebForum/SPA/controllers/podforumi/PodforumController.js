@@ -171,6 +171,7 @@
     $scope.obrisiPodforum = function (podforum) {
         PodforumiFactory.obrisiPodforum(podforum).then(function (response) {
             console.log(response.data);
+            alert('Podforum uspesno obrisan');
             $window.location.href = "#!/podforumi";
         });
     }
