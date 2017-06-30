@@ -4,9 +4,9 @@
 
     <div ng-show="zalbe" class="zalbe" ng-repeat="zalba in zalbe | orderBy:'-'"> <!--repeat-->
         <div class="zalba">
-          <h5>Autor: <a href="#!/profil/{{zalba.KorisnikKojiJeUlozio}}">{{zalba.KorisnikKojiJeUlozio}}</a></h5>
+          <h5>Autor žalbe: <a href="#!/profil/{{zalba.KorisnikKojiJeUlozio}}">{{zalba.KorisnikKojiJeUlozio}}</a></h5>
           <p>Datum: {{zalba.DatumZalbe}}</p>
-          <p>Žalba na: {{zalba.Entitet}}</p>
+          <p>Žalba na <span ng-show="zalba.TipEntiteta == 'Podforum'">podforum</span> <span ng-show="zalba.TipEntiteta == 'Tema'">temu</span> <span ng-show="zalba.TipEntiteta == 'Komentar'">komentar</span>: {{zalba.Entitet}} , Autor entiteta: {{zalba.AutorZaljenogEntiteta}}</p>
           <p>{{zalba.Tekst}}</p>
 
           <div class="btns">

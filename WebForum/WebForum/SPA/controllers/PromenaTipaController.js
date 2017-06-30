@@ -1,4 +1,9 @@
-﻿webForum.controller('PromenaTipaController', function ($scope, $rootScope, AccountFactory) {
+﻿webForum.controller('PromenaTipaController', function ($scope, $rootScope, $window, AccountFactory) {
+
+    if (sessionStorage.getItem("uloga") != 'Administrator') {
+        alert('Niste autorizovani da pregledate ovu stranicu.');
+        $window.location.href = "#!/podforumi";
+    }
 
     function init() {
         console.log('Promena tipa inicijalizovana');

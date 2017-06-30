@@ -1,4 +1,11 @@
-﻿webForum.controller('ZalbeController', function ($scope, $window, $rootScope, ZalbeFactory, PorukeFactory, PodforumiFactory, TemeFactory) {
+﻿webForum.controller('ZalbeController', function ($scope, $window, $rootScope, ZalbeFactory, PorukeFactory, PodforumiFactory, TemeFactory, KomentariFactory) {
+
+    if (sessionStorage.getItem("uloga") != 'Moderator') {
+        if (sessionStorage.getItem("uloga") != 'Administrator') {
+            alert('Niste autorizovani da pregledate ovu stranicu.');
+            $window.location.href = "#!/podforumi";
+        }
+    }
 
     function init() {
         console.log('Zalbe inicijalizovane');
@@ -24,7 +31,7 @@
         else if (zalba.TipEntiteta == 'Tema') {
             tekstPoruke = "Vasa zalba na temu " + zalba.Entitet + " je odbijena."
         }
-        else if (zalba.Entitet == 'Komentar') {
+        else if (zalba.TipEntiteta == 'Komentar') {
             tekstPoruke = "Vasa zalba na komentar " + zalba.Entitet + " je odbijena."
         }
 
@@ -52,7 +59,7 @@
         else if (zalba.TipEntiteta == 'Tema') {
             tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na temu " + zalba.Entitet;
         }
-        else if (zalba.Entitet == 'Komentar') {
+        else if (zalba.TipEntiteta == 'Komentar') {
             tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na komentar " + zalba.Entitet;
         }
 
@@ -63,7 +70,7 @@
         else if (zalba.TipEntiteta == 'Tema') {
             tekstPorukeZaAutoraZaljenogEntiteta = "Upozoravamo vas da je vasa tema " + zalba.Entitet + " bila prijavljena u zalbi.";
         }
-        else if (zalba.Entitet == 'Komentar') {
+        else if (zalba.TipEntiteta == 'Komentar') {
             tekstPorukeZaAutoraZaljenogEntiteta = "Upozoravamo vas da je vas komentar " + zalba.Entitet + " bio prijavljen u zalbi.";
         }
 
@@ -102,8 +109,8 @@
         else if (zalba.TipEntiteta == 'Tema') {
             tekstPorukeZaAutoraZalbe = "Postovani, obrisali smo temu " + zalba.Entitet + " na koju ste se zalili.";
         }
-        else if (zalba.Entitet == 'Komentar') {
-            tekstPorukeZaAutoraZalbe = "Postovani, obrisali smo komentar " + zalba.Entitet + " na koji ste se zalili.";
+        else if (zalba.TipEntiteta == 'Komentar') {
+            tekstPorukeZaAutoraZalbe = "Postovani, obrisali smo komentar " + zalba.Entitet + " na koji ste se zalili sa tekstom zalbe: '"+ zalba.Tekst+"'";
         }
 
         var tekstPorukeZaAutoraZaljenogEntiteta = "";
@@ -113,8 +120,8 @@
         else if (zalba.TipEntiteta == 'Tema') {
             tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vasa tema " + zalba.Entitet + " obrisana zbog zalbi.";
         }
-        else if (zalba.Entitet == 'Komentar') {
-            tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vas komentar " + zalba.Entitet + " obrisan zbog zalbi.";
+        else if (zalba.TipEntiteta == 'Komentar') {
+            tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vas komentar sa id-em " + zalba.Entitet + " obrisan zbog zalbi.";
         }
 
         var porukaZaAutoraZalbe = {
@@ -141,7 +148,7 @@
                         PorukeFactory.posaljiPoruku(porukaZaAutoraZaljenogEntiteta).then(function (response) {
                             ZalbeFactory.obrisiZalbu(zalba).then(function (response) {
                                 console.log(response.data);
-                                alert('Entitet obrisan');
+                                alert('Entitet obrisan, korisnici obavesteni');
                                 init();
                             });
                         });
@@ -160,7 +167,7 @@
                         PorukeFactory.posaljiPoruku(porukaZaAutoraZaljenogEntiteta).then(function (response) {
                             ZalbeFactory.obrisiZalbu(zalba).then(function (response) {
                                 console.log(response.data);
-                                alert('Entitet obrisan');
+                                alert('Entitet obrisan, korisnici obavesteni');
                                 init();
                             });
                         });
@@ -169,6 +176,42 @@
 
             }
             else if (zalba.TipEntiteta == 'Komentar') {
+
+                var komentar = {
+                    Id: zalba.Entitet
+                }
+
+                KomentariFactory.obrisiKomentar(komentar).then(function (response) {
+                    if (response.data == true) {
+                        PorukeFactory.posaljiPoruku(porukaZaAutoraZaljenogEntiteta).then(function (response) {
+                            ZalbeFactory.obrisiZalbu(zalba).then(function (response) {
+                                console.log(response.data);
+                                alert('Entitet obrisan, korisnici obavesteni');
+                                init();
+                            });
+                        });
+                    }
+                });
+
+            }
+
+            else if (zalba.TipEntiteta == 'Podkomentar') {
+
+                var podkomentar = {
+                    Id: zalba.Entitet
+                }
+
+                KomentariFactory.obrisiPodkomentar(podkomentar).then(function (response) {
+                    if (response.data == true) {
+                        PorukeFactory.posaljiPoruku(porukaZaAutoraZaljenogEntiteta).then(function (response) {
+                            ZalbeFactory.obrisiZalbu(zalba).then(function (response) {
+                                console.log(response.data);
+                                alert('Entitet obrisan, korisnici obavesteni');
+                                init();
+                            });
+                        });
+                    }
+                });
 
             }
 

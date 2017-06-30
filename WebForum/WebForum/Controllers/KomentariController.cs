@@ -98,6 +98,8 @@ namespace WebForum.Controllers
                     {
                         if (idPodkomentaraUKomentarima != "nemaPodkomentara")
                         {
+                            // ideviPodkomentara predstavlja string id-eva podkomentara koji pripadaju tom komentaru
+                            // prodji kroz sve podkomentare i napuni u listu samo one ciji je id == idPodkomentaraukomentarima
                             StreamReader readerPodkomentara = dbOperaterPodkomentari.getReader("podkomentari.txt");
                             string podkomentarLinija = "";
                             while ( (podkomentarLinija = readerPodkomentara.ReadLine()) != null )

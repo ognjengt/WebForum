@@ -3,5 +3,7 @@ Knjizevnost;U korak sa tehnologijom;Tekst;ognjen;asd;6/29/2017;0;0;nePostoje
 Nauka;jos jedna naucna;Slika;sofija;Nauka-jos jedna naucna.jpg;6/29/2017;0;0;nePostoje
 Muzika;Koju muziku volite;Tekst;sofija;Ovde mozete pisati koju vrstu muzike najvise volite;6/29/2017;0;0;nePostoje
 Muzika;Rock;Tekst;sofija;rock;6/29/2017;0;0;nePostoje
-Muzika;Pop;Tekst;sofija;popo;6/29/2017;1;0;nePostoje
+Muzika;Pop;Tekst;sofija;popo;6/29/2017;2;0;nePostoje|464da614-557a-4335-8da9-65c28fa4dabd|1bf06f8c-8a75-4701-9e5a-66618068a835|d8d89489-a154-428e-acba-1f96567f4e88
 Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;asdasd;6/29/2017;0;0;nePostoje
+Sport;Pozdrav;Slika;obican;Sport-Pozdrav.jpg;6/30/2017;0;0;nePostoje
+Muzika;Ognjenova muzika;Tekst;ognjen;jhjhhj;6/30/2017;0;0;nePostoje

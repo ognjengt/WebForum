@@ -5,11 +5,21 @@
 
     function init() {
         $scope.tema = {};
+        $scope.zalba = {};
+        $scope.zalbaKomentar = {};
+        $scope.zalbaPodkomentar = {};
         $scope.komentarZaIzmenu = '';
         $scope.podkomentarZaIzmenu = '';
 
+        $scope.komentarZaZalbu = '';
+        $scope.podkomentarZaZalbu = '';
+
+        $scope.tekstKomentaraZaZalbu = '';
+
         $scope.izmenaModalWindowVisible = false;
         $scope.zalbaModalVisible = false;
+        $scope.zalbaKomentarModalVisible = false;
+        $scope.zalbaPodkomentarModalVisible = false;
 
         TemeFactory.getTemaByNaziv($scope.nazivTeme, $scope.nazivPodforuma).then(function (response) {
             $scope.tema = response.data;
@@ -178,8 +188,7 @@
     $scope.izmeniKomentar = function (idKomentara, tekstKomentara, tipKorisnika) {
 
         var prikaziDaJeIzmenjeno = false;
-        // prodji kroz listu na sesiji za koje je taj korisnik odgovorni moderator, ako u toj listi nigde ne postoji ime ovog podforuma,
-        // stavi prikaziDaJeIzmenjeno = true, ili ako mu je uloga obican korisnik
+
         if (tipKorisnika == 'Korisnik') {
             prikaziDaJeIzmenjeno = true;
         }
@@ -193,8 +202,7 @@
     $scope.izmeniPodkomentar = function (idKomentara, tekstKomentara, tipKorisnika) {
 
         var prikaziDaJeIzmenjeno = false;
-        // prodji kroz listu na sesiji za koje je taj korisnik odgovorni moderator, ako u toj listi nigde ne postoji ime ovog podforuma,
-        // stavi prikaziDaJeIzmenjeno = true, ili ako mu je uloga obican korisnik
+
         if (tipKorisnika == 'Korisnik') {
             prikaziDaJeIzmenjeno = true;
         }
@@ -236,4 +244,58 @@
 
     }
 
+    $scope.setKomentarZaZalbu = function (komentar) {
+        $scope.zalbaKomentarModalVisible = true;
+        $scope.komentarZaZalbu = komentar.Id;
+        $scope.tekstKomentaraZaZalbu = komentar.Tekst;
+    }
+
+    $scope.setPodkomentarZaZalbu = function (komentar) {
+        $scope.zalbaPodkomentarModalVisible = true;
+        $scope.podkomentarZaZalbu = komentar.Id;
+        $scope.tekstKomentaraZaZalbu = komentar.Tekst;
+    }
+
+    $scope.priloziZalbuNaKomentar = function (zalba) {
+
+        if (zalba.tekst == "" || zalba.tekst == null) {
+            alert('Popunite tekst zalbe!');
+            return;
+        }
+
+        zalba.tekst = zalba.tekst.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        zalba.entitet = $scope.komentarZaZalbu; // id Komentara
+        zalba.korisnikKojiJeUlozio = sessionStorage.getItem("username");
+
+        ZalbeFactory.priloziZalbuNaKomentar(zalba).then(function (response) {
+            console.log(response.data);
+            if (response.data == true) {
+                alert('Uspesno poslata zalba!');
+                $scope.zalba = {};
+                $scope.zalbaKomentarModalVisible = false;
+            }
+        });
+
+    }
+
+    $scope.priloziZalbuNaPodkomentar = function (zalba) {
+
+        if (zalba.tekst == "" || zalba.tekst == null) {
+            alert('Popunite tekst zalbe!');
+            return;
+        }
+
+        zalba.tekst = zalba.tekst.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        zalba.entitet = $scope.podkomentarZaZalbu; // id Komentara
+        zalba.korisnikKojiJeUlozio = sessionStorage.getItem("username");
+
+        ZalbeFactory.priloziZalbuNaPodkomentar(zalba).then(function (response) {
+            console.log(response.data);
+            if (response.data == true) {
+                alert('Uspesno poslata zalba!');
+                $scope.zalba = {};
+                $scope.zalbaPodkomentarModalVisible = false;
+            }
+        });
+    }
 });

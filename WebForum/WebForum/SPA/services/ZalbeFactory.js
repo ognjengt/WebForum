@@ -19,7 +19,23 @@
             Tekst: zalba.tekst,
             Entitet: zalba.entitet,
             KorisnikKojiJeUlozio: zalba.korisnikKojiJeUlozio
-        })
+        });
+    }
+
+    factory.priloziZalbuNaKomentar = function (zalba) {
+        return $http.post('/api/Zalbe/PriloziZalbuNaKomentar', {
+            Tekst: zalba.tekst,
+            Entitet: zalba.entitet,
+            KorisnikKojiJeUlozio: zalba.korisnikKojiJeUlozio
+        });
+    }
+
+    factory.priloziZalbuNaPodkomentar = function (zalba) {
+        return $http.post('/api/Zalbe/PriloziZalbuNaPodkomentar', {
+            Tekst: zalba.tekst,
+            Entitet: zalba.entitet,
+            KorisnikKojiJeUlozio: zalba.korisnikKojiJeUlozio
+        });
     }
 
 
