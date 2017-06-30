@@ -1,4 +1,4 @@
-﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, $routeParams, $rootScope, $window) {
+﻿webForum.controller('TemaController', function ($scope, PodforumiFactory, TemeFactory, KomentariFactory, AccountFactory, ZalbeFactory, $routeParams, $rootScope, $window) {
 
     $scope.nazivPodforuma = $routeParams.naziv;
     $scope.nazivTeme = $routeParams.tema;
@@ -9,6 +9,7 @@
         $scope.podkomentarZaIzmenu = '';
 
         $scope.izmenaModalWindowVisible = false;
+        $scope.zalbaModalVisible = false;
 
         TemeFactory.getTemaByNaziv($scope.nazivTeme, $scope.nazivPodforuma).then(function (response) {
             $scope.tema = response.data;
@@ -210,6 +211,29 @@
             console.log(response.data);
             init();
         });
+    }
+
+    // ------------------------------------------------------------------- Zalbe
+
+    $scope.priloziZalbuNaTemu = function (zalba) {
+
+        if (zalba.tekst == "" || zalba.tekst == null) {
+            alert('Popunite tekst zalbe!');
+            return;
+        }
+        zalba.tekst = zalba.tekst.replace(/(\r\n|\n|\r)/gm, "{novired}");
+        zalba.entitet = $scope.tema.PodforumKomePripada + '-' + $scope.tema.Naslov;
+        zalba.korisnikKojiJeUlozio = sessionStorage.getItem("username");
+
+        ZalbeFactory.priloziZalbuNaTemu(zalba).then(function (response) {
+            console.log(response.data);
+            if (response.data == true) {
+                alert('Uspesno poslata zalba!');
+                $scope.zalba = {};
+                $scope.zalbaModalVisible = false;
+            }
+        });
+
     }
 
 });

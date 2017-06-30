@@ -6,6 +6,7 @@
   <button class="btn btn-warning" ng-show="ulogovan" ng-click="zapratiTemu(korisnik.username)"><i class="ion ion-archive"></i> Zaprati</button>
   <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="obrisiTemu(tema)"> <i class="ion ion-trash-b"></i> Obriši</button>
   <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="showIzmenaPopupWindow()"><i class="ion ion-edit"></i> Izmeni</button>
+  <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="korisnik.uloga == 'Korisnik' && tema.Autor != korisnik.username" class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
 </div>
 <div class="tema-sadrzaj">
   <h4 ng-show="tema.Tip == 'Tekst'">[Tekst]</h4>
@@ -177,6 +178,26 @@
           </div>
         </div>
         
+    </div>
+  </div>
+</div>
+
+
+<div id="IzmenaModal" ng-show="zalbaModalVisible">
+  <div class="overlay">
+    <div class="addNew-wrapper">
+      <div class="header">
+        Priloži žalbu
+        </div> 
+        <div class="popup-body">
+          <div class="form-group">
+            <label>Žalba</label>
+            <textarea type="text" ng-model="zalba.tekst" class="form-control" placeholder="Opisite vasu zalbu..."></textarea>
+          </div>
+          <div class="btn btn-success" ng-click="priloziZalbuNaTemu(zalba)">Pošalji</div>
+            <div class="btn btn-default" ng-click="zalbaModalVisible = !zalbaModalVisible">Zatvori</div>
+        </div>
+            
     </div>
   </div>
 </div>

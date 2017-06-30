@@ -1,4 +1,4 @@
-﻿webForum.controller('ZalbeController', function ($scope, $window, $rootScope, ZalbeFactory, PorukeFactory, PodforumiFactory) {
+﻿webForum.controller('ZalbeController', function ($scope, $window, $rootScope, ZalbeFactory, PorukeFactory, PodforumiFactory, TemeFactory) {
 
     function init() {
         console.log('Zalbe inicijalizovane');
@@ -47,13 +47,13 @@
     $scope.upozoriAutoraEntiteta = function (zalba) {
         var tekstPorukeZaAutoraZalbe = "";
         if (zalba.TipEntiteta == 'Podforum') {
-            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na podforum " + zalba.Entitet;
+            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na podforum " + zalba.Entitet;
         }
         else if (zalba.TipEntiteta == 'Tema') {
-            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na temu " + zalba.Entitet;
+            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na temu " + zalba.Entitet;
         }
         else if (zalba.Entitet == 'Komentar') {
-            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na komentar " + zalba.Entitet;
+            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na komentar " + zalba.Entitet;
         }
 
         var tekstPorukeZaAutoraZaljenogEntiteta = "";
@@ -149,6 +149,23 @@
                 });
             }
             else if (zalba.TipEntiteta == 'Tema') {
+                var podforumTema = zalba.Entitet.split('-');
+                var tema = {
+                    PodforumKomePripada: podforumTema[0],
+                    Naslov: podforumTema[1]
+                }
+
+                TemeFactory.obrisiTemu(tema).then(function (response) {
+                    if (response.data == true) {
+                        PorukeFactory.posaljiPoruku(porukaZaAutoraZaljenogEntiteta).then(function (response) {
+                            ZalbeFactory.obrisiZalbu(zalba).then(function (response) {
+                                console.log(response.data);
+                                alert('Entitet obrisan');
+                                init();
+                            });
+                        });
+                    }
+                });
 
             }
             else if (zalba.TipEntiteta == 'Komentar') {
