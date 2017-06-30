@@ -1,4 +1,4 @@
-﻿webForum.controller('ProfilController', function ($scope, AccountFactory, TemeFactory, PorukeFactory, $routeParams) {
+﻿webForum.controller('ProfilController', function ($scope, AccountFactory, TemeFactory, PorukeFactory, KomentariFactory, $routeParams) {
 
     function init() {
         console.log('Profil kontroler inicijalizovan');
@@ -38,17 +38,48 @@
                                     $scope.listaDislajkovanihTema = response.data;
                                     console.log(response.data);
 
-                                    // uzmi poruke ako sam ja taj koji je ulogovan
-                                    if ($scope.userProfile.Username == sessionStorage.getItem("username")) {
-                                        PorukeFactory.getAllUserMessages(sessionStorage.getItem("username")).then(function (response) {
+                                    KomentariFactory.getLajkovaniKomentari($routeParams.username).then(function (response) {
+                                        $scope.listaLajkovanihKomentara = response.data;
+                                        console.log(response.data);
+
+                                        KomentariFactory.getDislajkovaniKomentari($routeParams.username).then(function (response) {
+                                            $scope.listaDislajkovanihKomentara = response.data;
                                             console.log(response.data);
-                                            $scope.primljenePoruke = response.data;
-                                            $scope.primljenePoruke.forEach(function (poruka) {
-                                                poruka.Sadrzaj = poruka.Sadrzaj.replace(new RegExp('{novired}', 'g'), '\n');
+
+                                            KomentariFactory.getLajkovaniPodkomentari($routeParams.username).then(function (response) {
+                                                var listaLajkovanihPodkomentara = response.data;
+                                                listaLajkovanihPodkomentara.forEach(function (podkomentar) {
+                                                    $scope.listaLajkovanihKomentara.push(podkomentar);
+                                                })
+                                                
+                                                console.log(response.data);
+
+                                                KomentariFactory.getDislajkovaniPodkomentari($routeParams.username).then(function (response) {
+                                                    var listaDislajkovanihPodkomentara = response.data;
+                                                    listaDislajkovanihPodkomentara.forEach(function (podkomentar) {
+                                                        $scope.listaDislajkovanihKomentara.push(podkomentar);
+                                                    })
+                                                    console.log(response.data);
+
+                                                    // uzmi poruke ako sam ja taj koji je ulogovan
+                                                    if ($scope.userProfile.Username == sessionStorage.getItem("username")) {
+                                                        PorukeFactory.getAllUserMessages(sessionStorage.getItem("username")).then(function (response) {
+                                                            console.log(response.data);
+                                                            $scope.primljenePoruke = response.data;
+                                                            $scope.primljenePoruke.forEach(function (poruka) {
+                                                                poruka.Sadrzaj = poruka.Sadrzaj.replace(new RegExp('{novired}', 'g'), '\n');
+                                                            });
+                                                        });
+                                                    }
+
+
+                                                });
+
                                             });
+
                                         });
-                                    }
-                                    
+
+                                    });
 
                                 });
 

@@ -68,7 +68,7 @@
             <div class="row">
             <div class="col-md-3">
                 <div class="spisak">
-                    <h4><i class="ion ion-thumbsup"></i> Lajkovani entiteti</h4>
+                    <h4><i class="ion ion-thumbsup"></i> Lajkovane teme</h4>
                     <div class="repeat-teme" ng-repeat="lajkovanaTema in listaLajkovanihTema | orderBy:'-'">
                         <a>
                             <div class="item">
@@ -82,11 +82,37 @@
 
             <div class="col-md-3">
                 <div class="spisak">
-                    <h4><i class="ion ion-thumbsdown"></i> Dislajkovani entiteti</h4>
+                    <h4><i class="ion ion-thumbsdown"></i> Dislajkovane teme</h4>
                     <div class="repeat-teme" ng-repeat="dislajkovanaTema in listaDislajkovanihTema | orderBy:'-'">
                         <a>
                             <div class="item">
                                 <p>{{dislajkovanaTema}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4><i class="ion ion-thumbsup"></i> Lajkovani komentari</h4>
+                    <div class="repeat-teme" ng-repeat="lajkovanKomentar in listaLajkovanihKomentara | orderBy:'-'">
+                        <a>
+                            <div class="item">
+                                <p>{{lajkovanKomentar.Tekst}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="spisak">
+                    <h4><i class="ion ion-thumbsdown"></i> Dislajkovani komentari</h4>
+                    <div class="repeat-teme" ng-repeat="dislajkovanKomentar in listaDislajkovanihKomentara | orderBy:'-'">
+                        <a>
+                            <div class="item">
+                                <p>{{dislajkovanKomentar.Tekst}}</p>
                             </div>
                         </a>
                     </div>

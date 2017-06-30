@@ -1,9 +1,0 @@
-f8493472-cf97-4b8a-9f30-12dc4f3111a4;sofija;noviKorisnik;;True
-d6bf2d49-ae64-482e-8df9-1d976a303c14;sofija;obican;;True
-bbcb31ea-1199-4299-96ef-c2a197be2297;sofija;noviKorisnik;Postovani, obrisali smo komentar 9f3c7024-d2f7-4e5e-a87e-2cbdb83961be na koji ste se zalili sa tekstom zalbe: 'zaliiim';True
-d8f6c508-4e19-4ccf-88b9-bbdc268b981d;sofija;obican;Obavestavamo vas da je vas komentar sa id-em 9f3c7024-d2f7-4e5e-a87e-2cbdb83961be obrisan zbog zalbi.;True
-d31427c4-b05b-40be-87de-d94dcb7ffa76;sofija;noviKorisnik;Postovani, obrisali smo komentar a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce na koji ste se zalili sa tekstom zalbe: 'Brisanje i komenta i podkomenta';False
-9c04ddf8-5a74-4cfa-9783-f33f1276d934;sofija;obican;Obavestavamo vas da je vas komentar sa id-em a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce obrisan zbog zalbi.;False
-10e2cb87-833e-41d1-8efc-8c44bc2dfb8c;ognjen;sofija;Postovani, obrisali smo temu Muzika-Ognjenova muzika na koju ste se zalili.;True
-9fd8b605-bda4-4ed0-ac8e-a36de5a8bd7b;ognjen;ognjen;Obavestavamo vas da je vasa tema Muzika-Ognjenova muzika obrisana zbog zalbi.;True
-4cc63d57-6c7c-4dc2-aaa1-70c008934918;ognjen;noviKorisnik;z;False

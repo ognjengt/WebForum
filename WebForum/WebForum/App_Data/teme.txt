@@ -2,12 +2,6 @@ Nauka;U korak sa tehnologijom;Tekst;ognjen;Danasnjica je u koraku sa tehnologijo
 Knjizevnost;U korak sa tehnologijom;Tekst;ognjen;asd;6/29/2017;0;0;nePostoje
 Nauka;jos jedna naucna;Slika;sofija;Nauka-jos jedna naucna.jpg;6/29/2017;10;0;nePostoje
 Muzika;Koju muziku volite;Tekst;sofija;Ovde mozete pisati koju vrstu muzike najvise volite;6/29/2017;0;0;nePostoje
-Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;menja se;6/29/2017;10;0;nePostoje
 Muzika;Rock;Link;ognjen;asd;6/30/2017;0;0;nePostoje
 Muzika;nova;Tekst;ognjen;asdasd;6/30/2017;10;0;nePostoje
-Muzika;najnajnaj od obicnog;Tekst;obican;asd;6/30/2017;0;0;nePostoje
-blea;bllll;Slika;sofija;blea-bllll.jpg;6/30/2017;0;0;nePostoje
-blea;dobre tike;Slika;sofija;blea-dobre tike.jpg;6/30/2017;0;0;nePostoje
-blea;os uci brt;Slika;sofija;blea-os uci brt.jpg;6/30/2017;0;0;nePostoje
-blea;ae brt;Slika;sofija;95.jpg;6/30/2017;0;0;nePostoje|8dffdcb9-7263-4af7-871f-a151301da411|7dd8e0d8-e469-4289-ad3a-c94a210fbf04
-Testiranje za moderatore;Lnkkk;Link;ognjen;https://www.youtube.com/watch?v=Hm1YFszJWbQ;6/30/2017;0;0;nePostoje
+Muzika;najnajnaj od obicnog;Tekst;obican;asd;6/30/2017;0;0;nePostoje|40d1cf25-de08-48e7-9f3c-686269c07c99|9c4a70e3-3baf-43dd-847e-b67193e7fa98|3b14c621-ed9d-4b3d-aedd-66a710710011|fa3f05fa-4fd0-4d7f-b204-31f8f191f1e9|66430747-38c3-40f0-bb75-6872be0d3a04|d77b9502-20df-4ead-a047-4785ba0c3364|dba151e2-dcd9-45c8-aeb8-adb090c35ae6|658d5bc0-b27a-492f-a8f6-3bd544121eb1

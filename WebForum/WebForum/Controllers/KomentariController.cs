@@ -76,6 +76,7 @@ namespace WebForum.Controllers
             return k;
         }
 
+        [HttpGet]
         [ActionName("GetKomentariZaTemu")]
         public List<Komentar> GetKomentariZaTemu(string idTeme)
         {
@@ -138,6 +139,7 @@ namespace WebForum.Controllers
             return listaKomentaraZaTemu;
         }
 
+        [HttpPost]
         [ActionName("DodajPodkomentar")]
         public Komentar DodajPodkomentar([FromBody]Komentar podkomentar)
         {
@@ -515,6 +517,8 @@ namespace WebForum.Controllers
             StreamReader sr = dbOperater.getReader("komentari.txt");
             List<string> listaSvihKomentara = new List<string>();
 
+            string idKomentaraZaBrisanje = "";
+
             string line = "";
             while ((line = sr.ReadLine()) != null)
             {
@@ -524,6 +528,7 @@ namespace WebForum.Controllers
                 if (splitter[0] == komentar.Id)
                 {
                     nadjen = true;
+                    idKomentaraZaBrisanje = splitter[0];
                     listaSvihKomentara.Add(splitter[0]+";"+splitter[1]+ ";" + splitter[2]+ ";" + splitter[3]+ ";" + splitter[4]+ ";" + splitter[5]+ ";" + splitter[6]+ ";" + splitter[7]+ ";" + splitter[8]+";"+"True"+";"+splitter[10]);
                 }
                 if (!nadjen)
@@ -542,6 +547,36 @@ namespace WebForum.Controllers
                 sw.WriteLine(linijaKomentara);
             }
             sw.Close();
+            dbOperater.Writer.Close();
+
+            // Prodji kroz sve podkomentare, i onima kojima je roditelj Id od ovog sto se brise, stavi im obrisan na true
+            StreamReader srPodkomentari = dbOperater.getReader("podkomentari.txt");
+            List<string> listaPodkomentaraZaPonovniUpis = new List<string>();
+
+            string podkomLine = "";
+            while ((podkomLine = srPodkomentari.ReadLine()) != null)
+            {
+                bool nadjen = false;
+                string[] splitter = podkomLine.Split(';');
+                if (splitter[0] == idKomentaraZaBrisanje)
+                {
+                    nadjen = true;
+                    listaPodkomentaraZaPonovniUpis.Add(splitter[0] + ";" + splitter[1] + ";" + splitter[2] + ";" + splitter[3] + ";" + splitter[4] + ";" + splitter[5] + ";" + splitter[6] + ";" + splitter[7] + ";" + "True" + ";" + splitter[9]);
+                }
+                if (!nadjen)
+                {
+                    listaPodkomentaraZaPonovniUpis.Add(podkomLine);
+                }
+            }
+            srPodkomentari.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter swPodkomentari = dbOperater.getBulkWriter("podkomentari.txt");
+            foreach (string podkomentar in listaPodkomentaraZaPonovniUpis)
+            {
+                swPodkomentari.WriteLine(podkomentar);
+            }
+            swPodkomentari.Close();
             dbOperater.Writer.Close();
 
             return true;
@@ -635,6 +670,219 @@ namespace WebForum.Controllers
             dbOperater.Writer.Close();
 
             return true;
+        }
+
+        [HttpGet]
+        [ActionName("GetLajkovaniKomentari")]
+        public List<Komentar> GetLajkovaniKomentari(string username)
+        {
+            List<Komentar> listaLajkovanihKomentara = new List<Komentar>();
+
+            StreamReader readerLajkova = dbOperater.getReader("lajkDislajkKomentari.txt");
+            List<string> ideviLajkovanih = new List<string>();
+            string komentarLine = "";
+            while ((komentarLine = readerLajkova.ReadLine()) != null)
+            {
+                string[] splitter = komentarLine.Split(';');
+                if (splitter[2] == "like")
+                {
+                    ideviLajkovanih.Add(splitter[1]);
+                }
+                
+            }
+            readerLajkova.Close();
+            dbOperater.Reader.Close();
+
+            if (ideviLajkovanih.Count == 0) return listaLajkovanihKomentara;
+            // prodji kroz komentari.txt i uzmi te sa tim idem
+            StreamReader readerKomentara = dbOperater.getReader("komentari.txt");
+            string komLine = "";
+            while ((komLine = readerKomentara.ReadLine()) != null)
+            {
+                string[] splitter = komLine.Split(';');
+                bool postojiULajkovanim = ideviLajkovanih.Any(idKomentara => idKomentara == splitter[0]);
+                // ako postoji u lajkovanim i nije obrisan dodaj ga u listu lajkovanih
+                if (postojiULajkovanim && splitter[9] == "False")
+                {
+                    Komentar k = new Komentar();
+                    k.Id = splitter[0];
+                    k.TemaKojojPripada = splitter[1];
+                    k.Autor = splitter[2];
+                    k.DatumKomentara = DateTime.Parse(splitter[3]);
+                    k.RoditeljskiKomentar = splitter[4];
+                    k.Tekst = splitter[5];
+                    k.PozitivniGlasovi = Int32.Parse(splitter[6]);
+                    k.NegativniGlasovi = Int32.Parse(splitter[7]);
+                    k.Izmenjen = bool.Parse(splitter[8]);
+                    k.Obrisan = bool.Parse(splitter[9]);
+
+                    listaLajkovanihKomentara.Add(k);
+                }
+            }
+            readerKomentara.Close();
+            dbOperater.Reader.Close();
+
+            return listaLajkovanihKomentara;
+        }
+
+        [HttpGet]
+        [ActionName("GetDislajkovaniKomentari")]
+        public List<Komentar> GetDislajkovaniKomentari(string username)
+        {
+
+            List<Komentar> listaDislajkovanihKomentara = new List<Komentar>();
+
+            StreamReader readerLajkova = dbOperater.getReader("lajkDislajkKomentari.txt");
+            List<string> ideviDislajkovanih = new List<string>();
+            string komentarLine = "";
+            while ((komentarLine = readerLajkova.ReadLine()) != null)
+            {
+                string[] splitter = komentarLine.Split(';');
+                if (splitter[2] == "dislike")
+                {
+                    ideviDislajkovanih.Add(splitter[1]);
+                }
+
+            }
+            readerLajkova.Close();
+            dbOperater.Reader.Close();
+
+            if (ideviDislajkovanih.Count == 0) return listaDislajkovanihKomentara;
+            // prodji kroz komentari.txt i uzmi te sa tim idem
+            StreamReader readerKomentara = dbOperater.getReader("komentari.txt");
+            string komLine = "";
+            while ((komLine = readerKomentara.ReadLine()) != null)
+            {
+                string[] splitter = komLine.Split(';');
+                bool postojiUDislajkovanim = ideviDislajkovanih.Any(idKomentara => idKomentara == splitter[0]);
+                // ako postoji u dislajkovanima i nije obrisan dodaj ga u listu dislajkovanih
+                if (postojiUDislajkovanim && splitter[9] == "False")
+                {
+                    Komentar k = new Komentar();
+                    k.Id = splitter[0];
+                    k.TemaKojojPripada = splitter[1];
+                    k.Autor = splitter[2];
+                    k.DatumKomentara = DateTime.Parse(splitter[3]);
+                    k.RoditeljskiKomentar = splitter[4];
+                    k.Tekst = splitter[5];
+                    k.PozitivniGlasovi = Int32.Parse(splitter[6]);
+                    k.NegativniGlasovi = Int32.Parse(splitter[7]);
+                    k.Izmenjen = bool.Parse(splitter[8]);
+                    k.Obrisan = bool.Parse(splitter[9]);
+
+                    listaDislajkovanihKomentara.Add(k);
+                }
+            }
+            readerKomentara.Close();
+            dbOperater.Reader.Close();
+
+            return listaDislajkovanihKomentara;
+        }
+
+        [HttpGet]
+        [ActionName("GetLajkovaniPodkomentari")]
+        public List<Komentar> GetLajkovaniPodkomentari(string username)
+        {
+            List<Komentar> listaLajkovanihKomentara = new List<Komentar>();
+
+            StreamReader readerLajkova = dbOperater.getReader("lajkDislajkKomentari.txt");
+            List<string> ideviLajkovanih = new List<string>();
+            string komentarLine = "";
+            while ((komentarLine = readerLajkova.ReadLine()) != null)
+            {
+                string[] splitter = komentarLine.Split(';');
+                if (splitter[2] == "like")
+                {
+                    ideviLajkovanih.Add(splitter[1]);
+                }
+
+            }
+            readerLajkova.Close();
+            dbOperater.Reader.Close();
+
+            if (ideviLajkovanih.Count == 0) return listaLajkovanihKomentara;
+            // prodji kroz komentari.txt i uzmi te sa tim idem
+            StreamReader readerKomentara = dbOperater.getReader("podkomentari.txt");
+            string komLine = "";
+            while ((komLine = readerKomentara.ReadLine()) != null)
+            {
+                string[] splitter = komLine.Split(';');
+                bool postojiULajkovanim = ideviLajkovanih.Any(idKomentara => idKomentara == splitter[1]);
+                // ako postoji u lajkovanima i nije obrisan dodaj ga u listu lajkovanih
+                if (postojiULajkovanim && splitter[8] == "False")
+                {
+                    Komentar k = new Komentar();
+                    k.RoditeljskiKomentar = splitter[0];
+                    k.Id = splitter[1];
+                    k.Autor = splitter[2];
+                    k.DatumKomentara = DateTime.Parse(splitter[3]);
+                    k.Tekst = splitter[4];
+                    k.PozitivniGlasovi = Int32.Parse(splitter[5]);
+                    k.NegativniGlasovi = Int32.Parse(splitter[6]);
+                    k.Izmenjen = bool.Parse(splitter[7]);
+                    k.Obrisan = bool.Parse(splitter[8]);
+                    k.TemaKojojPripada = splitter[9];
+
+                    listaLajkovanihKomentara.Add(k);
+                }
+            }
+            readerKomentara.Close();
+            dbOperater.Reader.Close();
+
+            return listaLajkovanihKomentara;
+        }
+
+        [HttpGet]
+        [ActionName("GetDislajkovaniPodkomentari")]
+        public List<Komentar> GetDislajkovaniPodkomentari(string username)
+        {
+            List<Komentar> listaDislajkovanihKomentara = new List<Komentar>();
+
+            StreamReader readerLajkova = dbOperater.getReader("lajkDislajkKomentari.txt");
+            List<string> ideviDislajkovanih = new List<string>();
+            string komentarLine = "";
+            while ((komentarLine = readerLajkova.ReadLine()) != null)
+            {
+                string[] splitter = komentarLine.Split(';');
+                if (splitter[2] == "dislike")
+                {
+                    ideviDislajkovanih.Add(splitter[1]);
+                }
+
+            }
+            readerLajkova.Close();
+            dbOperater.Reader.Close();
+
+            if (ideviDislajkovanih.Count == 0) return listaDislajkovanihKomentara;
+            // prodji kroz komentari.txt i uzmi te sa tim idem
+            StreamReader readerKomentara = dbOperater.getReader("podkomentari.txt");
+            string komLine = "";
+            while ((komLine = readerKomentara.ReadLine()) != null)
+            {
+                string[] splitter = komLine.Split(';');
+                bool postojiUDislajkovanim = ideviDislajkovanih.Any(idKomentara => idKomentara == splitter[1]);
+                // ako postoji u dislajkovanima i nije obrisan dodaj ga u listu dislajkovanih
+                if (postojiUDislajkovanim && splitter[8] == "False")
+                {
+                    Komentar k = new Komentar();
+                    k.RoditeljskiKomentar = splitter[0];
+                    k.Id = splitter[1];
+                    k.Autor = splitter[2];
+                    k.DatumKomentara = DateTime.Parse(splitter[3]);
+                    k.Tekst = splitter[4];
+                    k.PozitivniGlasovi = Int32.Parse(splitter[5]);
+                    k.NegativniGlasovi = Int32.Parse(splitter[6]);
+                    k.Izmenjen = bool.Parse(splitter[7]);
+                    k.Obrisan = bool.Parse(splitter[8]);
+                    k.TemaKojojPripada = splitter[9];
+
+                    listaDislajkovanihKomentara.Add(k);
+                }
+            }
+            readerKomentara.Close();
+            dbOperater.Reader.Close();
+
+            return listaDislajkovanihKomentara;
         }
     }
 }

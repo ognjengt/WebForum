@@ -23,6 +23,7 @@ namespace WebForum.Controllers
         /// </summary>
         /// <param name="podforum"></param>
         /// <returns></returns>
+        [HttpGet]
         [ActionName("GetTemeZaPodforum")]
         public List<Tema> GetTemeZaPodforum(string podforum)
         {
@@ -95,6 +96,7 @@ namespace WebForum.Controllers
             return t;
         }
 
+        [HttpGet]
         [ActionName("GetTemaByNaziv")]
         public Tema GetTemaByNaziv(string podforum, string tema)
         {
@@ -405,6 +407,7 @@ namespace WebForum.Controllers
             return true;
         }
 
+        [HttpGet]
         [ActionName("GetLajkovaneTeme")]
         public List<string> GetLajkovaneTeme(string username)
         {
@@ -427,6 +430,7 @@ namespace WebForum.Controllers
             return listaLajkovanihTema;
         }
 
+        [HttpGet]
         [ActionName("GetDislajkovaneTeme")]
         public List<string> GetDislajkovaneTeme(string username)
         {

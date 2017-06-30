@@ -79,6 +79,7 @@ namespace WebForum.Controllers
             return null;
         }
 
+        [HttpGet]
         [ActionName("GetUserByUsername")]
         public Korisnik GetUserByUsername(string username)
         {
@@ -109,6 +110,7 @@ namespace WebForum.Controllers
             return null;
         }
 
+        [HttpGet]
         [ActionName("GetSacuvaniPodforumi")]
         public List<Podforum> GetSacuvaniPodforumi(string username)
         {
@@ -155,6 +157,7 @@ namespace WebForum.Controllers
             return listaSacuvanihPodforuma;
         }
 
+        [HttpGet]
         [ActionName("GetSnimljeneTeme")]
         public List<Tema> GetSnimljeneTeme(string username)
         {
@@ -200,6 +203,7 @@ namespace WebForum.Controllers
             return listaSacuvanihTema;
         }
 
+        [HttpGet]
         [ActionName("GetSacuvaniKomentari")]
         public List<Komentar> GetSacuvaniKomentari(string username)
         {
@@ -242,6 +246,7 @@ namespace WebForum.Controllers
             return listaSacuvanihKomentara;
         }
 
+        [HttpGet]
         [ActionName("GetSacuvaniPodkomentari")]
         public List<Komentar> GetSacuvaniPodkomentari(string username)
         {

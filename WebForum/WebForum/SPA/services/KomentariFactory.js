@@ -65,6 +65,22 @@
         });
     }
 
+    factory.getLajkovaniKomentari = function (username) {
+        return $http.get('/api/Komentari/GetLajkovaniKomentari?username=' + username);
+    }
+
+    factory.getLajkovaniPodkomentari = function (username) {
+        return $http.get('/api/Komentari/GetLajkovaniPodkomentari?username=' + username);
+    }
+
+    factory.getDislajkovaniKomentari = function (username) {
+        return $http.get('/api/Komentari/GetDislajkovaniKomentari?username=' + username);
+    }
+
+    factory.getDislajkovaniPodkomentari = function (username) {
+        return $http.get('/api/Komentari/GetDislajkovaniPodkomentari?username=' + username);
+    }
+
     return factory;
 
 });

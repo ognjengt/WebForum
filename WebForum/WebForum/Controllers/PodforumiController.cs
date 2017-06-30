@@ -24,6 +24,7 @@ namespace WebForum.Controllers
         /// Vraca sve postojece podforume
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         [ActionName("GetAll")]
         public List<Podforum> GetAll()
         {
@@ -58,6 +59,7 @@ namespace WebForum.Controllers
         /// </summary>
         /// <param name="naziv"></param>
         /// <returns></returns>
+        [HttpGet]
         [ActionName("GetPodforumByNaziv")]
         public Podforum GetPodforumByNaziv(string naziv)
         {
