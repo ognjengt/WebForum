@@ -1,0 +1,2 @@
+8dffdcb9-7263-4af7-871f-a151301da411;blea-ae brt;ognjen;6/30/2017;nemaRoditelja;asdasd;0;0;False;False;nemaPodkomentara|4a8669be-1f95-40b0-833b-4b58387b294e
+7dd8e0d8-e469-4289-ad3a-c94a210fbf04;blea-ae brt;obican;6/30/2017;nemaRoditelja;ae;0;0;False;False;nemaPodkomentara

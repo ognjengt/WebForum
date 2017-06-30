@@ -17,6 +17,7 @@
         $scope.tekstKomentaraZaZalbu = '';
 
         $scope.izmenaModalWindowVisible = false;
+        $scope.izmenaTemeSaSlikomModalVisible = false;
         $scope.zalbaModalVisible = false;
         $scope.zalbaKomentarModalVisible = false;
         $scope.zalbaPodkomentarModalVisible = false;
@@ -171,8 +172,14 @@
     // -------------------------------------------------------------------------------- Izmena
 
     $scope.showIzmenaPopupWindow = function () {
-        $scope.izmenaModalWindowVisible = !$scope.izmenaModalWindowVisible;
-        $scope.noviSadrzajTeme = $scope.tema.Sadrzaj;
+        if ($scope.tema.Tip == 'Slika') {
+            $scope.izmenaTemeSaSlikomModalVisible = true;
+        }
+        else {
+            $scope.izmenaModalWindowVisible = !$scope.izmenaModalWindowVisible;
+            $scope.noviSadrzajTeme = $scope.tema.Sadrzaj;
+        }
+        
     }
 
     $scope.setKomentarZaIzmenu = function (komentar) {
@@ -216,6 +223,48 @@
     $scope.izmeniTemu = function (tema, noviSadrzaj) {
         noviSadrzaj = noviSadrzaj.replace(/(\r\n|\n|\r)/gm, "{novired}");
         TemeFactory.izmeniTemu(tema, noviSadrzaj).then(function (response) {
+            console.log(response.data);
+            init();
+        });
+    }
+
+    $scope.filesChanged = function (elm) {
+        $scope.files = elm.files;
+        $scope.$apply();
+    }
+
+    $scope.izmeniTemuSaSlikom = function (tema) {
+
+        var fullPath = document.getElementById('slikaTemeZaIzmenu').value;
+        if (fullPath == null || fullPath == "") {
+            alert('Niste odabrali sliku za upload');
+            return;
+        }
+        var nazivSlike = "";
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+
+            nazivSlike = filename;
+        }
+        TemeFactory.izmeniTemu(tema, nazivSlike).then(function (response) {
+            console.log(response.data);
+            upload(nazivSlike);
+        });
+
+    }
+
+    function upload(nazivSlike) {
+        var fd = new FormData();
+        angular.forEach($scope.files, function (file) {
+            fd.append('file', file);
+        });
+
+        TemeFactory.uploadImage(fd, nazivSlike).then(function (response) {
+            // upload slike gotov
             console.log(response.data);
             init();
         });
