@@ -213,6 +213,7 @@
     <Content Include="App_Data\podkomentari.txt" />
     <Content Include="App_Data\poruke.txt" />
     <Content Include="App_Data\teme.txt" />
+    <Content Include="App_Data\zalbe.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\app.css" />
     <Content Include="Content\css\bootstrap.min.css" />

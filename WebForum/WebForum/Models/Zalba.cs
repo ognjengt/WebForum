@@ -12,5 +12,7 @@ namespace WebForum.Models
         public DateTime DatumZalbe { get; set; }
         public string Entitet { get; set; }
         public string KorisnikKojiJeUlozio { get; set; }
+        public string AutorZaljenogEntiteta { get; set; }
+        public string TipEntiteta { get; set; }
     }
 }

@@ -2,6 +2,10 @@
 
     var factory = {};
 
+    factory.getSveZalbe = function (username) {
+        return $http.get('/api/Zalbe/GetSveZalbe?username=' + username);
+    }
+
     factory.priloziZalbuNaPodforum = function (zalba) {
         return $http.post('/api/Zalbe/PriloziZalbuNaPodforum', {
             Tekst: zalba.tekst,
@@ -9,6 +13,15 @@
             KorisnikKojiJeUlozio: zalba.korisnikKojiJeUlozio
         });
     }
+
+
+    factory.obrisiZalbu = function (zalba) {
+        return $http.post('/api/Zalbe/ObrisiZalbu', {
+            Id: zalba.Id
+        });
+    }
+
+    
 
     return factory;
 

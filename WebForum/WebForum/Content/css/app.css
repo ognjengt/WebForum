@@ -630,6 +630,23 @@
   margin-top: 50px;
   text-align: center; }
 
+.zalbe-wrapper {
+  text-align: center; }
+  .zalbe-wrapper .zalbe {
+    padding: 20px; }
+    .zalbe-wrapper .zalbe .zalba {
+      width: 100%;
+      min-height: 100px;
+      max-height: auto;
+      background: #fff;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      text-align: left;
+      margin-bottom: 40px;
+      border-radius: 8px; }
+      .zalbe-wrapper .zalbe .zalba .btns {
+        padding-top: 20px; }
+
 * {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 1.01em; }

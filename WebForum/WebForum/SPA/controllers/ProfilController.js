@@ -43,6 +43,9 @@
                                         PorukeFactory.getAllUserMessages(sessionStorage.getItem("username")).then(function (response) {
                                             console.log(response.data);
                                             $scope.primljenePoruke = response.data;
+                                            $scope.primljenePoruke.forEach(function (poruka) {
+                                                poruka.Sadrzaj = poruka.Sadrzaj.replace(new RegExp('{novired}', 'g'), '\n');
+                                            });
                                         });
                                     }
                                     

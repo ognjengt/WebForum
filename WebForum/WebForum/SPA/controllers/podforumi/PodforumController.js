@@ -180,11 +180,17 @@
             alert('Popunite tekst zalbe!');
             return;
         }
+        zalba.tekst = zalba.tekst.replace(/(\r\n|\n|\r)/gm, "{novired}");
         zalba.entitet = $scope.nazivPodforuma;
         zalba.korisnikKojiJeUlozio = sessionStorage.getItem("username");
 
         ZalbeFactory.priloziZalbuNaPodforum(zalba).then(function (response) {
-            console.log(response);
+            console.log(response.data);
+            if (response.data == true) {
+                alert('Uspesno poslata zalba!');
+                $scope.zalba = {};
+                $scope.zalbaModalVisible = false;
+            }
         });
     }
 

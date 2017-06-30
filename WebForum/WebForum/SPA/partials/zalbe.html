@@ -1,1 +1,25 @@
-﻿OVDE ZALBE BURKEEEEEEELINNNO BRE
+﻿<div class="container">
+  <div class="zalbe-wrapper">
+    <h2>Žalbe</h2>
+
+    <div ng-show="zalbe" class="zalbe" ng-repeat="zalba in zalbe | orderBy:'-'"> <!--repeat-->
+        <div class="zalba">
+          <h5>Autor: <a href="#!/profil/{{zalba.KorisnikKojiJeUlozio}}">{{zalba.KorisnikKojiJeUlozio}}</a></h5>
+          <p>Datum: {{zalba.DatumZalbe}}</p>
+          <p>Žalba na: {{zalba.Entitet}}</p>
+          <p>{{zalba.Tekst}}</p>
+
+          <div class="btns">
+            <button class="btn btn-primary" ng-click="odbijZalbu(zalba)"><i class="ion ion-close"></i> Odbij žalbu</button>
+            <button class="btn btn-warning" ng-click="upozoriAutoraEntiteta(zalba)"><i class="ion ion-alert-circled"></i> Upozori autora</button>
+            <button class="btn btn-danger" ng-click="obrisiEntitet(zalba)"><i class="ion ion-android-delete"></i> Obriši entitet</button>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="nemaZalbi" ng-show="zalbe.length == 0">
+      <h3>Trenutno ne postoje žalbe koje su namenjene vama.</h3>
+    </div>
+  </div>
+</div>

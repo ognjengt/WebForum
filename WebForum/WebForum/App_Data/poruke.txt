@@ -1,1 +1,6 @@
-﻿
+dfcc323b-6c0e-4f86-b756-58612bc788ac;ognjen;obican;Postovani, upozorili smo sofija zbog vase zalbe na podforum Muzika;True
+a060df80-abd0-47fb-971f-ff273ec5fa2b;ognjen;sofija;Upozoravamo vas da je vas podforum Muzika bio prijavljen u zalbi.;True
+e8d6fe84-25b7-48d0-bf9b-43bd94c16289;ognjen;obican;Postovani, obrisali smo podforum Podforum za brisanje preko zalbe na koji ste se zalili.;True
+8bbc995b-51aa-4f30-a2c1-5f7916800342;ognjen;sofija;Obavestavamo vas da je vas podforum Podforum za brisanje preko zalbe obrisan zbog zalbi.;True
+8f714f22-ee09-43ad-a00f-cdf4c3f9375c;ognjen;obican;Postovani, obrisali smo podforum brisiiiiiiiiiii na koji ste se zalili.;False
+7fdf9f27-8686-4a3d-8056-0ee312919fbb;ognjen;sofija;Obavestavamo vas da je vas podforum brisiiiiiiiiiii obrisan zbog zalbi.;False
