@@ -2,7 +2,7 @@
   <div class="preporuke-teme-wrapper">
     <h2>Teme koje bi vam se svidele</h2>
     <h4>Ovo su teme koje ne pratite a u proteklom vremenskom periodu su skupile velik broj lajkova</h4>
-    <div ng-show="preporuceneTeme" class="teme" ng-repeat="tema in preporuceneTeme"><!--ng-repeat-->
+    <div ng-show="preporuceneTeme" class="teme" ng-repeat="tema in preporuceneTeme | orderBy:'-'"><!--ng-repeat-->
       
       <a href="#!/podforumi/{{tema.PodforumKomePripada}}/{{tema.Naslov}}">
         <div class="tema">

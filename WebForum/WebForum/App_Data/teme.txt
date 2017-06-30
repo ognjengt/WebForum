@@ -2,5 +2,6 @@ Nauka;U korak sa tehnologijom;Tekst;ognjen;Danasnjica je u koraku sa tehnologijo
 Knjizevnost;U korak sa tehnologijom;Tekst;ognjen;asd;6/29/2017;0;0;nePostoje
 Nauka;jos jedna naucna;Slika;sofija;Nauka-jos jedna naucna.jpg;6/29/2017;10;0;nePostoje
 Muzika;Koju muziku volite;Tekst;sofija;Ovde mozete pisati koju vrstu muzike najvise volite;6/29/2017;0;0;nePostoje
-Muzika;Rock;Tekst;sofija;rock;6/29/2017;0;0;nePostoje
 Testiranje za moderatore;Ajde testiraj da li ovu mozes da obrises;Tekst;obican;asdasd;6/29/2017;10;0;nePostoje
+Muzika;Rock;Link;ognjen;asd;6/30/2017;0;0;nePostoje
+Muzika;jazz;Tekst;ognjen;asd;6/30/2017;8;0;nePostoje
