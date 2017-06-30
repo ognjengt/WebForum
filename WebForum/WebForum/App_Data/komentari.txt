@@ -1,3 +1,2 @@
-464da614-557a-4335-8da9-65c28fa4dabd;Muzika-Pop;obican;6/30/2017;nemaRoditelja;Pozdrav i ja volim pop;0;0;False;False;nemaPodkomentara
-1bf06f8c-8a75-4701-9e5a-66618068a835;Muzika-Pop;sofija;6/30/2017;nemaRoditelja;Zdravo;0;0;False;True;nemaPodkomentara
-d8d89489-a154-428e-acba-1f96567f4e88;Muzika-Pop;obican;6/30/2017;nemaRoditelja;Djubreeee;0;0;False;True;nemaPodkomentara
+a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce;Muzika-Pop;obican;6/30/2017;nemaRoditelja;zdravoooo;0;0;False;True;nemaPodkomentara|61660524-a7bc-4b56-8ec9-1aed6212b2b4|5f9be15c-3049-4f72-8a97-5bb0d1b9c0ed
+5516ab8b-dd07-46bc-86d6-55bd5569f607;Muzika-Pop;obican;6/30/2017;nemaRoditelja;Pozppozzzz;0;0;False;False;nemaPodkomentara|9f3c7024-d2f7-4e5e-a87e-2cbdb83961be

@@ -34,6 +34,9 @@
         else if (zalba.TipEntiteta == 'Komentar') {
             tekstPoruke = "Vasa zalba na komentar " + zalba.Entitet + " je odbijena."
         }
+        else if (zalba.TipEntiteta == 'Podkomentar') {
+            tekstPoruke = "Vasa zalba na komentar " + zalba.Entitet + " je odbijena."
+        }
 
 
         var poruka = {
@@ -62,6 +65,9 @@
         else if (zalba.TipEntiteta == 'Komentar') {
             tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na komentar " + zalba.Entitet;
         }
+        else if (zalba.TipEntiteta == 'Podkomentar') {
+            tekstPorukeZaAutoraZalbe = "Postovani, upozorili smo korisnika " + zalba.AutorZaljenogEntiteta + " zbog vase zalbe na komentar " + zalba.Entitet;
+        }
 
         var tekstPorukeZaAutoraZaljenogEntiteta = "";
         if (zalba.TipEntiteta == 'Podforum') {
@@ -71,6 +77,9 @@
             tekstPorukeZaAutoraZaljenogEntiteta = "Upozoravamo vas da je vasa tema " + zalba.Entitet + " bila prijavljena u zalbi.";
         }
         else if (zalba.TipEntiteta == 'Komentar') {
+            tekstPorukeZaAutoraZaljenogEntiteta = "Upozoravamo vas da je vas komentar " + zalba.Entitet + " bio prijavljen u zalbi.";
+        }
+        else if (zalba.TipEntiteta == 'Podkomentar') {
             tekstPorukeZaAutoraZaljenogEntiteta = "Upozoravamo vas da je vas komentar " + zalba.Entitet + " bio prijavljen u zalbi.";
         }
 
@@ -112,6 +121,9 @@
         else if (zalba.TipEntiteta == 'Komentar') {
             tekstPorukeZaAutoraZalbe = "Postovani, obrisali smo komentar " + zalba.Entitet + " na koji ste se zalili sa tekstom zalbe: '"+ zalba.Tekst+"'";
         }
+        else if (zalba.TipEntiteta == 'Podkomentar') {
+            tekstPorukeZaAutoraZalbe = "Postovani, obrisali smo komentar " + zalba.Entitet + " na koji ste se zalili sa tekstom zalbe: '" + zalba.Tekst + "'";
+        }
 
         var tekstPorukeZaAutoraZaljenogEntiteta = "";
         if (zalba.TipEntiteta == 'Podforum') {
@@ -121,6 +133,9 @@
             tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vasa tema " + zalba.Entitet + " obrisana zbog zalbi.";
         }
         else if (zalba.TipEntiteta == 'Komentar') {
+            tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vas komentar sa id-em " + zalba.Entitet + " obrisan zbog zalbi.";
+        }
+        else if (zalba.TipEntiteta == 'Podkomentar') {
             tekstPorukeZaAutoraZaljenogEntiteta = "Obavestavamo vas da je vas komentar sa id-em " + zalba.Entitet + " obrisan zbog zalbi.";
         }
 

@@ -230,6 +230,99 @@ namespace WebForum.Controllers
         [ActionName("PriloziZalbuNaPodkomentar")]
         public bool PriloziZalbuNaPodkomentar([FromBody]Zalba zalba)
         {
+            zalba.DatumZalbe = DateTime.Now;
+            zalba.Id = Guid.NewGuid().ToString();
+            zalba.TipEntiteta = "Podkomentar";
+
+            string idRoditeljskogKomentara = "";
+
+            // nadji autora zaljenog podkomentara
+            StreamReader podkomentariReader = dbOperater.getReader("podkomentari.txt");
+            string podkomentarLine = "";
+            while ((podkomentarLine = podkomentariReader.ReadLine()) != null)
+            {
+                string[] splitter = podkomentarLine.Split(';');
+                if (splitter[1] == zalba.Entitet)
+                {
+                    idRoditeljskogKomentara = splitter[0];
+                    zalba.AutorZaljenogEntiteta = splitter[2];
+                    break;
+                }
+            }
+            podkomentariReader.Close();
+            dbOperater.Reader.Close();
+
+            // prvo nadji sve administratore da se njima prosledi
+            StreamReader sr = dbOperater.getReader("korisnici.txt");
+            List<string> listaAdministratoraZaProsledjivanje = new List<string>();
+            string line = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                string[] splitter = line.Split(';');
+                if (splitter[4] == "Administrator")
+                {
+                    listaAdministratoraZaProsledjivanje.Add(splitter[0]);
+                }
+            }
+            sr.Close();
+            dbOperater.Reader.Close();
+
+            // prodji kroz komentare svih tema, ukoliko neka tema sadrzi u svojoj listi komenara idRoditeljskogKomentara sacuvaj podforum u kojem se nalazi ta tema
+            // onda prodji kroz sve podforume i nadji onaj podforum koji sam malopre nasao i izvuci mu odgovornog moderatora
+
+            StreamReader temeReader = dbOperater.getReader("teme.txt");
+            string podforumZaPretraguModeratora = "";
+
+            string temaLine = "";
+            bool nadjen = false;
+            while ((temaLine = temeReader.ReadLine()) != null)
+            {
+                string[] splitter = temaLine.Split(';');
+                // posplituj sad splitter[8] - tu su svi idEvi komentara
+                string[] komentariSplitter = splitter[8].Split('|');
+                foreach (string idKomentara in komentariSplitter)
+                {
+                    if (idKomentara == idRoditeljskogKomentara)
+                    {
+                        // To znaci da ova tema sadrzi taj komentar koji je poslat na zalbu i sad uzimam podforum u kom se ta tema nalazi
+                        podforumZaPretraguModeratora = splitter[0];
+                        nadjen = true;
+                        break;
+                    }
+                }
+                if (nadjen)
+                {
+                    break;
+                }
+            }
+            temeReader.Close();
+            dbOperater.Reader.Close();
+
+            // pa sada prodji kroz podforume i nadji odgovornog moderatora za podforum u kojem se nalazi tema u kojoj se nalazi komentar na koji se korisnik zalio
+            StreamReader pfReader = dbOperater.getReader("podforumi.txt");
+            string odgovorniModeratorPodforumaKomeTrebaDaSeProsledi = "";
+            string pfLine = "";
+            while ((pfLine = pfReader.ReadLine()) != null)
+            {
+                string[] splitter = pfLine.Split(';');
+                if (splitter[0] == podforumZaPretraguModeratora)
+                {
+                    odgovorniModeratorPodforumaKomeTrebaDaSeProsledi = splitter[4];
+                    break;
+                }
+            }
+            pfReader.Close();
+            dbOperater.Reader.Close();
+
+            StreamWriter sw = dbOperater.getWriter("zalbe.txt");
+            foreach (string administrator in listaAdministratoraZaProsledjivanje)
+            {
+                sw.WriteLine(zalba.Id + ";" + zalba.Entitet + ";" + zalba.Tekst + ";" + zalba.DatumZalbe.ToShortDateString() + ";" + zalba.KorisnikKojiJeUlozio + ";" + administrator + ";" + zalba.AutorZaljenogEntiteta + ";" + zalba.TipEntiteta);
+            }
+            sw.WriteLine(zalba.Id + ";" + zalba.Entitet + ";" + zalba.Tekst + ";" + zalba.DatumZalbe.ToShortDateString() + ";" + zalba.KorisnikKojiJeUlozio + ";" + odgovorniModeratorPodforumaKomeTrebaDaSeProsledi + ";" + zalba.AutorZaljenogEntiteta + ";" + zalba.TipEntiteta);
+            sw.Close();
+            dbOperater.Writer.Close();
+
             return true;
         }
 

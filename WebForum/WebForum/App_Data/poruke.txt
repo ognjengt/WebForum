@@ -1,14 +1,6 @@
-b74b29b0-03b6-4e28-9601-0bb447b22b0d;ognjen;obican;Postovani, obrisali smo komentar 1bf06f8c-8a75-4701-9e5a-66618068a835 na koji ste se zalili.;True
-ca8d433a-b247-4fae-a42b-3f05f618a4d6;ognjen;sofija;Obavestavamo vas da je vas komentar 1bf06f8c-8a75-4701-9e5a-66618068a835 obrisan zbog zalbi.;True
-de808d24-4e30-4e4e-8a20-88665cf3d18e;ognjen;sofija;Postovani, obrisali smo komentar 299145dc-5482-4254-a93d-774c730b979c na koji ste se zalili.;True
-b3265cfc-b16f-4156-9fef-8f2d87a26b1d;ognjen;obican;Obavestavamo vas da je vas komentar 299145dc-5482-4254-a93d-774c730b979c obrisan zbog zalbi.;True
-4d276a16-3926-45ac-83f4-5289605e26a1;sofija;noviKorisnik;Pozdrav;True
-cb49ebfa-bcb8-4ee9-b7f3-db2bbec30ff6;sofija;noviKorisnik;Postovani, obrisali smo komentar 464da614-557a-4335-8da9-65c28fa4dabd na koji ste se zalili.;True
-17dab6f8-74ff-41a3-b7e8-278d8ab7c15c;sofija;obican;Obavestavamo vas da je vas komentar 464da614-557a-4335-8da9-65c28fa4dabd obrisan zbog zalbi.;True
-93b72436-81a4-4a36-8588-81d4d0c52755;sofija;noviKorisnik;Postovani, obrisali smo komentar d8d89489-a154-428e-acba-1f96567f4e88 na koji ste se zalili sa tekstom zalbe: 'ajde brisi bre';True
-068d0198-af01-475f-a048-483f81ab0f7d;sofija;obican;Obavestavamo vas da je vas komentar sa id-em d8d89489-a154-428e-acba-1f96567f4e88 obrisan zbog zalbi.;True
-05f93f7e-1e72-4513-b3d3-5eff3f3eb6c4;sofija;noviKorisnik;Vasa zalba na temu Muzika-Pop je odbijena.;False
-42b16e71-bb30-4731-8eb3-fc9cd8c520c8;sofija;obican;Postovani, obrisali smo temu Muzika-Muzicka tema od novog korisnika na koju ste se zalili.;False
-d64b32c6-9200-4954-8991-8d3e6e8aab1c;sofija;noviKorisnik;Obavestavamo vas da je vasa tema Muzika-Muzicka tema od novog korisnika obrisana zbog zalbi.;False
-d5b907c3-d1eb-4b4d-bdfe-d4903968dd37;ognjen;sofija;Postovani, obrisali smo temu Nauka-Naukaka na koju ste se zalili.;False
-e769392e-c32c-4399-8555-2c083c49763b;ognjen;noviKorisnik;Obavestavamo vas da je vasa tema Nauka-Naukaka obrisana zbog zalbi.;False
+f8493472-cf97-4b8a-9f30-12dc4f3111a4;sofija;noviKorisnik;;True
+d6bf2d49-ae64-482e-8df9-1d976a303c14;sofija;obican;;True
+bbcb31ea-1199-4299-96ef-c2a197be2297;sofija;noviKorisnik;Postovani, obrisali smo komentar 9f3c7024-d2f7-4e5e-a87e-2cbdb83961be na koji ste se zalili sa tekstom zalbe: 'zaliiim';True
+d8f6c508-4e19-4ccf-88b9-bbdc268b981d;sofija;obican;Obavestavamo vas da je vas komentar sa id-em 9f3c7024-d2f7-4e5e-a87e-2cbdb83961be obrisan zbog zalbi.;True
+d31427c4-b05b-40be-87de-d94dcb7ffa76;sofija;noviKorisnik;Postovani, obrisali smo komentar a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce na koji ste se zalili sa tekstom zalbe: 'Brisanje i komenta i podkomenta';False
+9c04ddf8-5a74-4cfa-9783-f33f1276d934;sofija;obican;Obavestavamo vas da je vas komentar sa id-em a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce obrisan zbog zalbi.;False
