@@ -92,6 +92,9 @@ webForum.controller('PodforumiController', function ($scope, PodforumiFactory,$r
             if (izmenjenNazivSlike != "") {
                 upload(izmenjenNazivSlike);
             }
+            //else {
+            //    $window.location.href = "#!/podforumi";
+            //}
         }); 
     }
 

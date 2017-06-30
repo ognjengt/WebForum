@@ -1,3 +1,0 @@
-a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce;61660524-a7bc-4b56-8ec9-1aed6212b2b4;obican;6/30/2017;Podkomentar za brisanje;0;0;False;True;Muzika-Pop
-5516ab8b-dd07-46bc-86d6-55bd5569f607;9f3c7024-d2f7-4e5e-a87e-2cbdb83961be;obican;6/30/2017;zdra;0;0;False;True;Muzika-Pop
-a9cdd4f0-2350-4a7a-95dc-a0afbd8ff3ce;5f9be15c-3049-4f72-8a97-5bb0d1b9c0ed;noviKorisnik;6/30/2017;najebaces sad;0;0;False;False;Muzika-Pop

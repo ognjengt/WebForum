@@ -65,6 +65,12 @@ webForum.config(function ($routeProvider) {
         templateUrl: 'SPA/partials/zalbe.html',
         activetab: 'zalbe'
 
+    }).when('/preporuke', {
+
+        controller: 'PreporukeController',
+        templateUrl: 'SPA/partials/preporuke.html',
+        activetab: 'preporuke'
+
     })
 
 });

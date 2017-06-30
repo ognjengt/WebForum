@@ -53,9 +53,9 @@
       <div class="odgovoriNaKomentar" ng-show="prikazanKomentar == komentar.Id">
         <h5>Odgovori na komentar</h5>
         <div class="form-group">
-          <textarea class="form-control" placeholder="Napišite komentar" ng-model="podkomentar.tekstKomentara"></textarea>
+          <textarea class="form-control" placeholder="Odgovorite na ovaj komentar..." ng-model="podkomentar.tekstKomentara"></textarea>
         </div>
-        <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara,tema.PodforumKomePripada,tema.Naslov)">Odgovori</button>
+        <button class="btn button-green" ng-click="dodajPodkomentar(komentar.Id,podkomentar.tekstKomentara,tema.PodforumKomePripada,tema.Naslov)"><i class="ion ion-reply"></i> Odgovori</button>
       </div>
 
       <div class="podkomentari" ng-show="!komentar.Obrisan"> 
@@ -98,7 +98,7 @@
           <textarea type="text" class="form-control" placeholder="Ostavi komentar na ovu temu..." ng-model="tekstKomentara"></textarea>
       </div>
       <div class="col-md-3">
-        <button class="btn button-success" ng-click="komentarisiTemu(tema.PodforumKomePripada,tema.Naslov,tekstKomentara)">Komentariši</button>
+        <button class="btn button-success" ng-click="komentarisiTemu(tema.PodforumKomePripada,tema.Naslov,tekstKomentara)"><i class="ion ion-compose"></i> Komentariši</button>
       </div>
     </div>
     <div ng-show="!ulogovan"><h4>Ulogujte se da bi ste komentarisali</h4></div>

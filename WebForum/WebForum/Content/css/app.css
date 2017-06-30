@@ -647,6 +647,35 @@
       .zalbe-wrapper .zalbe .zalba .btns {
         padding-top: 20px; }
 
+.preporuke-teme-wrapper {
+  width: 100%;
+  min-height: 100px;
+  max-height: auto;
+  border: 2px solid #0060FF;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .preporuke-teme-wrapper .teme a {
+    text-decoration: none; }
+    .preporuke-teme-wrapper .teme a .tema {
+      margin-top: 30px;
+      width: 100%;
+      height: 150px;
+      box-shadow: 1px 2px 60px -18px rgba(0, 0, 0, 0.6);
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: left;
+      color: #000;
+      transition: 0.2s ease; }
+    .preporuke-teme-wrapper .teme a .tema:hover {
+      background: #0060FF;
+      color: #fff; }
+
 * {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 1.01em; }

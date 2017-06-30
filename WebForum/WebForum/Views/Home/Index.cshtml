@@ -31,6 +31,7 @@
                         <li ng-class="checkActive('/podforumi')"><a href="#!/podforumi"><i class="ion ion-ios-albums"></i> Podforumi</a></li>
                         <li ng-class="checkActive('/pretraga')"><a href="#!/pretraga"><i class="ion ion-ios-search-strong"></i> Pretraga</a></li>
                         <li ng-show="korisnik.uloga == 'Administrator'" ng-class="checkActive('/promenaTipa')"><a href="#!/promenaTipa"><i class="ion ion-lock-combination"></i> Promena tipa</a></li>
+                        <li ng-show="ulogovan" ng-class="checkActive('/preporuke')"><a href="#!/preporuke"><i class="ion ion-usb"></i> Preporuke</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-show="!ulogovan" ng-class="checkActive('/login')"><a href="#!/login">Login</a></li>
@@ -62,6 +63,7 @@
     <script src="../../SPA/controllers/PretragaController.js"></script>
     <script src="../../SPA/controllers/PromenaTipaController.js"></script>
     <script src="../../SPA/controllers/ZalbeController.js"></script>
+    <script src="../../SPA/controllers/PreporukeController.js"></script>
     <!--Factories-->
     <script src="../../SPA/services/AccountFactory.js"></script>
     <script src="../../SPA/services/PodforumiFactory.js"></script>
@@ -70,6 +72,7 @@
     <script src="../../SPA/services/SearchFactory.js"></script>
     <script src="../../SPA/services/PorukeFactory.js"></script>
     <script src="../../SPA/services/ZalbeFactory.js"></script>
+    <script src="../../SPA/services/PreporukeFactory.js"></script>
     <!--Directives-->
     <script src="../../SPA/directives/fileUploadDirective.js"></script>
 </body>

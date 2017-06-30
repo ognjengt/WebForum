@@ -187,6 +187,7 @@
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\PodforumiController.cs" />
     <Compile Include="Controllers\PorukeController.cs" />
+    <Compile Include="Controllers\PreporukeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TemeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -255,6 +256,7 @@
     <Content Include="SPA\controllers\podforumi\PodforumiController.js" />
     <Content Include="SPA\controllers\LoginController.js" />
     <Content Include="SPA\controllers\MainController.js" />
+    <Content Include="SPA\controllers\PreporukeController.js" />
     <Content Include="SPA\controllers\PretragaController.js" />
     <Content Include="SPA\controllers\ProfilController.js" />
     <Content Include="SPA\controllers\PromenaTipaController.js" />
@@ -265,6 +267,7 @@
     <Content Include="SPA\partials\pocetna.html" />
     <Content Include="SPA\partials\podforumi\podforumi.html" />
     <Content Include="SPA\partials\podforumi\pregledPodforuma.html" />
+    <Content Include="SPA\partials\preporuke.html" />
     <Content Include="SPA\partials\pretraga.html" />
     <Content Include="SPA\partials\profil.html" />
     <Content Include="SPA\partials\promenaTipa.html" />
@@ -275,6 +278,7 @@
     <Content Include="SPA\services\KomentariFactory.js" />
     <Content Include="SPA\services\PodforumiFactory.js" />
     <Content Include="SPA\services\PorukeFactory.js" />
+    <Content Include="SPA\services\PreporukeFactory.js" />
     <Content Include="SPA\services\SearchFactory.js" />
     <Content Include="SPA\services\TemeFactory.js" />
     <Content Include="SPA\services\ZalbeFactory.js" />
