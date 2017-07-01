@@ -55,6 +55,10 @@
     .item:hover{
       color: #fff;
       background: $blue;
+
+      p{
+          color: #fff;
+      }
     }
 }
 .nohover:hover{

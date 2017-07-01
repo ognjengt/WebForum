@@ -41,7 +41,7 @@
                 <div class="spisak">
                     <h4>Snimljeni komentari</h4>
                     <div class="repeat-teme" ng-repeat="komentar in sacuvaniKomentari | orderBy:'-'">
-                        <a>
+                        <a href="#!/podforumi/{{komentar.TemaKojojPripada}}">
                             <div class="item">
                                 <p>{{komentar.Tekst}}</p>
                             </div>
@@ -70,7 +70,7 @@
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsup"></i> Lajkovane teme</h4>
                     <div class="repeat-teme" ng-repeat="lajkovanaTema in listaLajkovanihTema | orderBy:'-'">
-                        <a>
+                        <a href="#!/podforumi/{{lajkovanaTema}}">
                             <div class="item">
                                 <p>{{lajkovanaTema}}</p>
                             </div>
@@ -84,7 +84,7 @@
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsdown"></i> Dislajkovane teme</h4>
                     <div class="repeat-teme" ng-repeat="dislajkovanaTema in listaDislajkovanihTema | orderBy:'-'">
-                        <a>
+                        <a href="#!/podforumi/{{dislajkovanaTema}}">
                             <div class="item">
                                 <p>{{dislajkovanaTema}}</p>
                             </div>
@@ -97,7 +97,7 @@
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsup"></i> Lajkovani komentari</h4>
                     <div class="repeat-teme" ng-repeat="lajkovanKomentar in listaLajkovanihKomentara | orderBy:'-'">
-                        <a>
+                        <a href="#!/podforumi/{{lajkovanKomentar.TemaKojojPripada}}">
                             <div class="item">
                                 <p>{{lajkovanKomentar.Tekst}}</p>
                             </div>
@@ -110,7 +110,7 @@
                 <div class="spisak">
                     <h4><i class="ion ion-thumbsdown"></i> Dislajkovani komentari</h4>
                     <div class="repeat-teme" ng-repeat="dislajkovanKomentar in listaDislajkovanihKomentara | orderBy:'-'">
-                        <a>
+                        <a href="#!/podforumi/{{dislajkovanKomentar.TemaKojojPripada}}">
                             <div class="item">
                                 <p>{{dislajkovanKomentar.Tekst}}</p>
                             </div>

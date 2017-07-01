@@ -554,6 +554,8 @@
 .profile-content .item:hover {
   color: #fff;
   background: #0060FF; }
+  .profile-content .item:hover p {
+    color: #fff; }
 
 .nohover:hover {
   background: #fff !important;

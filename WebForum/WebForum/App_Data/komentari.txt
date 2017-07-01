@@ -1,3 +1,5 @@
 d77b9502-20df-4ead-a047-4785ba0c3364;Muzika-najnajnaj od obicnog;ognjen;7/1/2017;nemaRoditelja;Komentar lajk;1;0;False;True;nemaPodkomentara|a034987a-6f0b-4437-8c8c-e5274d62ad9c
 dba151e2-dcd9-45c8-aeb8-adb090c35ae6;Muzika-najnajnaj od obicnog;ognjen;7/1/2017;nemaRoditelja;Komentar dislajk;0;1;False;True;nemaPodkomentara|c1290d80-9141-44ce-a554-1ebf329e6e5d
 658d5bc0-b27a-492f-a8f6-3bd544121eb1;Muzika-najnajnaj od obicnog;ognjen;7/1/2017;nemaRoditelja;asdasd;0;0;False;False;nemaPodkomentara|48be03ca-c99b-4f9f-869c-e846f2ce5361
+1d9e67a8-95fa-4d11-813b-4786ca6b8a28;Muzika-Rock;ognjen;7/1/2017;nemaRoditelja;Deste rokeri;0;0;False;False;nemaPodkomentara|0fc0632a-587c-4549-a586-b2297b29fd7e|9ab5509d-1318-436e-b47e-8136e90ea91c
+68afd18b-cfca-424e-a35b-6949edbca8bf;Nauka-U korak sa tehnologijom;ognjen;7/1/2017;nemaRoditelja;desi brt;0;1;False;False;nemaPodkomentara

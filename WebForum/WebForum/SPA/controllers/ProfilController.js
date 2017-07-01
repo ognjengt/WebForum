@@ -21,34 +21,55 @@
 
                     AccountFactory.getSacuvaniKomentari($routeParams.username).then(function (response) {
                         $scope.sacuvaniKomentari = response.data;
+                        $scope.sacuvaniKomentari.forEach(function (komentar) {
+                            komentar.TemaKojojPripada = komentar.TemaKojojPripada.replace("-", "/");
+                        });
                         console.log(response.data);
 
                         AccountFactory.getSacuvaniPodkomentari($routeParams.username).then(function (response) {
                             var listaPodkomentara = response.data;
                             listaPodkomentara.forEach(function (podkomentar) {
+                                podkomentar.TemaKojojPripada = podkomentar.TemaKojojPripada.replace("-", "/");
                                 $scope.sacuvaniKomentari.push(podkomentar);
                             })
                             console.log(response.data);
                             
                             TemeFactory.getLajkovaneTeme($routeParams.username).then(function (response) {
-                                $scope.listaLajkovanihTema = response.data;
+                                var listaLajkovanih = response.data;
+                                $scope.listaLajkovanihTema = [];
+                                listaLajkovanih.forEach(function (tema) {
+                                    tema = tema.replace("-", "/");
+                                    $scope.listaLajkovanihTema.push(tema);
+                                });
                                 console.log(response.data);
 
                                 TemeFactory.getDislajkovaneTeme($routeParams.username).then(function (response) {
-                                    $scope.listaDislajkovanihTema = response.data;
+                                    var listaDislajkovanih = response.data;
+                                    $scope.listaDislajkovanihTema = [];
+                                    listaDislajkovanih.forEach(function (tema) {
+                                        tema = tema.replace("-", "/");
+                                        $scope.listaDislajkovanihTema.push(tema);
+                                    });
                                     console.log(response.data);
 
                                     KomentariFactory.getLajkovaniKomentari($routeParams.username).then(function (response) {
                                         $scope.listaLajkovanihKomentara = response.data;
+                                        $scope.listaLajkovanihKomentara.forEach(function (komentar) {
+                                            komentar.TemaKojojPripada = komentar.TemaKojojPripada.replace("-", "/");
+                                        });
                                         console.log(response.data);
 
                                         KomentariFactory.getDislajkovaniKomentari($routeParams.username).then(function (response) {
                                             $scope.listaDislajkovanihKomentara = response.data;
+                                            $scope.listaDislajkovanihKomentara.forEach(function (komentar) {
+                                                komentar.TemaKojojPripada = komentar.TemaKojojPripada.replace("-", "/");
+                                            });
                                             console.log(response.data);
 
                                             KomentariFactory.getLajkovaniPodkomentari($routeParams.username).then(function (response) {
                                                 var listaLajkovanihPodkomentara = response.data;
                                                 listaLajkovanihPodkomentara.forEach(function (podkomentar) {
+                                                    podkomentar.TemaKojojPripada = podkomentar.TemaKojojPripada.replace("-", "/");
                                                     $scope.listaLajkovanihKomentara.push(podkomentar);
                                                 })
                                                 
@@ -57,6 +78,7 @@
                                                 KomentariFactory.getDislajkovaniPodkomentari($routeParams.username).then(function (response) {
                                                     var listaDislajkovanihPodkomentara = response.data;
                                                     listaDislajkovanihPodkomentara.forEach(function (podkomentar) {
+                                                        podkomentar.TemaKojojPripada = podkomentar.TemaKojojPripada.replace("-", "/");
                                                         $scope.listaDislajkovanihKomentara.push(podkomentar);
                                                     })
                                                     console.log(response.data);

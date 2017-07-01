@@ -1,3 +1,5 @@
 d77b9502-20df-4ead-a047-4785ba0c3364;a034987a-6f0b-4437-8c8c-e5274d62ad9c;ognjen;7/1/2017;podkomentar lajk;1;0;False;True;Muzika-najnajnaj od obicnog
 dba151e2-dcd9-45c8-aeb8-adb090c35ae6;c1290d80-9141-44ce-a554-1ebf329e6e5d;ognjen;7/1/2017;podkomentar dislajk;0;1;False;True;Muzika-najnajnaj od obicnog
 658d5bc0-b27a-492f-a8f6-3bd544121eb1;48be03ca-c99b-4f9f-869c-e846f2ce5361;ognjen;7/1/2017;adsasd;1;0;False;True;Muzika-najnajnaj od obicnog
+1d9e67a8-95fa-4d11-813b-4786ca6b8a28;0fc0632a-587c-4549-a586-b2297b29fd7e;ognjen;7/1/2017;Evo nas;1;0;False;False;Muzika-Rock
+1d9e67a8-95fa-4d11-813b-4786ca6b8a28;9ab5509d-1318-436e-b47e-8136e90ea91c;ognjen;7/1/2017;Jos jedan;0;0;False;True;Muzika-Rock
