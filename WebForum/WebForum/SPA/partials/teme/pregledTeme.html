@@ -6,7 +6,7 @@
   <button class="btn btn-warning" ng-show="ulogovan" ng-click="zapratiTemu(korisnik.username)"><i class="ion ion-archive"></i> Zaprati</button>
   <button class="btn btn-danger" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="obrisiTemu(tema)"> <i class="ion ion-trash-b"></i> Obriši</button>
   <button class="btn btn-info" ng-show="korisnik.uloga.includes('Administrator') || korisnik.username == tema.Autor || (JeUListiModeratora && korisnik.uloga == 'Moderator')" ng-click="showIzmenaPopupWindow()"><i class="ion ion-edit"></i> Izmeni</button>
-  <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="(korisnik.uloga == 'Korisnik' && tema.Autor != korisnik.username) || (podforumUKomeSeTemaNalazi.OdgovorniModerator != korisnik.username && tema.Autor != korisnik.username)" ng-hide="korisnik.uloga == 'Administrator' " class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
+  <button ng-click="zalbaModalVisible = !zalbaModalVisible" ng-show="(korisnik.uloga == 'Korisnik' && tema.Autor != korisnik.username) || (podforumUKomeSeTemaNalazi.OdgovorniModerator != korisnik.username && tema.Autor != korisnik.username && ulogovan)" ng-hide="korisnik.uloga == 'Administrator' || !ulogovan" class="btn btn-danger"> <i class="ion ion-alert-circled"></i> Priloži žalbu</button>
 </div>
 <div class="tema-sadrzaj">
   <h4 ng-show="tema.Tip == 'Tekst'">[Tekst]</h4>

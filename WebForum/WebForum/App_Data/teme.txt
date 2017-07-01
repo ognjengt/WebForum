@@ -1,2 +1,4 @@
 Knjizevnost;U korak sa tehnologijom;Tekst;ognjen;asd;6/29/2017;0;0;nePostoje
 Drinkomanija;Sajt drinkomanije;Link;ognjen;http://www.drinkomanija.com/;7/1/2017;1;0;nePostoje|abd2a5d9-c73a-4088-bb78-de77c580af87|61ec889a-113e-43f5-a47a-745a72bc60f8
+neki;desbaeee;Tekst;obican;asdasd;7/1/2017;0;0;nePostoje
+Muzika;Rock;Link;obican;https://www.youtube.com/watch?v=v2AC41dglnM;7/1/2017;0;0;nePostoje|0f2fb1af-b0e9-4da3-80cb-1b280d852eef

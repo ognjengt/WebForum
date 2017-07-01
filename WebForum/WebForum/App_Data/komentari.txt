@@ -1,2 +1,3 @@
 abd2a5d9-c73a-4088-bb78-de77c580af87;Drinkomanija-Sajt drinkomanije;noviKorisnik;7/1/2017;nemaRoditelja;Svidja mi se!;0;1;False;False;nemaPodkomentara
 61ec889a-113e-43f5-a47a-745a72bc60f8;Drinkomanija-Sajt drinkomanije;obican;7/1/2017;nemaRoditelja;Meni se ne svidja....;1;0;False;False;nemaPodkomentara
+0f2fb1af-b0e9-4da3-80cb-1b280d852eef;Muzika-Rock;obican;7/1/2017;nemaRoditelja;Ovo je super!;0;0;False;False;nemaPodkomentara|5d639592-5170-4f5c-a8ed-e32eff3964af

@@ -3,3 +3,4 @@ Knjizevnost;opis knjizevnosti;Knjizevnost.jpg;pravila pravila knjizevnost;modera
 Nauka;Ovde idu sve teme vezane za nauku;Nauka.jpg;Pravila pravila;ognjen;ognjen
 Muzika;muzika samo u obzir dolazi;Muzika.jpg;Samo muzika dolazi u obzir;ognjen;ognjen
 Drinkomanija;Ovde idu sve teme vezane za drinkomaniju;Drinkomanija.jpg;Sve vezano za drinkomaniju;ognjen;ognjen
+neki;asdasd;;asdasd;moderatorTest;moderatorTest
