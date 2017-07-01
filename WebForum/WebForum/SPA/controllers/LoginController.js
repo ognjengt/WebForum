@@ -66,6 +66,15 @@
     };
 
     $scope.Login = function (korisnik) {
+        if (korisnik.username == null || korisnik.username == "") {
+            alert('Popunite korisnicko ime!');
+            return;
+        }
+        else if (korisnik.password == null || korisnik.password == "") {
+            alert('Popunite password!');
+            return;
+        }
+
         AccountFactory.Login(korisnik).then(function (response) {
             if (response.data == null) {
                 alert("Korisnik sa tim korisnickim imenom i sifrom ne postoji");

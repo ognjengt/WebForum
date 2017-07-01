@@ -1,3 +1,2 @@
-abd2a5d9-c73a-4088-bb78-de77c580af87;Drinkomanija-Sajt drinkomanije;noviKorisnik;7/1/2017;nemaRoditelja;Svidja mi se!;0;1;False;False;nemaPodkomentara
-61ec889a-113e-43f5-a47a-745a72bc60f8;Drinkomanija-Sajt drinkomanije;obican;7/1/2017;nemaRoditelja;Meni se ne svidja....;1;0;False;False;nemaPodkomentara
-0f2fb1af-b0e9-4da3-80cb-1b280d852eef;Muzika-Rock;obican;7/1/2017;nemaRoditelja;Ovo je super!;0;0;False;False;nemaPodkomentara|5d639592-5170-4f5c-a8ed-e32eff3964af
+a809c0d2-48e7-4a27-ab47-5579fcbee8b4;Nauka-Najnovija vest iz nauke!;pera;7/1/2017;nemaRoditelja;Svaka cast;0;0;False;False;nemaPodkomentara|3c37b25e-714c-4140-9434-64f62b147240
+7692bbb0-e8a5-4839-b46b-731ff3e34c1a;Nauka-Najnovija vest iz nauke!;obican;7/1/2017;nemaRoditelja;Proba;0;0;False;True;nemaPodkomentara
