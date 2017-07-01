@@ -23,6 +23,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="sacuvaniPodforumi.length == 0">Nema sačuvanih podforuma</h5>
                 </div>
             </div>
             <div class="col-md-3">
@@ -35,6 +36,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="sacuvaneTeme.length == 0">Nema sačuvanih tema</h5>
                 </div>
             </div>
             <div class="col-md-3">
@@ -47,6 +49,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="sacuvaniKomentari.length == 0">Nema sačuvanih komentara</h5>
                 </div>
             </div>
             <div class="col-md-3" ng-show="userProfile.Username == korisnik.username">
@@ -62,6 +65,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="primljenePoruke.length == 0">Nema primljenih poruka</h5>
                 </div>
             </div>
             </div>
@@ -76,6 +80,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="listaLajkovanihTema.length == 0">Nema lajkovanih tema</h5>
                 </div>
             </div>
             
@@ -90,6 +95,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="listaDislajkovanihTema.length == 0">Nema dislajkovanih tema</h5>
                 </div>
             </div>
 
@@ -103,6 +109,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="listaLajkovanihKomentara.length == 0">Nema lajkovanih komentara</h5>
                 </div>
             </div>
 
@@ -116,6 +123,7 @@
                             </div>
                         </a>
                     </div>
+                    <h5 ng-show="listaDislajkovanihKomentara.length == 0">Nema dislajkovanih komentara</h5>
                 </div>
             </div>
             </div>
