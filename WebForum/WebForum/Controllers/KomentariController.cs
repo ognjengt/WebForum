@@ -684,7 +684,7 @@ namespace WebForum.Controllers
             while ((komentarLine = readerLajkova.ReadLine()) != null)
             {
                 string[] splitter = komentarLine.Split(';');
-                if (splitter[2] == "like")
+                if (splitter[2] == "like" && splitter[0] == username)
                 {
                     ideviLajkovanih.Add(splitter[1]);
                 }
@@ -738,7 +738,7 @@ namespace WebForum.Controllers
             while ((komentarLine = readerLajkova.ReadLine()) != null)
             {
                 string[] splitter = komentarLine.Split(';');
-                if (splitter[2] == "dislike")
+                if (splitter[2] == "dislike" && splitter[0] == username)
                 {
                     ideviDislajkovanih.Add(splitter[1]);
                 }
@@ -791,7 +791,7 @@ namespace WebForum.Controllers
             while ((komentarLine = readerLajkova.ReadLine()) != null)
             {
                 string[] splitter = komentarLine.Split(';');
-                if (splitter[2] == "like")
+                if (splitter[2] == "like" && splitter[0] == username)
                 {
                     ideviLajkovanih.Add(splitter[1]);
                 }
@@ -844,7 +844,7 @@ namespace WebForum.Controllers
             while ((komentarLine = readerLajkova.ReadLine()) != null)
             {
                 string[] splitter = komentarLine.Split(';');
-                if (splitter[2] == "dislike")
+                if (splitter[2] == "dislike" && splitter[0] == username)
                 {
                     ideviDislajkovanih.Add(splitter[1]);
                 }

@@ -1,4 +1,7 @@
 a1eaf25b-6de8-4f00-9c14-907ed1ce792b;ognjen;obican;Postovani, upozorili smo korisnika ognjen zbog vase zalbe na temu Muzika-nova;True
 b44e42a8-e017-47e4-9c99-0ec5131f1870;ognjen;ognjen;Upozoravamo vas da je vasa tema Muzika-nova bila prijavljena u zalbi.;True
-4ec8dfe7-d81c-4bb6-bb8f-96f42aa48eef;ognjen;obican;Postovani, obrisali smo komentar 9ab5509d-1318-436e-b47e-8136e90ea91c na koji ste se zalili sa tekstom zalbe: 'Aj sklanjaj ga';False
+4ec8dfe7-d81c-4bb6-bb8f-96f42aa48eef;ognjen;obican;Postovani, obrisali smo komentar 9ab5509d-1318-436e-b47e-8136e90ea91c na koji ste se zalili sa tekstom zalbe: 'Aj sklanjaj ga';True
 d46cdd09-bae5-4e08-9bb3-5489574d7c14;ognjen;ognjen;Obavestavamo vas da je vas komentar sa id-em 9ab5509d-1318-436e-b47e-8136e90ea91c obrisan zbog zalbi.;True
+80bf0294-34e8-4523-9c1f-12b08c0e15d0;ognjen;obican;Postovani, obrisali smo temu Nauka-U korak sa tehnologijom na koju ste se zalili.;True
+d2a0dfb0-60e1-4f59-bf34-39d84685b2b4;ognjen;ognjen;Obavestavamo vas da je vasa tema Nauka-U korak sa tehnologijom obrisana zbog zalbi.;True
+96d91efb-664a-46ed-84a3-fc966db0cc78;ognjen;obican;Vasa zalba na temu Drinkomanija-Sajt drinkomanije je odbijena.;True

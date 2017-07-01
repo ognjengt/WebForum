@@ -560,6 +560,8 @@
 .nohover:hover {
   background: #fff !important;
   color: #0060FF !important; }
+  .nohover:hover p {
+    color: #000 !important; }
 
 #IzmenaModal .overlay {
   position: fixed;

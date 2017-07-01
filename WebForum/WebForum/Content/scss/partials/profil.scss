@@ -64,4 +64,8 @@
 .nohover:hover{
     background: #fff !important;
     color: $blue !important;
+
+    p{
+        color: #000 !important;
+    }
 }

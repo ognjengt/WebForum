@@ -1,7 +1,2 @@
-ognjen;d77b9502-20df-4ead-a047-4785ba0c3364;like
-ognjen;a034987a-6f0b-4437-8c8c-e5274d62ad9c;like
-ognjen;dba151e2-dcd9-45c8-aeb8-adb090c35ae6;dislike
-ognjen;c1290d80-9141-44ce-a554-1ebf329e6e5d;dislike
-ognjen;48be03ca-c99b-4f9f-869c-e846f2ce5361;like
-obican;0fc0632a-587c-4549-a586-b2297b29fd7e;like
-ognjen;68afd18b-cfca-424e-a35b-6949edbca8bf;dislike
+obican;abd2a5d9-c73a-4088-bb78-de77c580af87;dislike
+obican;61ec889a-113e-43f5-a47a-745a72bc60f8;like

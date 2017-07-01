@@ -1,4 +1,5 @@
 Sport;opis sporta;Sport.jpg;pravila pravila pravila;moderator1;moderator1
 Knjizevnost;opis knjizevnosti;Knjizevnost.jpg;pravila pravila knjizevnost;moderator2;moderator2
 Nauka;Ovde idu sve teme vezane za nauku;Nauka.jpg;Pravila pravila;ognjen;ognjen
-Muzika;samo muzika;;Samo muzika;sofija;sofija
+Muzika;muzika samo u obzir dolazi;Muzika.jpg;Samo muzika dolazi u obzir;ognjen;ognjen
+Drinkomanija;Ovde idu sve teme vezane za drinkomaniju;Drinkomanija.jpg;Sve vezano za drinkomaniju;ognjen;ognjen
