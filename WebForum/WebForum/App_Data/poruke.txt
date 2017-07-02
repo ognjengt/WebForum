@@ -6,3 +6,5 @@ c047284f-9718-416f-852b-d0daff3c0677;ognjen;obican;Postovani, obrisali smo temu 
 74888ff7-ffe1-4fe1-b7a5-6422f1092b97;ognjen;noviKorisnik;Obavestavamo vas da je vasa tema Nauka-Rock obrisana zbog zalbi.;True
 98aa9363-064d-413f-8edb-b5d114cc5289;ognjen;pera;Postovani, obrisali smo temu Nauka-Naucna fantastika na koju ste se zalili.;False
 04af4b95-b7ae-47c0-a240-a1762d5c8f8e;ognjen;sofija;Obavestavamo vas da je vasa tema Nauka-Naucna fantastika obrisana zbog zalbi.;False
+43b74c4c-0ef7-4d31-ae82-858f3e318916;ognjen;noviKorisnik;Postovani, obrisali smo podforum Podforum za brisanje na koji ste se zalili.;False
+047d1140-9222-47a7-acc1-cc2e7644a685;ognjen;ognjen;Obavestavamo vas da je vas podforum Podforum za brisanje obrisan zbog zalbi.;True
