@@ -75,7 +75,7 @@ namespace WebForum.Controllers
             }
 
 
-            else if (podforumZaPretragu.Naziv != null && podforumZaPretragu.Opis == null && podforumZaPretragu.OdgovorniModerator != null)
+            else if (podforumZaPretragu.Naziv == null && podforumZaPretragu.Opis != null && podforumZaPretragu.OdgovorniModerator != null)
             {
                 // pretrazi po opisu i moderatoru
                 listaFiltriranih = listaSvihPodforuma.Where(p => p.Opis.Contains(podforumZaPretragu.Opis) && p.OdgovorniModerator.Contains(podforumZaPretragu.OdgovorniModerator)).ToList();
